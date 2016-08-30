@@ -1,0 +1,325 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'update' ]
+2 info using npm@3.10.3
+3 info using node@v6.3.1
+4 silly mapToRegistry name @types/async
+5 silly mapToRegistry scope (from package name) @types
+6 verbose mapToRegistry no registry URL found in name for scope @types
+7 silly mapToRegistry using default registry
+8 silly mapToRegistry registry https://registry.npmjs.org/
+9 silly mapToRegistry data Result {
+9 silly mapToRegistry   raw: '@types/async',
+9 silly mapToRegistry   scope: '@types',
+9 silly mapToRegistry   escapedName: '@types%2fasync',
+9 silly mapToRegistry   name: '@types/async',
+9 silly mapToRegistry   rawSpec: '',
+9 silly mapToRegistry   spec: 'latest',
+9 silly mapToRegistry   type: 'tag' }
+10 silly mapToRegistry uri https://registry.npmjs.org/@types%2fasync
+11 silly mapToRegistry name @types/node
+12 silly mapToRegistry scope (from package name) @types
+13 verbose mapToRegistry no registry URL found in name for scope @types
+14 silly mapToRegistry using default registry
+15 silly mapToRegistry registry https://registry.npmjs.org/
+16 silly mapToRegistry data Result {
+16 silly mapToRegistry   raw: '@types/node',
+16 silly mapToRegistry   scope: '@types',
+16 silly mapToRegistry   escapedName: '@types%2fnode',
+16 silly mapToRegistry   name: '@types/node',
+16 silly mapToRegistry   rawSpec: '',
+16 silly mapToRegistry   spec: 'latest',
+16 silly mapToRegistry   type: 'tag' }
+17 silly mapToRegistry uri https://registry.npmjs.org/@types%2fnode
+18 silly mapToRegistry name typescript
+19 silly mapToRegistry using default registry
+20 silly mapToRegistry registry https://registry.npmjs.org/
+21 silly mapToRegistry data Result {
+21 silly mapToRegistry   raw: 'typescript',
+21 silly mapToRegistry   scope: null,
+21 silly mapToRegistry   escapedName: 'typescript',
+21 silly mapToRegistry   name: 'typescript',
+21 silly mapToRegistry   rawSpec: '',
+21 silly mapToRegistry   spec: 'latest',
+21 silly mapToRegistry   type: 'tag' }
+22 silly mapToRegistry uri https://registry.npmjs.org/typescript
+23 silly mapToRegistry name lodash
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'lodash',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'lodash',
+26 silly mapToRegistry   name: 'lodash',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/lodash
+28 verbose request uri https://registry.npmjs.org/@types%2fasync
+29 verbose request no auth needed
+30 info attempt registry request try #1 at 12:53:37 PM
+31 verbose request using bearer token for auth
+32 verbose request id 39e6ce2e5e844290
+33 verbose etag "2F9JYQDRDOM6V4VH8XDDDCBDA"
+34 http request GET https://registry.npmjs.org/@types%2fasync
+35 verbose request uri https://registry.npmjs.org/@types%2fnode
+36 verbose request no auth needed
+37 info attempt registry request try #1 at 12:53:37 PM
+38 verbose request using bearer token for auth
+39 verbose etag "5PA6ZSON8HSA0TT56SYV3CJUG"
+40 http request GET https://registry.npmjs.org/@types%2fnode
+41 verbose request uri https://registry.npmjs.org/typescript
+42 verbose request no auth needed
+43 info attempt registry request try #1 at 12:53:37 PM
+44 verbose request using bearer token for auth
+45 verbose etag "5DNM6D6NZD4HRQ3CVHOP4M9CN"
+46 http request GET https://registry.npmjs.org/typescript
+47 verbose request uri https://registry.npmjs.org/lodash
+48 verbose request no auth needed
+49 info attempt registry request try #1 at 12:53:37 PM
+50 verbose request using bearer token for auth
+51 verbose etag "3F6MGQWPURGJRMO7BLCCC409X"
+52 http request GET https://registry.npmjs.org/lodash
+53 http 304 https://registry.npmjs.org/typescript
+54 verbose headers { 'cache-control': 'max-age=300',
+54 verbose headers   'accept-ranges': 'bytes',
+54 verbose headers   date: 'Tue, 30 Aug 2016 10:53:38 GMT',
+54 verbose headers   via: '1.1 varnish',
+54 verbose headers   connection: 'keep-alive',
+54 verbose headers   'x-served-by': 'cache-ams4439-AMS',
+54 verbose headers   'x-cache': 'MISS',
+54 verbose headers   'x-cache-hits': '0',
+54 verbose headers   'x-timer': 'S1472554418.021957,VS0,VE104',
+54 verbose headers   vary: 'Accept-Encoding' }
+55 silly get cb [ 304,
+55 silly get   { 'cache-control': 'max-age=300',
+55 silly get     'accept-ranges': 'bytes',
+55 silly get     date: 'Tue, 30 Aug 2016 10:53:38 GMT',
+55 silly get     via: '1.1 varnish',
+55 silly get     connection: 'keep-alive',
+55 silly get     'x-served-by': 'cache-ams4439-AMS',
+55 silly get     'x-cache': 'MISS',
+55 silly get     'x-cache-hits': '0',
+55 silly get     'x-timer': 'S1472554418.021957,VS0,VE104',
+55 silly get     vary: 'Accept-Encoding' } ]
+56 verbose etag https://registry.npmjs.org/typescript from cache
+57 verbose get saving typescript to /home/radic/.npm/registry.npmjs.org/typescript/.cache.json
+58 verbose correctMkdir /home/radic/.npm correctMkdir not in flight; initializing
+59 http 304 https://registry.npmjs.org/lodash
+60 verbose headers { 'cache-control': 'max-age=300',
+60 verbose headers   'accept-ranges': 'bytes',
+60 verbose headers   date: 'Tue, 30 Aug 2016 10:53:38 GMT',
+60 verbose headers   via: '1.1 varnish',
+60 verbose headers   connection: 'keep-alive',
+60 verbose headers   'x-served-by': 'cache-ams4123-AMS',
+60 verbose headers   'x-cache': 'MISS',
+60 verbose headers   'x-cache-hits': '0',
+60 verbose headers   'x-timer': 'S1472554418.032027,VS0,VE181',
+60 verbose headers   vary: 'Accept-Encoding' }
+61 silly get cb [ 304,
+61 silly get   { 'cache-control': 'max-age=300',
+61 silly get     'accept-ranges': 'bytes',
+61 silly get     date: 'Tue, 30 Aug 2016 10:53:38 GMT',
+61 silly get     via: '1.1 varnish',
+61 silly get     connection: 'keep-alive',
+61 silly get     'x-served-by': 'cache-ams4123-AMS',
+61 silly get     'x-cache': 'MISS',
+61 silly get     'x-cache-hits': '0',
+61 silly get     'x-timer': 'S1472554418.032027,VS0,VE181',
+61 silly get     vary: 'Accept-Encoding' } ]
+62 verbose etag https://registry.npmjs.org/lodash from cache
+63 verbose get saving lodash to /home/radic/.npm/registry.npmjs.org/lodash/.cache.json
+64 verbose correctMkdir /home/radic/.npm correctMkdir not in flight; initializing
+65 silly cache add args [ 'lodash', '^5.0.0' ]
+66 verbose cache add spec lodash@^5.0.0
+67 silly cache add parsed spec Result {
+67 silly cache add   raw: 'lodash@^5.0.0',
+67 silly cache add   scope: null,
+67 silly cache add   escapedName: 'lodash',
+67 silly cache add   name: 'lodash',
+67 silly cache add   rawSpec: '^5.0.0',
+67 silly cache add   spec: '>=5.0.0 <6.0.0',
+67 silly cache add   type: 'range' }
+68 silly addNamed lodash@>=5.0.0 <6.0.0
+69 verbose addNamed ">=5.0.0 <6.0.0" is a valid semver range for lodash
+70 silly addNameRange { name: 'lodash', range: '>=5.0.0 <6.0.0', hasData: false }
+71 silly mapToRegistry name lodash
+72 silly mapToRegistry using default registry
+73 silly mapToRegistry registry https://registry.npmjs.org/
+74 silly mapToRegistry data Result {
+74 silly mapToRegistry   raw: 'lodash',
+74 silly mapToRegistry   scope: null,
+74 silly mapToRegistry   escapedName: 'lodash',
+74 silly mapToRegistry   name: 'lodash',
+74 silly mapToRegistry   rawSpec: '',
+74 silly mapToRegistry   spec: 'latest',
+74 silly mapToRegistry   type: 'tag' }
+75 silly mapToRegistry uri https://registry.npmjs.org/lodash
+76 verbose addNameRange registry:https://registry.npmjs.org/lodash not in flight; fetching
+77 verbose get https://registry.npmjs.org/lodash not expired, no request
+78 silly addNameRange number 2 { name: 'lodash', range: '>=5.0.0 <6.0.0', hasData: true }
+79 silly addNameRange versions [ 'lodash',
+79 silly addNameRange   [ '0.1.0',
+79 silly addNameRange     '0.2.0',
+79 silly addNameRange     '0.2.1',
+79 silly addNameRange     '0.2.2',
+79 silly addNameRange     '0.3.0',
+79 silly addNameRange     '0.3.1',
+79 silly addNameRange     '0.3.2',
+79 silly addNameRange     '0.4.0',
+79 silly addNameRange     '0.4.1',
+79 silly addNameRange     '0.4.2',
+79 silly addNameRange     '0.5.0-rc.1',
+79 silly addNameRange     '0.5.0',
+79 silly addNameRange     '0.5.1',
+79 silly addNameRange     '0.5.2',
+79 silly addNameRange     '0.6.0',
+79 silly addNameRange     '0.6.1',
+79 silly addNameRange     '0.7.0',
+79 silly addNameRange     '0.8.0',
+79 silly addNameRange     '0.8.1',
+79 silly addNameRange     '0.8.2',
+79 silly addNameRange     '0.9.0',
+79 silly addNameRange     '0.9.1',
+79 silly addNameRange     '0.9.2',
+79 silly addNameRange     '0.10.0',
+79 silly addNameRange     '1.0.0-rc.1',
+79 silly addNameRange     '1.0.0-rc.2',
+79 silly addNameRange     '1.0.0-rc.3',
+79 silly addNameRange     '1.0.0',
+79 silly addNameRange     '1.0.1',
+79 silly addNameRange     '1.1.0',
+79 silly addNameRange     '1.1.1',
+79 silly addNameRange     '1.2.0',
+79 silly addNameRange     '1.2.1',
+79 silly addNameRange     '1.3.0',
+79 silly addNameRange     '1.3.1',
+79 silly addNameRange     '2.0.0',
+79 silly addNameRange     '2.1.0',
+79 silly addNameRange     '2.2.0',
+79 silly addNameRange     '2.2.1',
+79 silly addNameRange     '2.3.0',
+79 silly addNameRange     '2.4.0',
+79 silly addNameRange     '2.4.1',
+79 silly addNameRange     '3.0.0',
+79 silly addNameRange     '3.0.1',
+79 silly addNameRange     '3.1.0',
+79 silly addNameRange     '3.2.0',
+79 silly addNameRange     '3.3.0',
+79 silly addNameRange     '3.3.1',
+79 silly addNameRange     '3.4.0',
+79 silly addNameRange     '3.5.0',
+79 silly addNameRange     '3.6.0',
+79 silly addNameRange     '1.0.2',
+79 silly addNameRange     '3.7.0',
+79 silly addNameRange     '2.4.2',
+79 silly addNameRange     '3.8.0',
+79 silly addNameRange     '3.9.0',
+79 silly addNameRange     '3.9.1',
+79 silly addNameRange     '3.9.2',
+79 silly addNameRange     '3.9.3',
+79 silly addNameRange     '3.10.0',
+79 silly addNameRange     '3.10.1',
+79 silly addNameRange     '4.0.0',
+79 silly addNameRange     '4.0.1',
+79 silly addNameRange     '4.1.0',
+79 silly addNameRange     '4.2.0',
+79 silly addNameRange     '4.2.1',
+79 silly addNameRange     '4.3.0',
+79 silly addNameRange     '4.4.0',
+79 silly addNameRange     '4.5.0',
+79 silly addNameRange     '4.5.1',
+79 silly addNameRange     '4.6.0',
+79 silly addNameRange     '4.6.1',
+79 silly addNameRange     '4.7.0',
+79 silly addNameRange     '4.8.0',
+79 silly addNameRange     '4.8.1',
+79 silly addNameRange     '4.8.2',
+79 silly addNameRange     '4.9.0',
+79 silly addNameRange     '4.10.0',
+79 silly addNameRange     '4.11.0',
+79 silly addNameRange     '4.11.1',
+79 silly addNameRange     '4.11.2',
+79 silly addNameRange     '4.12.0',
+79 silly addNameRange     '4.13.0',
+79 silly addNameRange     '4.13.1',
+79 silly addNameRange     '4.14.0',
+79 silly addNameRange     '4.14.1',
+79 silly addNameRange     '4.14.2',
+79 silly addNameRange     '4.15.0' ] ]
+80 http 304 https://registry.npmjs.org/@types%2fasync
+81 verbose headers { 'cache-control': 'max-age=0',
+81 verbose headers   'accept-ranges': 'bytes',
+81 verbose headers   date: 'Tue, 30 Aug 2016 10:53:38 GMT',
+81 verbose headers   via: '1.1 varnish',
+81 verbose headers   connection: 'keep-alive',
+81 verbose headers   'x-served-by': 'cache-ams4440-AMS',
+81 verbose headers   'x-cache': 'MISS',
+81 verbose headers   'x-cache-hits': '0',
+81 verbose headers   'x-timer': 'S1472554418.016812,VS0,VE382',
+81 verbose headers   vary: 'Accept-Encoding' }
+82 silly get cb [ 304,
+82 silly get   { 'cache-control': 'max-age=0',
+82 silly get     'accept-ranges': 'bytes',
+82 silly get     date: 'Tue, 30 Aug 2016 10:53:38 GMT',
+82 silly get     via: '1.1 varnish',
+82 silly get     connection: 'keep-alive',
+82 silly get     'x-served-by': 'cache-ams4440-AMS',
+82 silly get     'x-cache': 'MISS',
+82 silly get     'x-cache-hits': '0',
+82 silly get     'x-timer': 'S1472554418.016812,VS0,VE382',
+82 silly get     vary: 'Accept-Encoding' } ]
+83 verbose etag https://registry.npmjs.org/@types%2fasync from cache
+84 verbose get saving @types/async to /home/radic/.npm/registry.npmjs.org/_40types_252fasync/.cache.json
+85 verbose correctMkdir /home/radic/.npm correctMkdir not in flight; initializing
+86 http 304 https://registry.npmjs.org/@types%2fnode
+87 verbose headers { 'cache-control': 'max-age=0',
+87 verbose headers   'accept-ranges': 'bytes',
+87 verbose headers   date: 'Tue, 30 Aug 2016 10:53:38 GMT',
+87 verbose headers   via: '1.1 varnish',
+87 verbose headers   connection: 'keep-alive',
+87 verbose headers   'x-served-by': 'cache-ams4441-AMS',
+87 verbose headers   'x-cache': 'MISS',
+87 verbose headers   'x-cache-hits': '0',
+87 verbose headers   'x-timer': 'S1472554418.025699,VS0,VE730',
+87 verbose headers   vary: 'Accept-Encoding' }
+88 silly get cb [ 304,
+88 silly get   { 'cache-control': 'max-age=0',
+88 silly get     'accept-ranges': 'bytes',
+88 silly get     date: 'Tue, 30 Aug 2016 10:53:38 GMT',
+88 silly get     via: '1.1 varnish',
+88 silly get     connection: 'keep-alive',
+88 silly get     'x-served-by': 'cache-ams4441-AMS',
+88 silly get     'x-cache': 'MISS',
+88 silly get     'x-cache-hits': '0',
+88 silly get     'x-timer': 'S1472554418.025699,VS0,VE730',
+88 silly get     vary: 'Accept-Encoding' } ]
+89 verbose etag https://registry.npmjs.org/@types%2fnode from cache
+90 verbose get saving @types/node to /home/radic/.npm/registry.npmjs.org/_40types_252fnode/.cache.json
+91 verbose correctMkdir /home/radic/.npm correctMkdir not in flight; initializing
+92 verbose stack Error: No compatible version found: lodash@'>=5.0.0 <6.0.0'
+92 verbose stack Valid install targets:
+92 verbose stack 0.1.0, 0.2.0, 0.2.1, 0.2.2, 0.3.0, 0.3.1, 0.3.2, 0.4.0, 0.4.1, 0.4.2, 0.5.0-rc.1, 0.5.0, 0.5.1, 0.5.2, 0.6.0, 0.6.1, 0.7.0, 0.8.0, 0.8.1, 0.8.2, 0.9.0, 0.9.1, 0.9.2, 0.10.0, 1.0.0-rc.1, 1.0.0-rc.2, 1.0.0-rc.3, 1.0.0, 1.0.1, 1.1.0, 1.1.1, 1.2.0, 1.2.1, 1.3.0, 1.3.1, 2.0.0, 2.1.0, 2.2.0, 2.2.1, 2.3.0, 2.4.0, 2.4.1, 3.0.0, 3.0.1, 3.1.0, 3.2.0, 3.3.0, 3.3.1, 3.4.0, 3.5.0, 3.6.0, 1.0.2, 3.7.0, 2.4.2, 3.8.0, 3.9.0, 3.9.1, 3.9.2, 3.9.3, 3.10.0, 3.10.1, 4.0.0, 4.0.1, 4.1.0, 4.2.0, 4.2.1, 4.3.0, 4.4.0, 4.5.0, 4.5.1, 4.6.0, 4.6.1, 4.7.0, 4.8.0, 4.8.1, 4.8.2, 4.9.0, 4.10.0, 4.11.0, 4.11.1, 4.11.2, 4.12.0, 4.13.0, 4.13.1, 4.14.0, 4.14.1, 4.14.2, 4.15.0
+92 verbose stack
+92 verbose stack     at installTargetsError (/usr/lib/node_modules/npm/lib/cache/add-named.js:292:12)
+92 verbose stack     at next (/usr/lib/node_modules/npm/lib/cache/add-named.js:270:19)
+92 verbose stack     at setData (/usr/lib/node_modules/npm/lib/cache/add-named.js:242:5)
+92 verbose stack     at RES (/usr/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+92 verbose stack     at f (/usr/lib/node_modules/npm/node_modules/once/once.js:17:25)
+92 verbose stack     at fixName (/usr/lib/node_modules/npm/lib/cache/add-named.js:30:5)
+92 verbose stack     at /usr/lib/node_modules/npm/lib/utils/pulse-till-done.js:20:8
+92 verbose stack     at CachingRegistryClient.get_ (/usr/lib/node_modules/npm/lib/cache/caching-client.js:126:16)
+92 verbose stack     at /usr/lib/node_modules/npm/lib/cache/caching-client.js:91:14
+92 verbose stack     at /usr/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:78:16
+93 verbose cwd /mnt/safe/node/@radic/util
+94 error Linux 3.13.0-37-generic
+95 error argv "/usr/bin/nodejs" "/usr/bin/npm" "update"
+96 error node v6.3.1
+97 error npm  v3.10.3
+98 error code ETARGET
+99 error notarget No compatible version found: lodash@'>=5.0.0 <6.0.0'
+99 error notarget Valid install targets:
+99 error notarget 0.1.0, 0.2.0, 0.2.1, 0.2.2, 0.3.0, 0.3.1, 0.3.2, 0.4.0, 0.4.1, 0.4.2, 0.5.0-rc.1, 0.5.0, 0.5.1, 0.5.2, 0.6.0, 0.6.1, 0.7.0, 0.8.0, 0.8.1, 0.8.2, 0.9.0, 0.9.1, 0.9.2, 0.10.0, 1.0.0-rc.1, 1.0.0-rc.2, 1.0.0-rc.3, 1.0.0, 1.0.1, 1.1.0, 1.1.1, 1.2.0, 1.2.1, 1.3.0, 1.3.1, 2.0.0, 2.1.0, 2.2.0, 2.2.1, 2.3.0, 2.4.0, 2.4.1, 3.0.0, 3.0.1, 3.1.0, 3.2.0, 3.3.0, 3.3.1, 3.4.0, 3.5.0, 3.6.0, 1.0.2, 3.7.0, 2.4.2, 3.8.0, 3.9.0, 3.9.1, 3.9.2, 3.9.3, 3.10.0, 3.10.1, 4.0.0, 4.0.1, 4.1.0, 4.2.0, 4.2.1, 4.3.0, 4.4.0, 4.5.0, 4.5.1, 4.6.0, 4.6.1, 4.7.0, 4.8.0, 4.8.1, 4.8.2, 4.9.0, 4.10.0, 4.11.0, 4.11.1, 4.11.2, 4.12.0, 4.13.0, 4.13.1, 4.14.0, 4.14.1, 4.14.2, 4.15.0
+100 error notarget This is most likely not a problem with npm itself.
+100 error notarget In most cases you or one of your dependencies are requesting
+100 error notarget a package version that doesn't exist.
+101 verbose exit [ 1, true ]
