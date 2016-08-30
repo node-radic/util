@@ -2,24 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94455b5f-cc13-4471-bab5-927a73c68dbb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/lib/configSpec.ts" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jasmine.ts" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jasmine_examples/Player.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jasmine_examples/Song.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/util.iml" afterPath="$PROJECT_DIR$/.idea/util.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/JSON.js" afterPath="$PROJECT_DIR$/lib/JSON.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config.js" afterPath="$PROJECT_DIR$/lib/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config.js.map" afterPath="$PROJECT_DIR$/lib/config.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config.ts" afterPath="$PROJECT_DIR$/lib/config.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/karma.conf.js" afterPath="$PROJECT_DIR$/karma.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/karma.conf.js.map" afterPath="$PROJECT_DIR$/karma.conf.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/JSON.js.map" afterPath="$PROJECT_DIR$/lib/JSON.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/JSON.ts" afterPath="$PROJECT_DIR$/lib/JSON.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/general.js" afterPath="$PROJECT_DIR$/lib/general.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/general.js.map" afterPath="$PROJECT_DIR$/lib/general.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/general.ts" afterPath="$PROJECT_DIR$/lib/general.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/material.js" afterPath="$PROJECT_DIR$/lib/material.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/storage.js" afterPath="$PROJECT_DIR$/lib/storage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/storage.js.map" afterPath="$PROJECT_DIR$/lib/storage.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/storage.ts" afterPath="$PROJECT_DIR$/lib/storage.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/lib/configSpec.js" afterPath="$PROJECT_DIR$/spec/lib/configSpec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/lib/configSpec.js.map" afterPath="$PROJECT_DIR$/spec/lib/configSpec.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/lib/configSpec.ts" afterPath="$PROJECT_DIR$/spec/lib/configSpec.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
     </list>
     <ignored path="util.iws" />
@@ -41,148 +47,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.ts">
+      <file leaf-file-name="configSpec.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/lib/configSpec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="92">
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/config.ts">
+      <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/@types/jasmine/index.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+            <state relative-caret-position="961">
+              <caret line="483" column="22" selection-start-line="483" selection-start-column="22" selection-end-line="483" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="storage.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/storage.ts">
+      <file leaf-file-name="jasmine.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jasmine.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-              <folding>
-                <element signature="n#StorageProvider#0" expanded="false" />
-                <element signature="n#FileStorageProvider#0" expanded="false" />
-                <element signature="n#LocalStorageProvider#0" expanded="false" />
-                <element signature="n#SessionStorageProvider#0" expanded="false" />
-                <element signature="n#StorageBag#0" expanded="false" />
-                <element signature="n#!!block;n#hasBag#0" expanded="false" />
-                <element signature="n#!!block;n#createBag#0" expanded="false" />
-                <element signature="e#599#681#0" expanded="false" />
-                <element signature="n#!!block;n#getBag#0" expanded="false" />
-                <element signature="e#828#910#0" expanded="false" />
-                <element signature="n#!!block;n#constructor#0;n#StorageBag#1" expanded="false" />
-                <element signature="n#!!block;n#on#0;n#StorageBag#1" expanded="false" />
-                <element signature="e#1918#2125#0" expanded="false" />
-                <element signature="n#!!block;n#set#0;n#StorageBag#1" expanded="false" />
-                <element signature="e#2953#3011#0" expanded="false" />
-                <element signature="e#3045#3203#0" expanded="false" />
-                <element signature="n#!!block;n#get#0;n#StorageBag#1" expanded="false" />
-                <element signature="e#3910#3961#0" expanded="false" />
-                <element signature="e#4019#4435#0" expanded="false" />
-                <element signature="e#4093#4421#0" expanded="false" />
-                <element signature="e#4290#4403#0" expanded="false" />
-                <element signature="e#4564#4615#0" expanded="false" />
-                <element signature="e#4647#4702#0" expanded="false" />
-                <element signature="n#!!block;n#del#0;n#StorageBag#1" expanded="false" />
-                <element signature="n#!!block;n#clear#0;n#StorageBag#1" expanded="false" />
-                <element signature="n#!!block;n#getSize#0;n#StorageBag#1" expanded="false" />
-                <element signature="n#!!block;n#length#0;n#LocalStorage#0" expanded="false" />
-                <element signature="n#!!block;n#getSize#0;n#LocalStorage#0" expanded="false" />
-                <element signature="e#5688#5790#0" expanded="false" />
-                <element signature="e#5796#6034#0" expanded="false" />
-                <element signature="e#5880#5979#0" expanded="false" />
-                <element signature="n#!!block;n#onStoreEvent#0;n#LocalStorage#0" expanded="false" />
-                <element signature="e#6137#6227#0" expanded="false" />
-                <element signature="e#6233#6313#0" expanded="false" />
-                <element signature="n#!!block;n#clear#0;n#LocalStorage#0" expanded="false" />
-                <element signature="n#!!block;n#getItem#0;n#LocalStorage#0" expanded="false" />
-                <element signature="n#!!block;n#key#0;n#LocalStorage#0" expanded="false" />
-                <element signature="n#!!block;n#removeItem#0;n#LocalStorage#0" expanded="false" />
-                <element signature="n#!!block;n#setItem#0;n#LocalStorage#0" expanded="false" />
-                <element signature="n#SessionStorage#0" expanded="false" />
-                <element signature="n#!!block;n#length#0;n#SessionStorage#0" expanded="false" />
-                <element signature="n#!!block;n#getSize#0;n#SessionStorage#0" expanded="false" />
-                <element signature="e#7116#7220#0" expanded="false" />
-                <element signature="e#7226#7468#0" expanded="false" />
-                <element signature="e#7312#7413#0" expanded="false" />
-                <element signature="n#!!block;n#onStoreEvent#0;n#SessionStorage#0" expanded="false" />
-                <element signature="e#7571#7661#0" expanded="false" />
-                <element signature="e#7667#7747#0" expanded="false" />
-                <element signature="n#!!block;n#clear#0;n#SessionStorage#0" expanded="false" />
-                <element signature="n#!!block;n#getItem#0;n#SessionStorage#0" expanded="false" />
-                <element signature="n#!!block;n#key#0;n#SessionStorage#0" expanded="false" />
-                <element signature="n#!!block;n#removeItem#0;n#SessionStorage#0" expanded="false" />
-                <element signature="n#!!block;n#setItem#0;n#SessionStorage#0" expanded="false" />
-                <element signature="n#CookieStorage#0" expanded="false" />
-                <element signature="n#!!block;n#length#0;n#CookieStorage#0" expanded="false" />
-                <element signature="n#!!block;n#getSize#0;n#CookieStorage#0" expanded="false" />
-                <element signature="e#8549#8653#0" expanded="false" />
-                <element signature="e#8659#8901#0" expanded="false" />
-                <element signature="e#8745#8846#0" expanded="false" />
-                <element signature="n#!!block;n#listenCookieChange#0;n#CookieStorage#0" expanded="false" />
-                <element signature="e#9060#9556#0" expanded="false" />
-                <element signature="e#9108#9437#0" expanded="false" />
-                <element signature="e#9195#9419#0" expanded="false" />
-                <element signature="e#9443#9542#0" expanded="false" />
-                <element signature="n#!!block;n#onStoreEvent#0;n#CookieStorage#0" expanded="false" />
-                <element signature="e#9687#9759#0" expanded="false" />
-                <element signature="n#!!block;n#clear#0;n#CookieStorage#0" expanded="false" />
-                <element signature="e#9863#9917#0" expanded="false" />
-                <element signature="n#!!block;n#key#0;n#CookieStorage#0" expanded="false" />
-                <element signature="n#!!block;n#getItem#0;n#CookieStorage#0" expanded="false" />
-                <element signature="e#10086#10130#0" expanded="false" />
-                <element signature="n#!!block;n#setItem#0;n#CookieStorage#0" expanded="false" />
-                <element signature="e#10535#10574#0" expanded="false" />
-                <element signature="e#10628#11141#0" expanded="false" />
-                <element signature="e#10646#11127#0" expanded="false" />
-                <element signature="n#!!block;n#removeItem#0;n#CookieStorage#0" expanded="false" />
-                <element signature="e#11492#11537#0" expanded="false" />
-                <element signature="n#!!block;n#hasItem#0;n#CookieStorage#0" expanded="false" />
-                <element signature="e#11812#11857#0" expanded="false" />
-                <element signature="n#!!block;n#keys#0;n#CookieStorage#0" expanded="false" />
-                <element signature="e#12255#12333#0" expanded="false" />
-                <element signature="e#12430#12503#0" expanded="false" />
-                <element signature="e#12559#12636#0" expanded="false" />
-                <element signature="e#12693#12768#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="functions.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/functions.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="types.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/types.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+            <state relative-caret-position="115">
+              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -191,163 +80,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider editor-type-id="MarkdownFxHtmlEditor">
-            <state />
-          </provider>
-          <provider editor-type-id="MarkdownFxUnmodifiedHtmlEditor">
-            <state />
-          </provider>
-          <provider editor-type-id="Gfm">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownFxPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jasmine.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/support/jasmine.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.e2e-spec.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tester/e2e/app.e2e-spec.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.po.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tester/e2e/app.po.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tester/e2e/tsconfig.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="typings.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tester/e2e/typings.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tester/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1012">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tsconfig.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="karma.conf.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/karma.conf.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpecHelper.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/helpers/jasmine_examples/SpecHelper.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="configSpec.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/lib/configSpec.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="general.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/general.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+            <state relative-caret-position="437">
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -361,21 +95,32 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/storage.ts" />
         <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/types.d.ts" />
         <option value="$PROJECT_DIR$/lib/functions.ts" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/spec/index.js" />
         <option value="$PROJECT_DIR$/lib/config.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/spec/jasmine_examples/configSpec.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/karma.conf.ts" />
+        <option value="$PROJECT_DIR$/lib/storage.ts" />
+        <option value="$PROJECT_DIR$/lib/JSON.ts" />
+        <option value="$PROJECT_DIR$/util.js" />
         <option value="$PROJECT_DIR$/lib/general.ts" />
+        <option value="$PROJECT_DIR$/.idea/util.iml" />
+        <option value="$PROJECT_DIR$/jasmine.conf.ts" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/lib/tsconfig.json" />
+        <option value="$PROJECT_DIR$/spec/index.js" />
+        <option value="$PROJECT_DIR$/spec/lib/configSpec.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/jasmine.ts" />
       </list>
     </option>
+  </component>
+  <component name="JsBowerSettings">
+    <exe-path>/usr/local/bin/bower</exe-path>
+    <config-path />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -385,7 +130,6 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
-    <handled-path value="$PROJECT_DIR$/tester/node_modules" />
   </component>
   <component name="PhpServers">
     <servers />
@@ -397,6 +141,43 @@
     <option name="width" value="3850" />
     <option name="height" value="2123" />
   </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Error handlingJava</id>
+          </State>
+          <State>
+            <id>Inheritance issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+          <State>
+            <id>PerformancePhp Inspections (EA Extended)PHP</id>
+          </State>
+          <State>
+            <id>Php Inspections (EA Extended)PHP</id>
+          </State>
+          <State>
+            <id>Visibility issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
@@ -404,7 +185,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -468,24 +249,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -494,25 +257,50 @@
               <option name="myItemType" value="com.intellij.lang.typescript.compiler.ui.projectView.TypeScriptNestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Production">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="util">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="util">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Default">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="util">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -522,21 +310,27 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jasmine.js" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="editor.config.accepted" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/spec" />
       <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/spec" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.jasmine.js">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -592,6 +386,12 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -642,6 +442,16 @@
       <recursive>false</recursive>
       <method />
     </configuration>
+    <configuration default="false" name="jasmine.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" path-to-js-file="jasmine.js" working-dir="$PROJECT_DIR$">
+      <profiling v8-profiler-path="" />
+      <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSProfilingRunConfigurationExtension">
+        <profiling v8-profiler-path="" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Node.js.jasmine.js" />
+    </list>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -691,12 +501,12 @@
       <option name="presentableId" value="Default" />
       <updated>1472544333937</updated>
       <workItem from="1472544335525" duration="9865000" />
-      <workItem from="1472559720304" duration="163000" />
+      <workItem from="1472559720304" duration="7889000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10028000" />
+    <option name="totallyTimeSpent" value="17754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1595" y="14" width="3850" height="2123" extended-state="6" />
@@ -707,24 +517,27 @@
       <window_info id="Bitbucket Issues" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="26" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32598275" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" x="2516" y="580" width="1252" height="1029" />
       <window_info id="UML Diagrams" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="31" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="31" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1276988" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23907584" sideWeight="0.6586248" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="30" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14560294" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.111637704" sideWeight="0.48367655" order="11" side_tool="false" content_ui="tabs" x="2516" y="580" width="361" height="382" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23792757" sideWeight="0.6129542" order="29" side_tool="true" content_ui="tabs" x="3720" y="299" width="1236" height="700" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328807" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Tasks" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847425" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38083163" sideWeight="0.42852834" order="21" side_tool="false" content_ui="tabs" />
-      <window_info id="Unicode Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.24012157" sideWeight="0.6129542" order="13" side_tool="true" content_ui="tabs" x="5457" y="545" width="820" height="373" />
+      <window_info id="Unicode Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299105" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="31" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23816717" sideWeight="0.38131487" order="23" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23792757" sideWeight="0.3870458" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.112164296" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12743549" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" x="1044" y="985" width="556" height="1146" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31690142" sideWeight="0.39942074" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Graphical Navigator" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.15165877" sideWeight="0.08466454" order="5" side_tool="false" content_ui="tabs" x="3483" y="1065" width="851" height="838" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13258786" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -755,17 +568,14 @@
       <window_info id="Issues - JIRA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.49155608" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4489796" sideWeight="0.5" order="27" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23857358" sideWeight="0.59965396" order="29" side_tool="true" content_ui="tabs" x="3720" y="299" width="1236" height="700" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Plugins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299105" sideWeight="0.49797365" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297769" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.24012157" sideWeight="0.6129542" order="13" side_tool="true" content_ui="tabs" x="5457" y="545" width="820" height="373" />
       <window_info id="npm" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20174588" sideWeight="0.111821085" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944608" sideWeight="0.5" order="28" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31692618" sideWeight="0.400346" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -780,7 +590,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="atlassian-ide-plugin-workspace-issues">
@@ -791,225 +603,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/storage.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-          <folding>
-            <element signature="n#StorageProvider#0" expanded="false" />
-            <element signature="n#FileStorageProvider#0" expanded="false" />
-            <element signature="n#LocalStorageProvider#0" expanded="false" />
-            <element signature="n#SessionStorageProvider#0" expanded="false" />
-            <element signature="n#StorageBag#0" expanded="false" />
-            <element signature="n#!!block;n#hasBag#0" expanded="false" />
-            <element signature="n#!!block;n#createBag#0" expanded="false" />
-            <element signature="e#599#681#0" expanded="false" />
-            <element signature="n#!!block;n#getBag#0" expanded="false" />
-            <element signature="e#828#910#0" expanded="false" />
-            <element signature="n#!!block;n#constructor#0;n#StorageBag#1" expanded="false" />
-            <element signature="n#!!block;n#on#0;n#StorageBag#1" expanded="false" />
-            <element signature="e#1918#2125#0" expanded="false" />
-            <element signature="n#!!block;n#set#0;n#StorageBag#1" expanded="false" />
-            <element signature="e#2953#3011#0" expanded="false" />
-            <element signature="e#3045#3203#0" expanded="false" />
-            <element signature="n#!!block;n#get#0;n#StorageBag#1" expanded="false" />
-            <element signature="e#3910#3961#0" expanded="false" />
-            <element signature="e#4019#4435#0" expanded="false" />
-            <element signature="e#4093#4421#0" expanded="false" />
-            <element signature="e#4290#4403#0" expanded="false" />
-            <element signature="e#4564#4615#0" expanded="false" />
-            <element signature="e#4647#4702#0" expanded="false" />
-            <element signature="n#!!block;n#del#0;n#StorageBag#1" expanded="false" />
-            <element signature="n#!!block;n#clear#0;n#StorageBag#1" expanded="false" />
-            <element signature="n#!!block;n#getSize#0;n#StorageBag#1" expanded="false" />
-            <element signature="n#!!block;n#length#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getSize#0;n#LocalStorage#0" expanded="false" />
-            <element signature="e#5688#5790#0" expanded="false" />
-            <element signature="e#5796#6034#0" expanded="false" />
-            <element signature="e#5880#5979#0" expanded="false" />
-            <element signature="n#!!block;n#onStoreEvent#0;n#LocalStorage#0" expanded="false" />
-            <element signature="e#6137#6227#0" expanded="false" />
-            <element signature="e#6233#6313#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getItem#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#!!block;n#key#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#!!block;n#removeItem#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#!!block;n#setItem#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#length#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getSize#0;n#SessionStorage#0" expanded="false" />
-            <element signature="e#7116#7220#0" expanded="false" />
-            <element signature="e#7226#7468#0" expanded="false" />
-            <element signature="e#7312#7413#0" expanded="false" />
-            <element signature="n#!!block;n#onStoreEvent#0;n#SessionStorage#0" expanded="false" />
-            <element signature="e#7571#7661#0" expanded="false" />
-            <element signature="e#7667#7747#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getItem#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#key#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#removeItem#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#setItem#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#CookieStorage#0" expanded="false" />
-            <element signature="n#!!block;n#length#0;n#CookieStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getSize#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#8549#8653#0" expanded="false" />
-            <element signature="e#8659#8901#0" expanded="false" />
-            <element signature="e#8745#8846#0" expanded="false" />
-            <element signature="n#!!block;n#listenCookieChange#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#9060#9556#0" expanded="false" />
-            <element signature="e#9108#9437#0" expanded="false" />
-            <element signature="e#9195#9419#0" expanded="false" />
-            <element signature="e#9443#9542#0" expanded="false" />
-            <element signature="n#!!block;n#onStoreEvent#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#9687#9759#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#9863#9917#0" expanded="false" />
-            <element signature="n#!!block;n#key#0;n#CookieStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getItem#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#10086#10130#0" expanded="false" />
-            <element signature="n#!!block;n#setItem#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#10535#10574#0" expanded="false" />
-            <element signature="e#10628#11141#0" expanded="false" />
-            <element signature="e#10646#11127#0" expanded="false" />
-            <element signature="n#!!block;n#removeItem#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#11492#11537#0" expanded="false" />
-            <element signature="n#!!block;n#hasItem#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#11812#11857#0" expanded="false" />
-            <element signature="n#!!block;n#keys#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#12255#12333#0" expanded="false" />
-            <element signature="e#12430#12503#0" expanded="false" />
-            <element signature="e#12559#12636#0" expanded="false" />
-            <element signature="e#12693#12768#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/functions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/types.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownFxHtmlEditor">
-        <state />
-      </provider>
-      <provider editor-type-id="MarkdownFxUnmodifiedHtmlEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/support/jasmine.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tester/e2e/app.e2e-spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tester/e2e/app.po.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tester/e2e/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tester/e2e/typings.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tester/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -1050,108 +643,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/storage.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-          <folding>
-            <element signature="n#StorageProvider#0" expanded="false" />
-            <element signature="n#FileStorageProvider#0" expanded="false" />
-            <element signature="n#LocalStorageProvider#0" expanded="false" />
-            <element signature="n#SessionStorageProvider#0" expanded="false" />
-            <element signature="n#StorageBag#0" expanded="false" />
-            <element signature="n#!!block;n#hasBag#0" expanded="false" />
-            <element signature="n#!!block;n#createBag#0" expanded="false" />
-            <element signature="e#599#681#0" expanded="false" />
-            <element signature="n#!!block;n#getBag#0" expanded="false" />
-            <element signature="e#828#910#0" expanded="false" />
-            <element signature="n#!!block;n#constructor#0;n#StorageBag#1" expanded="false" />
-            <element signature="n#!!block;n#on#0;n#StorageBag#1" expanded="false" />
-            <element signature="e#1918#2125#0" expanded="false" />
-            <element signature="n#!!block;n#set#0;n#StorageBag#1" expanded="false" />
-            <element signature="e#2953#3011#0" expanded="false" />
-            <element signature="e#3045#3203#0" expanded="false" />
-            <element signature="n#!!block;n#get#0;n#StorageBag#1" expanded="false" />
-            <element signature="e#3910#3961#0" expanded="false" />
-            <element signature="e#4019#4435#0" expanded="false" />
-            <element signature="e#4093#4421#0" expanded="false" />
-            <element signature="e#4290#4403#0" expanded="false" />
-            <element signature="e#4564#4615#0" expanded="false" />
-            <element signature="e#4647#4702#0" expanded="false" />
-            <element signature="n#!!block;n#del#0;n#StorageBag#1" expanded="false" />
-            <element signature="n#!!block;n#clear#0;n#StorageBag#1" expanded="false" />
-            <element signature="n#!!block;n#getSize#0;n#StorageBag#1" expanded="false" />
-            <element signature="n#!!block;n#length#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getSize#0;n#LocalStorage#0" expanded="false" />
-            <element signature="e#5688#5790#0" expanded="false" />
-            <element signature="e#5796#6034#0" expanded="false" />
-            <element signature="e#5880#5979#0" expanded="false" />
-            <element signature="n#!!block;n#onStoreEvent#0;n#LocalStorage#0" expanded="false" />
-            <element signature="e#6137#6227#0" expanded="false" />
-            <element signature="e#6233#6313#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getItem#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#!!block;n#key#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#!!block;n#removeItem#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#!!block;n#setItem#0;n#LocalStorage#0" expanded="false" />
-            <element signature="n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#length#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getSize#0;n#SessionStorage#0" expanded="false" />
-            <element signature="e#7116#7220#0" expanded="false" />
-            <element signature="e#7226#7468#0" expanded="false" />
-            <element signature="e#7312#7413#0" expanded="false" />
-            <element signature="n#!!block;n#onStoreEvent#0;n#SessionStorage#0" expanded="false" />
-            <element signature="e#7571#7661#0" expanded="false" />
-            <element signature="e#7667#7747#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getItem#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#key#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#removeItem#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#!!block;n#setItem#0;n#SessionStorage#0" expanded="false" />
-            <element signature="n#CookieStorage#0" expanded="false" />
-            <element signature="n#!!block;n#length#0;n#CookieStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getSize#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#8549#8653#0" expanded="false" />
-            <element signature="e#8659#8901#0" expanded="false" />
-            <element signature="e#8745#8846#0" expanded="false" />
-            <element signature="n#!!block;n#listenCookieChange#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#9060#9556#0" expanded="false" />
-            <element signature="e#9108#9437#0" expanded="false" />
-            <element signature="e#9195#9419#0" expanded="false" />
-            <element signature="e#9443#9542#0" expanded="false" />
-            <element signature="n#!!block;n#onStoreEvent#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#9687#9759#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#9863#9917#0" expanded="false" />
-            <element signature="n#!!block;n#key#0;n#CookieStorage#0" expanded="false" />
-            <element signature="n#!!block;n#getItem#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#10086#10130#0" expanded="false" />
-            <element signature="n#!!block;n#setItem#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#10535#10574#0" expanded="false" />
-            <element signature="e#10628#11141#0" expanded="false" />
-            <element signature="e#10646#11127#0" expanded="false" />
-            <element signature="n#!!block;n#removeItem#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#11492#11537#0" expanded="false" />
-            <element signature="n#!!block;n#hasItem#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#11812#11857#0" expanded="false" />
-            <element signature="n#!!block;n#keys#0;n#CookieStorage#0" expanded="false" />
-            <element signature="e#12255#12333#0" expanded="false" />
-            <element signature="e#12430#12503#0" expanded="false" />
-            <element signature="e#12559#12636#0" expanded="false" />
-            <element signature="e#12693#12768#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/index.ts" />
-    <entry file="file://$PROJECT_DIR$/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lodash.custom.js" />
     <entry file="file://$PROJECT_DIR$/types.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -1166,16 +658,8 @@
         <state relative-caret-position="345">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,10 +726,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/index.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="69">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/jasmine_examples/PlayerSpec.js" />
+    <entry file="file://$PROJECT_DIR$/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tester/typings/main/ambient/jasmine/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/karma.conf.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="16" column="12" selection-start-line="15" selection-start-column="46" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/JSON.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tester/src/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="990" column="246" selection-start-line="990" selection-start-column="246" selection-end-line="990" selection-end-column="246" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/general.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!block;n#round#0" expanded="false" />
+            <element signature="n#!!block;n#makeString#0" expanded="false" />
+            <element signature="e#1044#1100#0" expanded="false" />
+            <element signature="e#1160#1276#0" expanded="false" />
+            <element signature="n#!!block;n#kindOf#0" expanded="false" />
+            <element signature="e#1456#1493#0" expanded="false" />
+            <element signature="n#!!block;n#def#0" expanded="false" />
+            <element signature="n#!!block;n#defined#0" expanded="false" />
+            <element signature="n#!!block;n#getRandomId#0" expanded="false" />
+            <element signature="e#2100#2128#0" expanded="false" />
+            <element signature="e#2292#2377#0" expanded="false" />
+            <element signature="n#!!block;n#guid#0" expanded="false" />
+            <element signature="n#!!block;n#s4#0" expanded="false" />
+            <marker date="1472563686906" expanded="false" signature="740:927" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/JSON.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/storage.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1117">
+          <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
+          <folding>
+            <element signature="n#StorageProvider#0" expanded="false" />
+            <element signature="n#FileStorageProvider#0" expanded="false" />
+            <element signature="n#LocalStorageProvider#0" expanded="false" />
+            <element signature="n#SessionStorageProvider#0" expanded="false" />
+            <element signature="n#StorageBag#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/lib/configSpec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding>
+            <marker date="1472568520038" expanded="true" signature="89:2420" ph="{...}" />
+            <marker date="1472568520038" expanded="true" signature="115:183" ph="{&quot;foo&quot;: 'bar'...}" />
+            <marker date="1472568520038" expanded="true" signature="265:326" ph="{...}" />
+            <marker date="1472568520038" expanded="true" signature="371:807" ph="{...}" />
+            <marker date="1472568520038" expanded="true" signature="422:487" ph="{...}" />
+            <marker date="1472568520038" expanded="true" signature="538:647" ph="{...}" />
+            <marker date="1472568520038" expanded="true" signature="709:799" ph="{...}" />
+            <marker date="1472568520038" expanded="true" signature="861:982" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1258,10 +877,247 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/lib/object.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="667">
+          <caret line="199" column="23" selection-start-line="199" selection-start-column="23" selection-end-line="199" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!block;n#getParts#0" expanded="false" />
+            <element signature="e#153#202#0" expanded="false" />
+            <element signature="n#!!block;n#objectGet#0" expanded="false" />
+            <element signature="e#439#479#0" expanded="false" />
+            <element signature="e#556#698#0" expanded="false" />
+            <element signature="e#628#667#0" expanded="false" />
+            <element signature="n#!!block;n#objectSet#0" expanded="false" />
+            <element signature="e#1043#1086#0" expanded="false" />
+            <element signature="n#!!block;n#objectExists#0" expanded="false" />
+            <element signature="n#!!block;n#recurse#0" expanded="false" />
+            <element signature="n#!!block;n#recurse#0;n#!!block;n#recurse#0" expanded="false" />
+            <element signature="e#1628#1789#0" expanded="false" />
+            <element signature="e#1870#1947#0" expanded="false" />
+            <element signature="e#1994#2324#0" expanded="false" />
+            <element signature="e#2108#2312#0" expanded="false" />
+            <element signature="e#2163#2296#0" expanded="false" />
+            <element signature="e#2372#2755#0" expanded="false" />
+            <element signature="e#2476#2721#0" expanded="false" />
+            <element signature="e#2541#2705#0" expanded="false" />
+            <element signature="e#2769#2866#0" expanded="false" />
+            <element signature="n#!!block;n#copyObject#0" expanded="false" />
+            <element signature="e#3162#3266#0" expanded="false" />
+            <element signature="e#3206#3260#0" expanded="false" />
+            <element signature="n#!!block;n#dotize#0" expanded="false" />
+            <element signature="e#3500#3672#0" expanded="false" />
+            <element signature="e#3524#3629#0" expanded="false" />
+            <element signature="n#!!block;n#recurse#0;n#!!block;n#dotize#0" expanded="false" />
+            <element signature="e#3787#4564#0" expanded="false" />
+            <element signature="e#3841#4300#0" expanded="false" />
+            <element signature="e#4022#4286#0" expanded="false" />
+            <element signature="e#4318#4554#0" expanded="false" />
+            <element signature="n#!!block;n#isNumber#0;n#!!block;n#dotize#0" expanded="false" />
+            <element signature="n#!!block;n#isEmptyObj#0;n#!!block;n#dotize#0" expanded="false" />
+            <element signature="e#4800#4885#0" expanded="false" />
+            <element signature="n#StringType#0" expanded="false" />
+            <element signature="n#!!block;n#toString#0;n#StringType#0" expanded="false" />
+            <element signature="n#!!block;n#valueOf#0;n#StringType#0" expanded="false" />
+            <element signature="n#!!block;n#all#0;n#StringType#0" expanded="false" />
+            <element signature="e#5316#5478#0" expanded="false" />
+            <element signature="e#5424#5468#0" expanded="false" />
+            <element signature="n#!!block;n#applyMixins#0" expanded="false" />
+            <element signature="e#5624#5791#0" expanded="false" />
+            <element signature="e#5705#5784#0" expanded="false" />
+            <element signature="n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#add#0;n#DependencySorter#0" expanded="false" />
+            <element signature="e#6469#6525#0" expanded="false" />
+            <element signature="n#!!block;n#addItem#0;n#DependencySorter#0" expanded="false" />
+            <element signature="e#6643#6685#0" expanded="false" />
+            <element signature="e#6731#6802#0" expanded="false" />
+            <element signature="n#!!block;n#setItem#0;n#DependencySorter#0" expanded="false" />
+            <element signature="e#6991#7215#0" expanded="false" />
+            <element signature="e#7068#7125#0" expanded="false" />
+            <element signature="n#!!block;n#sort#0;n#DependencySorter#0" expanded="false" />
+            <element signature="e#7541#7915#0" expanded="false" />
+            <element signature="e#7659#7903#0" expanded="false" />
+            <element signature="e#7705#7854#0" expanded="false" />
+            <element signature="n#!!block;n#satisfied#0;n#DependencySorter#0" expanded="false" />
+            <element signature="e#8102#8779#0" expanded="false" />
+            <element signature="e#8142#8181#0" expanded="false" />
+            <element signature="e#8221#8362#0" expanded="false" />
+            <element signature="e#8295#8348#0" expanded="false" />
+            <element signature="e#8406#8503#0" expanded="false" />
+            <element signature="e#8436#8489#0" expanded="false" />
+            <element signature="e#8521#8578#0" expanded="false" />
+            <element signature="e#8626#8769#0" expanded="false" />
+            <element signature="e#8701#8754#0" expanded="false" />
+            <element signature="n#!!block;n#setSorted#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#exists#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#removeDependents#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#setCircular#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#setMissing#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#setFound#0;n#DependencySorter#0" expanded="false" />
+            <element signature="e#9865#10043#0" expanded="false" />
+            <element signature="e#9975#10033#0" expanded="false" />
+            <element signature="n#!!block;n#isSorted#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#requiredBy#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#isDependent#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#hasDependents#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#hasMissing#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#isMissing#0;n#DependencySorter#0" expanded="false" />
+            <element signature="e#10974#11130#0" expanded="false" />
+            <element signature="e#11073#11120#0" expanded="false" />
+            <element signature="n#!!block;n#hasCircular#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#isCircular#0;n#DependencySorter#0" expanded="false" />
+            <element signature="e#11430#11588#0" expanded="false" />
+            <element signature="e#11530#11578#0" expanded="false" />
+            <element signature="n#!!block;n#getDependents#0;n#DependencySorter#0" expanded="false" />
+            <element signature="n#!!block;n#getMissing#0;n#DependencySorter#0" expanded="false" />
+            <element signature="e#11896#11945#0" expanded="false" />
+            <element signature="n#!!block;n#getCircular#0;n#DependencySorter#0" expanded="false" />
+            <element signature="e#12065#12115#0" expanded="false" />
+            <element signature="n#!!block;n#getHits#0;n#DependencySorter#0" expanded="false" />
+            <element signature="e#12231#12277#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/untitled/untitled.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/jsLibraryMappings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/webResources.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/codeStyleSettings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/typescript-compiler.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/util.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#28#0" expanded="false" />
+            <element signature="n#Config#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#Config#0" expanded="false" />
+            <element signature="n#!!block;n#unset#0;n#Config#0" expanded="false" />
+            <element signature="n#!!block;n#has#0;n#Config#0" expanded="false" />
+            <element signature="n#!!block;n#raw#0;n#Config#0" expanded="false" />
+            <element signature="e#1612#1692#0" expanded="false" />
+            <element signature="e#1698#1739#0" expanded="false" />
+            <element signature="n#!!block;n#get#0;n#Config#0" expanded="false" />
+            <element signature="n#!!block;n#set#0;n#Config#0" expanded="false" />
+            <element signature="n#!!block;n#merge#0;n#Config#0" expanded="false" />
+            <element signature="e#2058#2122#0" expanded="false" />
+            <element signature="e#2128#2240#0" expanded="false" />
+            <element signature="n#!!block;n#process#0;n#Config#0" expanded="false" />
+            <element signature="e#2393#3221#0" expanded="false" />
+            <element signature="e#2494#2539#0" expanded="false" />
+            <element signature="e#2552#2624#0" expanded="false" />
+            <element signature="e#2822#3095#0" expanded="false" />
+            <element signature="e#2887#2960#0" expanded="false" />
+            <element signature="e#3027#3081#0" expanded="false" />
+            <element signature="n#!!block;n#addDelimiters#0;n#Config#0" expanded="false" />
+            <element signature="e#3714#3883#0" expanded="false" />
+            <element signature="n#!!block;n#setDelimiters#0;n#Config#0" expanded="false" />
+            <element signature="n#!!block;n#processTemplate#0;n#Config#0" expanded="false" />
+            <element signature="e#4339#4376#0" expanded="false" />
+            <element signature="e#4732#5216#0" expanded="false" />
+            <element signature="e#4746#4818#0" expanded="false" />
+            <element signature="e#4931#5206#0" expanded="false" />
+            <element signature="e#4980#5003#0" expanded="false" />
+            <element signature="e#5117#5163#0" expanded="false" />
+            <element signature="e#5227#5312#0" expanded="false" />
+            <element signature="n#!!block;n#makeProperty#0;n#Config#0" expanded="false" />
+            <element signature="e#5546#5594#0" expanded="false" />
+            <element signature="n#!!block;n#getPropString#0;n#Config#0" expanded="false" />
+            <element signature="n#!!block;n#escape#0;n#Config#0" expanded="false" />
+            <element signature="n#!!block;n#toString#0;n#Config#0" expanded="false" />
+            <element signature="n#PersistentConfig#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#PersistentConfig#0" expanded="false" />
+            <element signature="n#!!block;n#save#0;n#PersistentConfig#0" expanded="false" />
+            <element signature="e#6571#6632#0" expanded="false" />
+            <element signature="n#!!block;n#load#0;n#PersistentConfig#0" expanded="false" />
+            <element signature="e#6734#6795#0" expanded="false" />
+            <element signature="n#!!block;n#unset#0;n#PersistentConfig#0" expanded="false" />
+            <element signature="n#!!block;n#merge#0;n#PersistentConfig#0" expanded="false" />
+            <element signature="n#!!block;n#set#0;n#PersistentConfig#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1274,75 +1130,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/jasmine_examples/PlayerSpec.js" />
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/node_modules/jasmine/lib/jasmine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="437">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/karma.conf.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.editorconfig">
+    <entry file="file://$PROJECT_DIR$/spec/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/jasmine/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tester/typings/main/ambient/jasmine/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/lib/configSpec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="92">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/config.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/jasmine/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        <state relative-caret-position="961">
+          <caret line="483" column="22" selection-start-line="483" selection-start-column="22" selection-end-line="483" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/general.ts">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        <state relative-caret-position="437">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jasmine.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>backbone-DefinitelyTyped</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>util</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

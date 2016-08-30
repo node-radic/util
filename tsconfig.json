@@ -7,9 +7,9 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
-        "removeComments": true,
-        "declaration": true,
-        "outDir": "../dist"
+        "removeComments": false,
+        "declaration": false,
+        "noImplicitAny": false
     },
     "exclude": [
         "node_modules",

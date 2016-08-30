@@ -1,8 +1,8 @@
 //import * as S from "underscore.string";
-import { inspect as _inspect } from "util";
-import isUndefined = require("lodash/isUndefined");
+import { inspect as _inspect } from 'util';
+import { isUndefined } from 'lodash';
 
-export var inspect = ( ...args: any[] ) => console.log(_inspect(args, true,  5, true)); //{ colors : true, depth : 5, showHidden : true }));
+export var inspect = ( ...args: any[] ) => console.log(_inspect(args, true, 5, true)); //{ colors : true, depth : 5, showHidden : true }));
 
 /**
  * Round a value to a precision
@@ -43,9 +43,9 @@ export function defaultToWhiteSpace( characters )
 
 var kindsOf: any = {};
 'Number String Boolean Function RegExp Array Date Error'.split(' ').forEach(function ( k )
-                                                                            {
-                                                                                kindsOf['[object ' + k + ']'] = k.toLowerCase();
-                                                                            });
+{
+    kindsOf['[object ' + k + ']'] = k.toLowerCase();
+});
 var nativeTrim = String.prototype.trim;
 
 var entityMap = {
@@ -115,12 +115,14 @@ export function getRandomId( length?: number ): string
     return text;
 }
 
-export function guid() {
+export function guid()
+{
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
         s4() + '-' + s4() + s4() + s4();
 }
 
-function s4() {
+function s4()
+{
     return Math.floor((1 + Math.random()) * 0x10000)
                .toString(16)
                .substring(1);

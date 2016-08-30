@@ -1,6 +1,5 @@
 var old_json:any = JSON;
 
-
 /**
  * Stringify a JSON object, supports functions
  * @param {object} obj - The json object
