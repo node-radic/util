@@ -25,7 +25,7 @@ describe("Config", () => {
         })
         it('can process values from defaults', () => {
             config.set('barfoo', 'is:<%= foo %>')
-            expect(config)
+            expect(config.get('barfoo')).toEqual('is:bar')
         })
     })
 

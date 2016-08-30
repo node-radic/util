@@ -2,31 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94455b5f-cc13-4471-bab5-927a73c68dbb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jasmine.ts" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jasmine_examples/Player.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jasmine_examples/Song.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/util.iml" afterPath="$PROJECT_DIR$/.idea/util.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jasmine.js" afterPath="$PROJECT_DIR$/jasmine.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jasmine.js.map" afterPath="$PROJECT_DIR$/jasmine.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jasmine.ts" afterPath="$PROJECT_DIR$/jasmine.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/karma.conf.js" afterPath="$PROJECT_DIR$/karma.conf.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/karma.conf.js.map" afterPath="$PROJECT_DIR$/karma.conf.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/JSON.js.map" afterPath="$PROJECT_DIR$/lib/JSON.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/JSON.ts" afterPath="$PROJECT_DIR$/lib/JSON.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/general.js" afterPath="$PROJECT_DIR$/lib/general.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/general.js.map" afterPath="$PROJECT_DIR$/lib/general.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/general.ts" afterPath="$PROJECT_DIR$/lib/general.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/storage.js" afterPath="$PROJECT_DIR$/lib/storage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/storage.js.map" afterPath="$PROJECT_DIR$/lib/storage.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/storage.ts" afterPath="$PROJECT_DIR$/lib/storage.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/material.js" afterPath="$PROJECT_DIR$/lib/material.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/object.js" afterPath="$PROJECT_DIR$/lib/object.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/lib/configSpec.js" afterPath="$PROJECT_DIR$/spec/lib/configSpec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/lib/configSpec.js.map" afterPath="$PROJECT_DIR$/spec/lib/configSpec.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/lib/configSpec.ts" afterPath="$PROJECT_DIR$/spec/lib/configSpec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
     </list>
     <ignored path="util.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +38,8 @@
       <file leaf-file-name="configSpec.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/lib/configSpec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            <state relative-caret-position="621">
+              <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -67,21 +55,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jasmine.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jasmine.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jasmine.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+            <state relative-caret-position="414">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="667">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="MarkdownFxHtmlEditor">
+            <state />
+          </provider>
+          <provider editor-type-id="MarkdownFxUnmodifiedHtmlEditor">
+            <state />
+          </provider>
+          <provider editor-type-id="Gfm">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="23">
+                <caret line="1" column="54" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownFxPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="types.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/types.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -98,7 +131,6 @@
         <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/types.d.ts" />
         <option value="$PROJECT_DIR$/lib/functions.ts" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/config.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/spec/jasmine_examples/configSpec.ts" />
@@ -112,6 +144,7 @@
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/lib/tsconfig.json" />
         <option value="$PROJECT_DIR$/spec/index.js" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/spec/lib/configSpec.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/jasmine.ts" />
@@ -249,12 +282,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="configSpec.ts" />
               <option name="myItemType" value="com.intellij.lang.typescript.compiler.ui.projectView.TypeScriptNestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coverage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -330,7 +409,10 @@
       <recent name="$PROJECT_DIR$/spec" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.jasmine.js">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/util/coverage/index.html">
+      <method />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -398,6 +480,15 @@
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <method />
     </configuration>
+    <configuration default="true" type="NodeunitConfigurationType" factoryName="Nodeunit">
+      <setting name="nodePath" value="project" />
+      <envs />
+      <setting name="nodeunitModuleDir" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="testType" value="JS_FILE" />
+      <setting name="jsFile" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -449,9 +540,15 @@
       </EXTENSION>
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Node.js.jasmine.js" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -501,16 +598,16 @@
       <option name="presentableId" value="Default" />
       <updated>1472544333937</updated>
       <workItem from="1472544335525" duration="9865000" />
-      <workItem from="1472559720304" duration="7889000" />
+      <workItem from="1472559720304" duration="9101000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17754000" />
+    <option name="totallyTimeSpent" value="18966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1595" y="14" width="3850" height="2123" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19062833" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="GfmBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
@@ -524,7 +621,7 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="30" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14560294" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.111637704" sideWeight="0.48367655" order="11" side_tool="false" content_ui="tabs" x="2516" y="580" width="361" height="382" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23792757" sideWeight="0.6129542" order="29" side_tool="true" content_ui="tabs" x="3720" y="299" width="1236" height="700" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23792757" sideWeight="0.6129542" order="29" side_tool="true" content_ui="tabs" x="3720" y="299" width="1236" height="700" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328807" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Tasks" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847425" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" />
@@ -534,7 +631,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.24012157" sideWeight="0.6129542" order="13" side_tool="true" content_ui="tabs" x="5457" y="545" width="820" height="373" />
       <window_info id="Unicode Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299105" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="31" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23792757" sideWeight="0.3870458" order="23" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23792757" sideWeight="0.3870458" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.112164296" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12743549" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" x="1044" y="985" width="556" height="1146" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31690142" sideWeight="0.39942074" order="9" side_tool="false" content_ui="tabs" />
@@ -645,14 +742,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/index.ts" />
     <entry file="file://$PROJECT_DIR$/lodash.custom.js" />
-    <entry file="file://$PROJECT_DIR$/types.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/functions.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -661,29 +750,6 @@
             <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownFxHtmlEditor">
-        <state />
-      </provider>
-      <provider editor-type-id="MarkdownFxUnmodifiedHtmlEditor">
-        <state />
-      </provider>
-      <provider editor-type-id="Gfm">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tester/e2e/app.e2e-spec.ts">
@@ -834,13 +900,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1117">
           <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
-          <folding>
-            <element signature="n#StorageProvider#0" expanded="false" />
-            <element signature="n#FileStorageProvider#0" expanded="false" />
-            <element signature="n#LocalStorageProvider#0" expanded="false" />
-            <element signature="n#SessionStorageProvider#0" expanded="false" />
-            <element signature="n#StorageBag#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -849,23 +909,15 @@
         <state relative-caret-position="943">
           <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding>
-            <marker date="1472568520038" expanded="true" signature="89:2420" ph="{...}" />
-            <marker date="1472568520038" expanded="true" signature="115:183" ph="{&quot;foo&quot;: 'bar'...}" />
-            <marker date="1472568520038" expanded="true" signature="265:326" ph="{...}" />
-            <marker date="1472568520038" expanded="true" signature="371:807" ph="{...}" />
-            <marker date="1472568520038" expanded="true" signature="422:487" ph="{...}" />
-            <marker date="1472568520038" expanded="true" signature="538:647" ph="{...}" />
-            <marker date="1472568520038" expanded="true" signature="709:799" ph="{...}" />
-            <marker date="1472568520038" expanded="true" signature="861:982" ph="{...}" />
+            <marker date="1472569773003" expanded="true" signature="89:2452" ph="{...}" />
+            <marker date="1472569773003" expanded="true" signature="115:183" ph="{&quot;foo&quot;: 'bar'...}" />
+            <marker date="1472569773003" expanded="true" signature="265:326" ph="{...}" />
+            <marker date="1472569773003" expanded="true" signature="371:839" ph="{...}" />
+            <marker date="1472569773003" expanded="true" signature="422:487" ph="{...}" />
+            <marker date="1472569773003" expanded="true" signature="538:647" ph="{...}" />
+            <marker date="1472569773003" expanded="true" signature="709:831" ph="{...}" />
+            <marker date="1472569773003" expanded="true" signature="893:1014" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,53 +1116,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-            <element signature="n#Config#0" expanded="false" />
-            <element signature="n#!!block;n#constructor#0;n#Config#0" expanded="false" />
-            <element signature="n#!!block;n#unset#0;n#Config#0" expanded="false" />
-            <element signature="n#!!block;n#has#0;n#Config#0" expanded="false" />
-            <element signature="n#!!block;n#raw#0;n#Config#0" expanded="false" />
-            <element signature="e#1612#1692#0" expanded="false" />
-            <element signature="e#1698#1739#0" expanded="false" />
-            <element signature="n#!!block;n#get#0;n#Config#0" expanded="false" />
-            <element signature="n#!!block;n#set#0;n#Config#0" expanded="false" />
-            <element signature="n#!!block;n#merge#0;n#Config#0" expanded="false" />
-            <element signature="e#2058#2122#0" expanded="false" />
-            <element signature="e#2128#2240#0" expanded="false" />
-            <element signature="n#!!block;n#process#0;n#Config#0" expanded="false" />
-            <element signature="e#2393#3221#0" expanded="false" />
-            <element signature="e#2494#2539#0" expanded="false" />
-            <element signature="e#2552#2624#0" expanded="false" />
-            <element signature="e#2822#3095#0" expanded="false" />
-            <element signature="e#2887#2960#0" expanded="false" />
-            <element signature="e#3027#3081#0" expanded="false" />
-            <element signature="n#!!block;n#addDelimiters#0;n#Config#0" expanded="false" />
-            <element signature="e#3714#3883#0" expanded="false" />
-            <element signature="n#!!block;n#setDelimiters#0;n#Config#0" expanded="false" />
-            <element signature="n#!!block;n#processTemplate#0;n#Config#0" expanded="false" />
-            <element signature="e#4339#4376#0" expanded="false" />
-            <element signature="e#4732#5216#0" expanded="false" />
-            <element signature="e#4746#4818#0" expanded="false" />
-            <element signature="e#4931#5206#0" expanded="false" />
-            <element signature="e#4980#5003#0" expanded="false" />
-            <element signature="e#5117#5163#0" expanded="false" />
-            <element signature="e#5227#5312#0" expanded="false" />
-            <element signature="n#!!block;n#makeProperty#0;n#Config#0" expanded="false" />
-            <element signature="e#5546#5594#0" expanded="false" />
-            <element signature="n#!!block;n#getPropString#0;n#Config#0" expanded="false" />
-            <element signature="n#!!block;n#escape#0;n#Config#0" expanded="false" />
-            <element signature="n#!!block;n#toString#0;n#Config#0" expanded="false" />
-            <element signature="n#PersistentConfig#0" expanded="false" />
-            <element signature="n#!!block;n#constructor#0;n#PersistentConfig#0" expanded="false" />
-            <element signature="n#!!block;n#save#0;n#PersistentConfig#0" expanded="false" />
-            <element signature="e#6571#6632#0" expanded="false" />
-            <element signature="n#!!block;n#load#0;n#PersistentConfig#0" expanded="false" />
-            <element signature="e#6734#6795#0" expanded="false" />
-            <element signature="n#!!block;n#unset#0;n#PersistentConfig#0" expanded="false" />
-            <element signature="n#!!block;n#merge#0;n#PersistentConfig#0" expanded="false" />
-            <element signature="n#!!block;n#set#0;n#PersistentConfig#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1146,14 +1152,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/lib/configSpec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/jasmine/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="961">
@@ -1162,18 +1160,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="161">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownFxHtmlEditor">
+        <state />
+      </provider>
+      <provider editor-type-id="MarkdownFxUnmodifiedHtmlEditor">
+        <state />
+      </provider>
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="23">
+            <caret line="1" column="54" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/lib/configSpec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jasmine.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+        <state relative-caret-position="414">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/types.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>

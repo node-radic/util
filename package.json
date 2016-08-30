@@ -7,8 +7,8 @@
     "build": "tsc",
     "start": "http-server -c-1 -o -p 8875 .",
     "pretest": "npm run build",
-    "test": "jasmine",
-    "posttest": "node_modules/.bin/remap-istanbul -i coverage/coverage-final.json -o coverage -t html",
+    "test": "istanbul cover jasmine.js",
+    "posttest": "echo \"DONE!\"",
     "coverage": "http-server -c-1 -o -p 9875 ./coverage"
   },
   "author": "Robin Radic",
@@ -17,8 +17,10 @@
     "@types/jasmine": "^2.2.33",
     "@types/lodash": "^4.14.34",
     "@types/node": "^6.0.31",
+    "istanbul": "^0.4.5",
     "jasmine": "^2.4.1",
     "jasmine-spec-reporter": "^2.7.0",
+    "remap-istanbul": "^0.6.4",
     "typescript": "^2.0.0"
   },
   "dependencies": {

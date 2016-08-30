@@ -15,3 +15,4 @@ jrunner.onComplete(function( passed) {
     }
 });
 jrunner.execute();
+process.exit()

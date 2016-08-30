@@ -20,7 +20,7 @@ describe("Config", function () {
         });
         it('can process values from defaults', function () {
             config.set('barfoo', 'is:<%= foo %>');
-            expect(config);
+            expect(config.get('barfoo')).toEqual('is:bar');
         });
     });
     it("should be able to set config", function () {

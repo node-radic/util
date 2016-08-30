@@ -14,4 +14,5 @@ jrunner.onComplete(function (passed) {
     }
 });
 jrunner.execute();
+process.exit();
 //# sourceMappingURL=jasmine.js.map
