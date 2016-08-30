@@ -1,5 +1,5 @@
 {
-  "name": "@radic/util",
+  "name": "radic-util",
   "version": "1.0.0",
   "description": "Utilities for node / browser",
   "main": "index.js",
@@ -24,6 +24,7 @@
     "typescript": "^2.0.0"
   },
   "dependencies": {
+    "browserfs": "^0.6.0",
     "lodash": "^4.15.0"
   }
 }
