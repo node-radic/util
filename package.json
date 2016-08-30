@@ -1,22 +1,30 @@
 {
-  "name": "@radic/util",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "example": "examples"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "typescript": "^2.0.0",
-    "@types/async": "^1.4.29",
-    "@types/node": "^6.0.31"
-  },
-  "dependencies": {
-    "lodash": "^4.15.0"
-  }
+    "name": "@radic/util",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "example": "examples"
+    },
+    "scripts": {
+        "build": "rm -rf dist && tsc -p src",
+        "start": "http-server -c-1 -o -p 8875 .",
+        "pretest": "npm run build",
+        "test": "karma start karma.conf.js",
+        "posttest": "node_modules/.bin/remap-istanbul -i coverage/coverage-final.json -o coverage -t html",
+        "coverage": "http-server -c-1 -o -p 9875 ./coverage"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/async": "^1.4.29",
+        "@types/jasmine": "^2.2.33",
+        "@types/lodash": "^4.14.34",
+        "@types/node": "^6.0.31",
+        "jasmine-core": "2.4.1",
+        "typescript": "^2.0.0"
+    },
+    "dependencies": {
+        "lodash": "^4.15.0"
+    }
 }

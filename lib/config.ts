@@ -231,16 +231,16 @@ export class PersistentConfig extends Config
 
     protected save()
     {
-        fs.writeJsonSync(this.persistenceFilePath, this.data, {});
-        fs.chmodSync(this.persistenceFilePath, '0600');
+        // fs.writeJsonSync(this.persistenceFilePath, this.data, {});
+        // fs.chmodSync(this.persistenceFilePath, '0600');
     }
 
     protected load()
     {
-        if ( false === fs.existsSync(this.persistenceFilePath) ) {
-            this.save();
-        }
-        this.data = _.merge(this.defaults, fs.readJsonSync(this.persistenceFilePath));
+        // if ( false === fs.existsSync(this.persistenceFilePath) ) {
+        //     this.save();
+        // }
+        // this.data = _.merge(this.defaults, fs.readJsonSync(this.persistenceFilePath));
     }
 
 

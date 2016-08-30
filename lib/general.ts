@@ -1,4 +1,4 @@
-import * as S from "underscore.string";
+//import * as S from "underscore.string";
 import { inspect as _inspect } from "util";
 import isUndefined = require("lodash/isUndefined");
 
@@ -37,7 +37,7 @@ export function defaultToWhiteSpace( characters )
     else if ( characters.source )
         return characters.source;
     else
-        return '[' + S.escapeRegExp(characters) + ']';
+        return '[' + _.escapeRegExp(characters) + ']';
 }
 
 
