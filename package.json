@@ -1,30 +1,33 @@
 {
-  "name": "radic-util",
-  "version": "1.0.0",
-  "description": "Utilities for node / browser",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "start": "http-server -c-1 -o -p 8875 .",
-    "pretest": "npm run build",
-    "test": "istanbul cover jasmine.js",
-    "posttest": "echo \"DONE!\"",
-    "coverage": "http-server -c-1 -o -p 9875 ./coverage"
-  },
-  "author": "Robin Radic",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/jasmine": "^2.2.33",
-    "@types/lodash": "^4.14.34",
-    "@types/node": "^6.0.31",
-    "istanbul": "^0.4.5",
-    "jasmine": "^2.4.1",
-    "jasmine-spec-reporter": "^2.7.0",
-    "remap-istanbul": "^0.6.4",
-    "typescript": "^2.0.0"
-  },
-  "dependencies": {
-    "browserfs": "^0.6.0",
-    "lodash": "^4.15.0"
-  }
+    "name": "radic-util",
+    "version": "1.0.0",
+    "description": "Utilities for node / browser",
+    "main": "radic.util.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "http-server -c-1 -o -p 8875 .",
+        "pretest": "npm run build",
+        "test": "istanbul cover build.js test",
+        "posttest": "echo \"DONE!\"",
+        "coverage": "http-server -c-1 -o -p 9875 ./coverage"
+    },
+    "author": "Robin Radic",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/bluebird": "^3.0.32",
+        "@types/jasmine": "^2.2.33",
+        "@types/lodash": "^4.14.34",
+        "@types/node": "^6.0.31",
+        "@types/systemjs": "^0.19.30",
+        "istanbul": "^0.4.5",
+        "jasmine": "^2.4.1",
+        "jasmine-spec-reporter": "^2.7.0",
+        "remap-istanbul": "^0.6.4",
+        "typescript": "^2.0.0"
+    },
+    "dependencies": {
+        "browserfs": "^0.6.0",
+        "lodash": "^4.15.0"
+    },
+    "optionalDependencies": {}
 }

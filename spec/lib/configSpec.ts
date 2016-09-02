@@ -1,7 +1,6 @@
 import { Config, IConfig } from '../../lib/config'
 
 
-
 describe("Config", () => {
     let defaultConfig = {
         foo     : 'bar',
@@ -15,7 +14,7 @@ describe("Config", () => {
         config = new Config({ foo : 'bar' })
     })
 
-    describe('when creating', ()=> {
+    describe('When creating', ()=> {
         it('should accept defaults', () => {
             expect(config.get('foo')).toEqual('bar')
         })
@@ -29,12 +28,44 @@ describe("Config", () => {
         })
     })
 
-
-
-    it("should be able to set config", function () {
-        config.set('path.to.config.foo', 'bar')
-        expect(config.get('path.to.config.foo')).toEqual('bar')
+    describe('Dot notation', () => {
+        it('can deeply set values using dot notation', () => {
+            config.set('a.deeply.set.value', 'foo');
+            expect(config.get('a.deeply.set.value')).toEqual('foo')
+        })
+        it('can set deep json structures and get them using dot notation', () => {
+            config.set('a.deeply.set', { json : { structure : 'foo' }, bar : 'foobar' });
+            expect(config.get('a.deeply.set.json.structure')).toEqual('foo')
+            expect(config.get('a.deeply.set.bar')).toEqual('foobar')
+        })
     })
+
+    describe('Object structures and advanced processing', () => {
+        let advancedStructure = {
+            foo     : 'bar',
+            level2  : {
+                boolbar  : true,
+                foonum   : 123,
+                regexbar : /asdf/gm,
+            },
+            process : '<%= path.to.config.level2 %>'
+        };
+        beforeEach(() => {
+            config.set('path.to.config', advancedStructure);
+        })
+        it("should be able to set object strutures", function () {
+            expect(config.get('path.to.config.foo')).toEqual('bar')
+        })
+        it('should be able to get object structures', () => {
+            expect(config.get('path.to.config.level2')).toEqual(advancedStructure.level2);
+        })
+        it('should parse object structures into itself', () => {
+            let expected     = advancedStructure;
+            expected.process = <any> advancedStructure.level2;
+            expect(config.get('path.to.config')).toEqual(expected)
+        })
+    });
+
 
 
     //

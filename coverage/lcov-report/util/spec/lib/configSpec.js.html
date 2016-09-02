@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>18/18</span>
+        <span class='fraction'>35/35</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>7/7</span>
+        <span class='fraction'>14/14</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>18/18</span>
+        <span class='fraction'>35/35</span>
       </div>
     </div>
   </div>
@@ -114,7 +114,39 @@
 69
 70
 71
-72</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -124,7 +156,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -142,6 +174,38 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -197,7 +261,7 @@ describe("Config", function () {
     beforeEach(function () {
         config = new config_1.Config({ foo: 'bar' });
     });
-    describe('when creating', function () {
+    describe('When creating', function () {
         it('should accept defaults', function () {
             expect(config.get('foo')).toEqual('bar');
         });
@@ -210,9 +274,41 @@ describe("Config", function () {
             expect(config.get('barfoo')).toEqual('is:bar');
         });
     });
-    it("should be able to set config", function () {
-        config.set('path.to.config.foo', 'bar');
-        expect(config.get('path.to.config.foo')).toEqual('bar');
+    describe('Dot notation', function () {
+        it('can deeply set values using dot notation', function () {
+            config.set('a.deeply.set.value', 'foo');
+            expect(config.get('a.deeply.set.value')).toEqual('foo');
+        });
+        it('can set deep json structures and get them using dot notation', function () {
+            config.set('a.deeply.set', { json: { structure: 'foo' }, bar: 'foobar' });
+            expect(config.get('a.deeply.set.json.structure')).toEqual('foo');
+            expect(config.get('a.deeply.set.bar')).toEqual('foobar');
+        });
+    });
+    describe('Object structures and advanced processing', function () {
+        var advancedStructure = {
+            foo: 'bar',
+            level2: {
+                boolbar: true,
+                foonum: 123,
+                regexbar: /asdf/gm,
+            },
+            process: '&lt;%= path.to.config.level2 %&gt;'
+        };
+        beforeEach(function () {
+            config.set('path.to.config', advancedStructure);
+        });
+        it("should be able to set object strutures", function () {
+            expect(config.get('path.to.config.foo')).toEqual('bar');
+        });
+        it('should be able to get object structures', function () {
+            expect(config.get('path.to.config.level2')).toEqual(advancedStructure.level2);
+        });
+        it('should parse object structures into itself', function () {
+            var expected = advancedStructure;
+            expected.process = advancedStructure.level2;
+            expect(config.get('path.to.config')).toEqual(expected);
+        });
     });
     //
     // describe("when song has been paused", function() {
@@ -262,7 +358,7 @@ describe("Config", function () {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 30 2016 17:09:33 GMT+0200 (CEST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 31 2016 03:23:03 GMT+0200 (CEST)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

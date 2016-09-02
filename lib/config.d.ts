@@ -33,7 +33,7 @@ export declare class Config implements IConfig {
     unset(prop: any): any;
     has(prop: any): boolean;
     raw(prop?: any): any;
-    get(prop?: any): any;
+    get(prop?: any, def?: any): any;
     set(prop: string, value: any): IConfig;
     merge(...args: any[]): IConfig;
     process(raw: any): any;
