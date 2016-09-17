@@ -1,6 +1,6 @@
 {
   "name": "radic-util",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utilities for node / browser",
   "main": "radic-util.js",
   "scripts": {
