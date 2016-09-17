@@ -1,5 +1,5 @@
-namespace radic.util
-{
+
+
     /**
      * Round a value to a precision
      * @param value
@@ -114,4 +114,5 @@ namespace radic.util
                    .toString(16)
                    .substring(1);
     }
-}
+
+

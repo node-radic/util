@@ -1,14 +1,13 @@
-"use strict";
-var config_1 = require('../../lib/config');
+var ru = require('../../radic-util');
 describe("Config", function () {
     var defaultConfig = {
         foo: 'bar',
         fooNum: 1,
         fooBool: true
     };
-    var config = new config_1.Config(defaultConfig);
+    var config = new ru.Config(defaultConfig);
     beforeEach(function () {
-        config = new config_1.Config({ foo: 'bar' });
+        config = new Config({ foo: 'bar' });
     });
     describe('When creating', function () {
         it('should accept defaults', function () {

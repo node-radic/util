@@ -1,5 +1,4 @@
-namespace radic.util
-{
+
 // Call this function in a another function to find out the file from
 // which that function was called from. (Inspects the v8 stack trace)
 //
@@ -18,4 +17,3 @@ namespace radic.util
         return stack[position] ? stack[position].getFileName() : undefined;
     };
 
-}

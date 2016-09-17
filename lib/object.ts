@@ -1,5 +1,4 @@
-namespace radic.util
-{
+
     export function getParts( str ): any {
         return str.replace(/\\\./g, '\uffff').split('.').map(function ( s ) {
             return s.replace(/\uffff/g, '.');
@@ -76,7 +75,7 @@ namespace radic.util
                 // Skip value if necessary.
                 return value;
             }
-            else if ( kindOf(value) === 'array' ) {
+            else if ( typeof value === 'array' ) {
                 // If value is an array, recurse.
                 return value.map(function ( item, index ) {
                     return recurse(item, fn, fnContinue, {
@@ -85,7 +84,7 @@ namespace radic.util
                     });
                 });
             }
-            else if ( kindOf(value) === 'object' ) {
+            else if ( typeof value === 'object' ) {
                 // If value is an object, recurse.
                 obj = {};
                 for ( key in value ) {
@@ -500,4 +499,3 @@ namespace radic.util
         }
 
     }
-}

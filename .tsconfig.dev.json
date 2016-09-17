@@ -2,18 +2,19 @@
     "compilerOptions": {
         "target": "ES5",
         "module": "commonjs",
-        "outFile": "../radic.util.js",
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
         "removeComments": false,
-        "declaration": true,
+        "declaration": false,
         "noImplicitAny": false,
         "isolatedModules": false,
         "preserveConstEnums": false,
         "pretty": true
     },
     "exclude": [
+        "node_modules",
+        "tester"
     ]
 }

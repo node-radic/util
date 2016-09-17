@@ -1,4 +1,4 @@
-import { Config, IConfig } from '../../lib/config'
+var ru = require('../../radic-util')
 
 
 describe("Config", () => {
@@ -8,7 +8,7 @@ describe("Config", () => {
         fooBool : true
     }
 
-    let config: IConfig = new Config(defaultConfig)
+    let config: radic.util.IConfig = new ru.Config(defaultConfig)
 
     beforeEach(() => {
         config = new Config({ foo : 'bar' })
@@ -27,7 +27,6 @@ describe("Config", () => {
             expect(config.get('barfoo')).toEqual('is:bar')
         })
     })
-
     describe('Dot notation', () => {
         it('can deeply set values using dot notation', () => {
             config.set('a.deeply.set.value', 'foo');

@@ -1,5 +1,4 @@
-namespace radic.util
-{
+
     var old_json: any = JSON;
 
     /**
@@ -67,4 +66,3 @@ namespace radic.util
     export function clone( obj: any, date2obj?: any ) {
         return parse(stringify(obj), date2obj);
     }
-}

@@ -1,5 +1,4 @@
-namespace radic.util
-{
+
     var materialColors: any = {
         'red' : {
             '50'   : '#ffebee',
@@ -313,6 +312,7 @@ namespace radic.util
             '1000' : '#11171a',
         }
     };
+
     export var colors: any  = materialColors;
 
     export function color( name: string, variant: any = '500', prefixHexSymbol: boolean = true ) {
@@ -321,4 +321,3 @@ namespace radic.util
         }
         throw new Error('Could not find color [' + name + '] variant [' + <string> variant + '] in materials.color()');
     }
-}
