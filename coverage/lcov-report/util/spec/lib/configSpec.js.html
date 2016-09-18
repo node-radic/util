@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>35/35</span>
+        <span class='fraction'>36/36</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>14/14</span>
+        <span class='fraction'>1/1</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>35/35</span>
+        <span class='fraction'>36/36</span>
       </div>
     </div>
   </div>
@@ -146,7 +146,9 @@
 101
 102
 103
-104</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+104
+105</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -250,62 +252,63 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
-var config_1 = require('../../lib/config');
-describe("Config", function () {
-    var defaultConfig = {
+const config_1 = require("../../lib/config");
+var ru = require('../../radic-util');
+describe("Config", () =&gt; {
+    let defaultConfig = {
         foo: 'bar',
         fooNum: 1,
         fooBool: true
     };
-    var config = new config_1.Config(defaultConfig);
-    beforeEach(function () {
+    let config = new config_1.Config(defaultConfig);
+    beforeEach(() =&gt; {
         config = new config_1.Config({ foo: 'bar' });
     });
-    describe('When creating', function () {
-        it('should accept defaults', function () {
+    describe('When creating', () =&gt; {
+        it('should accept defaults', () =&gt; {
             expect(config.get('foo')).toEqual('bar');
         });
-        it('can override defaults', function () {
+        it('can override defaults', () =&gt; {
             config.set('foo', 'foobar');
             expect(config.get('foo')).toEqual('foobar');
         });
-        it('can process values from defaults', function () {
+        it('can process values from defaults', () =&gt; {
             config.set('barfoo', 'is:&lt;%= foo %&gt;');
             expect(config.get('barfoo')).toEqual('is:bar');
         });
     });
-    describe('Dot notation', function () {
-        it('can deeply set values using dot notation', function () {
+    describe('Dot notation', () =&gt; {
+        it('can deeply set values using dot notation', () =&gt; {
             config.set('a.deeply.set.value', 'foo');
             expect(config.get('a.deeply.set.value')).toEqual('foo');
         });
-        it('can set deep json structures and get them using dot notation', function () {
+        it('can set deep json structures and get them using dot notation', () =&gt; {
             config.set('a.deeply.set', { json: { structure: 'foo' }, bar: 'foobar' });
             expect(config.get('a.deeply.set.json.structure')).toEqual('foo');
             expect(config.get('a.deeply.set.bar')).toEqual('foobar');
         });
     });
-    describe('Object structures and advanced processing', function () {
-        var advancedStructure = {
+    describe('Object structures and advanced processing', () =&gt; {
+        let advancedStructure = {
             foo: 'bar',
             level2: {
                 boolbar: true,
                 foonum: 123,
-                regexbar: /asdf/gm,
+                regexbar: '',
             },
             process: '&lt;%= path.to.config.level2 %&gt;'
         };
-        beforeEach(function () {
+        beforeEach(() =&gt; {
             config.set('path.to.config', advancedStructure);
         });
         it("should be able to set object strutures", function () {
             expect(config.get('path.to.config.foo')).toEqual('bar');
         });
-        it('should be able to get object structures', function () {
+        it('should be able to get object structures', () =&gt; {
             expect(config.get('path.to.config.level2')).toEqual(advancedStructure.level2);
         });
-        it('should parse object structures into itself', function () {
-            var expected = advancedStructure;
+        it('should parse object structures into itself', () =&gt; {
+            let expected = advancedStructure;
             expected.process = advancedStructure.level2;
             expect(config.get('path.to.config')).toEqual(expected);
         });
@@ -358,7 +361,7 @@ describe("Config", function () {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 31 2016 03:23:03 GMT+0200 (CEST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Sep 17 2016 21:49:31 GMT+0200 (CEST)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

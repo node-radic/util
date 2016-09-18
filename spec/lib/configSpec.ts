@@ -1,4 +1,6 @@
-var ru = require('../../radic-util')
+import {Config, IConfig} from "../../lib/config";
+var ru = require('../../radic.util')
+
 
 
 describe("Config", () => {
@@ -8,7 +10,7 @@ describe("Config", () => {
         fooBool : true
     }
 
-    let config: radic.util.IConfig = new ru.Config(defaultConfig)
+    let config: IConfig = new Config(defaultConfig)
 
     beforeEach(() => {
         config = new Config({ foo : 'bar' })
@@ -45,7 +47,7 @@ describe("Config", () => {
             level2  : {
                 boolbar  : true,
                 foonum   : 123,
-                regexbar : /asdf/gm,
+                regexbar : '',
             },
             process : '<%= path.to.config.level2 %>'
         };

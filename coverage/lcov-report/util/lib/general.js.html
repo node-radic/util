@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50.94% </span>
+        <span class="strong">47.83% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>27/53</span>
+        <span class='fraction'>22/46</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">21.43% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>3/14</span>
+        <span class='fraction'>0/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">18.18% </span>
+        <span class="strong">10% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/11</span>
+        <span class='fraction'>1/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50.94% </span>
+        <span class="strong">47.83% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>27/53</span>
+        <span class='fraction'>22/46</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -152,27 +152,7 @@
 107
 108
 109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+110</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -226,11 +206,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -282,16 +262,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
-//import * as S from "underscore.string";
-var util_1 = require('util');
-var lodash_1 = require('lodash');
-exports.inspect = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    var args = [];</span>
-<span class="cstat-no" title="statement not covered" >    for (var _i = 0; _i &lt; arguments.length; _i++) {</span>
-<span class="cstat-no" title="statement not covered" >        args[_i - 0] = arguments[_i];</span>
-    }
-<span class="cstat-no" title="statement not covered" >    return console.log(util_1.inspect(args, true, 5, true));</span>
-}; //{ colors : true, depth : 5, showHidden : true }));
 /**
  * Round a value to a precision
  * @param value
@@ -343,13 +313,13 @@ var entityMap = {
  * @param value
  * @returns {any}
  */
-function kindOf(value) {
+<span class="fstat-no" title="function not covered" >function kindOf(value) {</span>
     // Null or undefined.
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (value == null) {
+<span class="cstat-no" title="statement not covered" >    if (value == null) {</span>
 <span class="cstat-no" title="statement not covered" >        return String(value);</span>
     }
     // Everything else.
-    return kindsOf[kindsOf.toString.call(value)] || 'object';
+<span class="cstat-no" title="statement not covered" >    return kindsOf[kindsOf.toString.call(value)] || 'object';</span>
 }
 exports.kindOf = kindOf;
 /**
@@ -369,7 +339,7 @@ exports.def = def;
  * @returns {boolean}
  */
 <span class="fstat-no" title="function not covered" >function defined(obj) {</span>
-<span class="cstat-no" title="statement not covered" >    return !lodash_1.isUndefined(obj);</span>
+<span class="cstat-no" title="statement not covered" >    return !_.isUndefined(obj);</span>
 }
 exports.defined = defined;
 /**
@@ -406,7 +376,7 @@ exports.guid = guid;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 31 2016 03:23:03 GMT+0200 (CEST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Sep 17 2016 21:49:31 GMT+0200 (CEST)
 </div>
 </div>
 <script src="../../prettify.js"></script>

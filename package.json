@@ -1,13 +1,13 @@
 {
-  "name": "radic-util",
+  "name": "@radic/util",
   "version": "1.0.1",
   "description": "Utilities for node / browser",
-  "main": "radic-util.js",
+  "main": "index.js",
   "scripts": {
     "build": "tsc",
     "start": "http-server -c-1 -o -p 8875 .",
     "pretest": "npm run build",
-    "test": "istanbul cover build.js test",
+    "test": "istanbul cover jasmine.js test",
     "posttest": "echo \"DONE!\"",
     "coverage": "http-server -c-1 -o -p 9875 ./coverage"
   },

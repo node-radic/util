@@ -1,5 +1,4 @@
 
-import functionsIn = require('lodash/functionsIn')
 interface ErrorConstructor {
     prepareStackTrace(error?:any, structuredStackTrace?:any):any[];
 }
@@ -19,8 +18,3 @@ interface ErrorWithStack  {
     name: string;
     message: string;
 }
-
-declare function require();
-
-
-declare var _:any;

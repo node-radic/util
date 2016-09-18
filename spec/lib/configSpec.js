@@ -1,11 +1,12 @@
-var ru = require('../../radic-util');
+import { Config } from "../../lib/config";
+var ru = require('../../radic.util');
 describe("Config", function () {
     var defaultConfig = {
         foo: 'bar',
         fooNum: 1,
         fooBool: true
     };
-    var config = new ru.Config(defaultConfig);
+    var config = new Config(defaultConfig);
     beforeEach(function () {
         config = new Config({ foo: 'bar' });
     });
@@ -39,7 +40,7 @@ describe("Config", function () {
             level2: {
                 boolbar: true,
                 foonum: 123,
-                regexbar: /asdf/gm,
+                regexbar: '',
             },
             process: '<%= path.to.config.level2 %>'
         };

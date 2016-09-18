@@ -315,7 +315,7 @@
 
     export var colors: any  = materialColors;
 
-    export function color( name: string, variant: any = '500', prefixHexSymbol: boolean = true ) {
+    export var color = function color( name: string, variant: any = '500', prefixHexSymbol: boolean = true ) {
         if ( typeof colors[name] === 'object' && typeof colors[name][<string> variant] === 'string' ) {
             return prefixHexSymbol ? colors[name][<string> variant] : colors[name][<string> variant].replace('#', '');
         }

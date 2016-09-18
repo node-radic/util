@@ -89,7 +89,7 @@ var tasks = {
 
     compile: function () {
         linkTSConfig('build')
-        log(require('child_process').execSync('tsc').toString());
+        log(require('child_process').execSync('node_modules/.bin/tsc').toString());
         linkTSConfig('dev')
     },
 

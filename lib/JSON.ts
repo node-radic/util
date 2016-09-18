@@ -6,7 +6,7 @@
      * @param {object} obj - The json object
      * @returns {string}
      */
-    export function stringify( obj: any ) {
+    export var stringify = function stringify( obj: any ) {
 
         return old_json.stringify(obj, function ( key, value ) {
             if ( value instanceof Function || typeof value == 'function' ) {
@@ -25,7 +25,7 @@
      * @param date2obj - I forgot, sorry
      * @returns {object}
      */
-    export function parse( str: string, date2obj?: any ) {
+    export var parse = function parse( str: string, date2obj?: any ) {
 
         var iso8061 = date2obj ? /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)Z$/ : false;
 
@@ -63,6 +63,6 @@
      * @param {boolean} date2obj
      * @returns {Object}
      */
-    export function clone( obj: any, date2obj?: any ) {
+    export var clone = function clone( obj: any, date2obj?: any ) {
         return parse(stringify(obj), date2obj);
     }

@@ -1,1 +1,26 @@
-.tsconfig.dev.json
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "declaration": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "module": "es6",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "removeComments": false,
+        "noImplicitAny": false,
+        "isolatedModules": false,
+        "preserveConstEnums": false,
+        "pretty": true,
+        "rootDir": ".",
+        "sourceMap": true,
+        "inlineSources": true,
+        "target": "es5",
+        "lib": ["es2015", "dom"],
+        "skipLibCheck": true
+    },
+    "exclude": [
+        "node_modules",
+        "tester"
+    ]
+}

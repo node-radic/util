@@ -1,5 +1,6 @@
 import { objectGet, objectExists, objectSet, recurse } from './object'
 
+
 export interface IDelimitersCollection
 {
     [index: string]: IDelimiter;
