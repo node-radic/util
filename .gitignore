@@ -2,3 +2,5 @@
 /tester
 /coverage
 /util.iml
+jasmine.js
+karma.conf.js

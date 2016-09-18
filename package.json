@@ -6,10 +6,10 @@
   "module": "index.js",
   "typings": "index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "node tasks build",
     "start": "http-server -c-1 -o -p 8875 .",
     "pretest": "npm run build",
-    "test": "istanbul cover jasmine.js test",
+    "test": "istanbul cover ./tasks test",
     "posttest": "echo \"DONE!\"",
     "coverage": "http-server -c-1 -o -p 9875 ./coverage"
   },

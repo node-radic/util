@@ -1,6 +1,5 @@
 "use strict";
 var config_1 = require("../../lib/config");
-var ru = require('../../radic.util');
 describe("Config", function () {
     var defaultConfig = {
         foo: 'bar',

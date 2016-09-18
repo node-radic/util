@@ -1,5 +1,4 @@
 import {Config, IConfig} from "../../lib/config";
-var ru = require('../../radic.util')
 
 
 

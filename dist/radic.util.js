@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (factory((global.radic = global.radic || {}, global.radic.util = global.radic.util || {})));
-}(this, (function (exports) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('lodash')) :
+    typeof define === 'function' && define.amd ? define(['exports', 'lodash'], factory) :
+    (factory((global.radic = global.radic || {}, global.radic.util = global.radic.util || {}),global.lodash));
+}(this, (function (exports,lodash) { 'use strict';
 
 function __extends(d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -439,7 +439,7 @@ var Config = (function () {
         this.allDelimiters = {};
         this.addDelimiters('config', '<%', '%>');
         this.defaults = obj || {};
-        this.data = _.cloneDeep(this.defaults);
+        this.data = lodash.cloneDeep(this.defaults);
     }
     Config.prototype.unset = function (prop) {
         prop = prop.split('.');
@@ -471,11 +471,11 @@ var Config = (function () {
             args[_i - 0] = arguments[_i];
         }
         if (args.length === 1) {
-            this.data = _.merge(this.data, args[0]);
+            this.data = lodash.merge(this.data, args[0]);
         }
         else {
             var prop = args[0];
-            this.set(prop, _.merge(this.raw(prop), args[1]));
+            this.set(prop, lodash.merge(this.raw(prop), args[1]));
         }
         return this;
     };
@@ -521,7 +521,7 @@ var Config = (function () {
         // Get the appropriate delimiters.
         var delimiters = this.allDelimiters[name in this.allDelimiters ? name : 'config'];
         // Tell Lo-Dash which delimiters to use.
-        _['templateSettings'] = delimiters.lodash;
+        // templateSettings = delimiters.lodash;
         // Return the delimiters.
         return delimiters;
     };
@@ -539,7 +539,7 @@ var Config = (function () {
             // As long as tmpl contains template tags, render it and get the result,
             // otherwise just use the template string.
             while (tmpl.indexOf(delimiters.opener) >= 0) {
-                tmpl = _.template(tmpl)(data); //, delimiters.lodash);
+                tmpl = lodash.template(tmpl)(data); //, delimiters.lodash);
                 // Abort if template didn't change - nothing left to process!
                 if (tmpl === last) {
                     break;
@@ -623,7 +623,9 @@ var PersistentConfig = (function (_super) {
 var getCallerFile = function getCallerFile(_position) {
     if (_position === void 0) { _position = 2; }
     var oldPrepareStackTrace = Error['prepareStackTrace'];
-    Error['prepareStackTrace'] = function (err, stack) { return stack; };
+    Error['prepareStackTrace'] = function (err, stack) {
+        return stack;
+    };
     var stack = (new Error()).stack;
     Error['prepareStackTrace'] = oldPrepareStackTrace;
     var position = _position ? _position : 2;
@@ -632,6 +634,13 @@ var getCallerFile = function getCallerFile(_position) {
     // stack[2] holds the file we're interested in
     return stack[position] ? stack[position].getFileName() : undefined;
 };
+function inspect() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i - 0] = arguments[_i];
+    }
+    args.forEach(function (arg) { return console.dir(arg, { colors: true, depth: 5, showHidden: true }); });
+}
 
 /**
  * Round a value to a precision
@@ -1422,6 +1431,7 @@ var CookieStorage = (function (_super) {
 exports.Config = Config;
 exports.PersistentConfig = PersistentConfig;
 exports.getCallerFile = getCallerFile;
+exports.inspect = inspect;
 exports.round = round;
 exports.makeString = makeString;
 exports.defaultToWhiteSpace = defaultToWhiteSpace;

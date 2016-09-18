@@ -139,7 +139,7 @@ export class Config implements IConfig
         var delimiters: IDelimiter = this.allDelimiters[name in this.allDelimiters ? name : 'config'];
 
         // Tell Lo-Dash which delimiters to use.
-        _[<any> 'templateSettings'] = delimiters.lodash;
+        // templateSettings = delimiters.lodash;
         // Return the delimiters.
         return delimiters;
     }
@@ -159,7 +159,7 @@ export class Config implements IConfig
             // As long as tmpl contains template tags, render it and get the result,
             // otherwise just use the template string.
             while ( tmpl.indexOf(delimiters.opener) >= 0 ) {
-                tmpl = _.template(tmpl)(data); //, delimiters.lodash);
+                tmpl = template(tmpl)(data); //, delimiters.lodash);
                 // Abort if template didn't change - nothing left to process!
                 if ( tmpl === last ) {
                     break;
