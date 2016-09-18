@@ -4,11 +4,17 @@
     (factory((global.radic = global.radic || {}, global.radic.util = global.radic.util || {})));
 }(this, (function (exports) { 'use strict';
 
-var getParts = function getParts(str) {
+function __extends(d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+function getParts(str) {
     return str.replace(/\\\./g, '\uffff').split('.').map(function (s) {
         return s.replace(/\uffff/g, '.');
     });
-};
+}
 /**
  * Get a child of the object using dot notation
  * @param obj
@@ -16,7 +22,7 @@ var getParts = function getParts(str) {
  * @param create
  * @returns {any}
  */
-var objectGet = function objectGet(obj, parts, create) {
+function objectGet(obj, parts, create) {
     if (typeof parts === 'string') {
         parts = getParts(parts);
     }
@@ -29,7 +35,7 @@ var objectGet = function objectGet(obj, parts, create) {
         obj = obj[part];
     }
     return obj;
-};
+}
 /**
  * Set a value of a child of the object using dot notation
  * @param obj
@@ -37,27 +43,27 @@ var objectGet = function objectGet(obj, parts, create) {
  * @param value
  * @returns {any}
  */
-var objectSet = function objectSet(obj, parts, value) {
+function objectSet(obj, parts, value) {
     parts = getParts(parts);
     var prop = parts.pop();
     obj = objectGet(obj, parts, true);
     if (obj && typeof obj === 'object') {
         return (obj[prop] = value);
     }
-};
+}
 /**
  * Check if a child of the object exists using dot notation
  * @param obj
  * @param parts
  * @returns {boolean|any}
  */
-var objectExists = function objectExists(obj, parts) {
+function objectExists(obj, parts) {
     parts = getParts(parts);
     var prop = parts.pop();
     obj = objectGet(obj, parts);
     return typeof obj === 'object' && obj && prop in obj;
-};
-var recurse = function recurse(value, fn, fnContinue) {
+}
+function recurse(value, fn, fnContinue) {
     function recurse(value, fn, fnContinue, state) {
         var error;
         if (state.objs.indexOf(value) !== -1) {
@@ -75,7 +81,7 @@ var recurse = function recurse(value, fn, fnContinue) {
             return value.map(function (item, index) {
                 return recurse(item, fn, fnContinue, {
                     objs: state.objs.concat([value]),
-                    path: state.path + '[' + index + ']',
+                    path: state.path + '[' + index + ']'
                 });
             });
         }
@@ -85,7 +91,7 @@ var recurse = function recurse(value, fn, fnContinue) {
             for (key in value) {
                 obj[key] = recurse(value[key], fn, fnContinue, {
                     objs: state.objs.concat([value]),
-                    path: state.path + (/\W/.test(key) ? '["' + key + '"]' : '.' + key),
+                    path: state.path + (/\W/.test(key) ? '["' + key + '"]' : '.' + key)
                 });
             }
             return obj;
@@ -96,13 +102,13 @@ var recurse = function recurse(value, fn, fnContinue) {
         }
     }
     return recurse(value, fn, fnContinue, { objs: [], path: '' });
-};
+}
 /**
  * Copy an object, creating a new object and leaving the old intact
  * @param object
  * @returns {T}
  */
-var copyObject = function copyObject(object) {
+function copyObject(object) {
     var objectCopy = {};
     for (var key in object) {
         if (object.hasOwnProperty(key)) {
@@ -110,14 +116,14 @@ var copyObject = function copyObject(object) {
         }
     }
     return objectCopy;
-};
+}
 /**
  * Flatten an object to a dot notated associative array
  * @param obj
  * @param prefix
  * @returns {any}
  */
-var dotize = function dotize(obj, prefix) {
+function dotize(obj, prefix) {
     if (!obj || typeof obj != "object") {
         if (prefix) {
             var newObj = {};
@@ -162,7 +168,7 @@ var dotize = function dotize(obj, prefix) {
         return true;
     }
     return recurse(obj, prefix);
-};
+}
 var StringType = (function () {
     function StringType(value) {
         this.value = value;
@@ -184,13 +190,13 @@ var StringType = (function () {
     };
     return StringType;
 }());
-var applyMixins = function applyMixins(derivedCtor, baseCtors) {
+function applyMixins(derivedCtor, baseCtors) {
     baseCtors.forEach(function (baseCtor) {
         Object.getOwnPropertyNames(baseCtor.prototype).forEach(function (name) {
             derivedCtor.prototype[name] = baseCtor.prototype[name];
         });
     });
-};
+}
 var DependencySorter = (function () {
     function DependencySorter() {
         /**
@@ -428,11 +434,6 @@ var DependencySorter = (function () {
     return DependencySorter;
 }());
 
-var __extends = (undefined && undefined.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 var Config = (function () {
     function Config(obj) {
         this.allDelimiters = {};
@@ -573,9 +574,9 @@ var Config = (function () {
     Config.prototype.toString = function () {
         return this.raw();
     };
+    Config.propStringTmplRe = /^<%=\s*([a-z0-9_$]+(?:\.[a-z0-9_$]+)*)\s*%>$/i;
     return Config;
 }());
-Config.propStringTmplRe = /^<%=\s*([a-z0-9_$]+(?:\.[a-z0-9_$]+)*)\s*%>$/i;
 var PersistentConfig = (function (_super) {
     __extends(PersistentConfig, _super);
     function PersistentConfig(obj, persistenceFilePath) {
@@ -623,7 +624,7 @@ var getCallerFile = function getCallerFile(_position) {
     if (_position === void 0) { _position = 2; }
     var oldPrepareStackTrace = Error['prepareStackTrace'];
     Error['prepareStackTrace'] = function (err, stack) { return stack; };
-    var stack = new Error().stack;
+    var stack = (new Error()).stack;
     Error['prepareStackTrace'] = oldPrepareStackTrace;
     var position = _position ? _position : 2;
     // stack[0] holds this file
@@ -795,7 +796,7 @@ var materialColors = {
         'a100': '#ff8a80',
         'a200': '#ff5252',
         'a400': '#ff1744',
-        'a700': '#d50000',
+        'a700': '#d50000'
     },
     'pink': {
         '50': '#fce4ec',
@@ -811,7 +812,7 @@ var materialColors = {
         'a100': '#ff80ab',
         'a200': '#ff4081',
         'a400': '#f50057',
-        'a700': '#c51162',
+        'a700': '#c51162'
     },
     'purple': {
         '50': '#f3e5f5',
@@ -827,7 +828,7 @@ var materialColors = {
         'a100': '#ea80fc',
         'a200': '#e040fb',
         'a400': '#d500f9',
-        'a700': '#aa00ff',
+        'a700': '#aa00ff'
     },
     'deep-purple': {
         '50': '#ede7f6',
@@ -843,7 +844,7 @@ var materialColors = {
         'a100': '#b388ff',
         'a200': '#7c4dff',
         'a400': '#651fff',
-        'a700': '#6200ea',
+        'a700': '#6200ea'
     },
     'indigo': {
         '50': '#e8eaf6',
@@ -859,7 +860,7 @@ var materialColors = {
         'a100': '#8c9eff',
         'a200': '#536dfe',
         'a400': '#3d5afe',
-        'a700': '#304ffe',
+        'a700': '#304ffe'
     },
     'blue': {
         '50': '#e3f2fd',
@@ -875,7 +876,7 @@ var materialColors = {
         'a100': '#82b1ff',
         'a200': '#448aff',
         'a400': '#2979ff',
-        'a700': '#2962ff',
+        'a700': '#2962ff'
     },
     'light-blue': {
         '50': '#e1f5fe',
@@ -891,7 +892,7 @@ var materialColors = {
         'a100': '#80d8ff',
         'a200': '#40c4ff',
         'a400': '#00b0ff',
-        'a700': '#0091ea',
+        'a700': '#0091ea'
     },
     'cyan': {
         '50': '#e0f7fa',
@@ -907,7 +908,7 @@ var materialColors = {
         'a100': '#84ffff',
         'a200': '#18ffff',
         'a400': '#00e5ff',
-        'a700': '#00b8d4',
+        'a700': '#00b8d4'
     },
     'teal': {
         '50': '#e0f2f1',
@@ -923,7 +924,7 @@ var materialColors = {
         'a100': '#a7ffeb',
         'a200': '#64ffda',
         'a400': '#1de9b6',
-        'a700': '#00bfa5',
+        'a700': '#00bfa5'
     },
     'green': {
         '50': '#e8f5e9',
@@ -939,7 +940,7 @@ var materialColors = {
         'a100': '#b9f6ca',
         'a200': '#69f0ae',
         'a400': '#00e676',
-        'a700': '#00c853',
+        'a700': '#00c853'
     },
     'light-green': {
         '50': '#f1f8e9',
@@ -955,7 +956,7 @@ var materialColors = {
         'a100': '#ccff90',
         'a200': '#b2ff59',
         'a400': '#76ff03',
-        'a700': '#64dd17',
+        'a700': '#64dd17'
     },
     'lime': {
         '50': '#f9fbe7',
@@ -971,7 +972,7 @@ var materialColors = {
         'a100': '#f4ff81',
         'a200': '#eeff41',
         'a400': '#c6ff00',
-        'a700': '#aeea00',
+        'a700': '#aeea00'
     },
     'yellow': {
         '50': '#fffde7',
@@ -987,7 +988,7 @@ var materialColors = {
         'a100': '#ffff8d',
         'a200': '#ffff00',
         'a400': '#ffea00',
-        'a700': '#ffd600',
+        'a700': '#ffd600'
     },
     'amber': {
         '50': '#fff8e1',
@@ -1003,7 +1004,7 @@ var materialColors = {
         'a100': '#ffe57f',
         'a200': '#ffd740',
         'a400': '#ffc400',
-        'a700': '#ffab00',
+        'a700': '#ffab00'
     },
     'orange': {
         '50': '#fff3e0',
@@ -1019,7 +1020,7 @@ var materialColors = {
         'a100': '#ffd180',
         'a200': '#ffab40',
         'a400': '#ff9100',
-        'a700': '#ff6d00',
+        'a700': '#ff6d00'
     },
     'deep-orange': {
         '50': '#fbe9e7',
@@ -1035,7 +1036,7 @@ var materialColors = {
         'a100': '#ff9e80',
         'a200': '#ff6e40',
         'a400': '#ff3d00',
-        'a700': '#dd2c00',
+        'a700': '#dd2c00'
     },
     'brown': {
         '50': '#efebe9',
@@ -1047,7 +1048,7 @@ var materialColors = {
         '600': '#6d4c41',
         '700': '#5d4037',
         '800': '#4e342e',
-        '900': '#3e2723',
+        '900': '#3e2723'
     },
     'grey': {
         '50': '#fafafa',
@@ -1059,7 +1060,7 @@ var materialColors = {
         '600': '#757575',
         '700': '#616161',
         '800': '#424242',
-        '900': '#212121',
+        '900': '#212121'
     },
     'blue-grey': {
         '50': '#eceff1',
@@ -1072,7 +1073,7 @@ var materialColors = {
         '700': '#455a64',
         '800': '#37474f',
         '900': '#263238',
-        '1000': '#11171a',
+        '1000': '#11171a'
     }
 };
 var colors = materialColors;
@@ -1083,12 +1084,6 @@ var color = function color(name, variant, prefixHexSymbol) {
         return prefixHexSymbol ? colors[name][variant] : colors[name][variant].replace('#', '');
     }
     throw new Error('Could not find color [' + name + '] variant [' + variant + '] in materials.color()');
-};
-
-var __extends$1 = (undefined && undefined.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 
 (function (StorageProvider) {
@@ -1134,9 +1129,9 @@ var Storage = (function () {
             return defined(window.document.cookie);
         }
     };
+    Storage.bags = {};
     return Storage;
 }());
-Storage.bags = {};
 var StorageBag = (function () {
     function StorageBag(provider) {
         this.provider = provider;
@@ -1213,7 +1208,7 @@ var BaseStorageProvider = (function () {
     return BaseStorageProvider;
 }());
 var LocalStorage = (function (_super) {
-    __extends$1(LocalStorage, _super);
+    __extends(LocalStorage, _super);
     function LocalStorage() {
         _super.apply(this, arguments);
     }
@@ -1266,7 +1261,7 @@ var LocalStorage = (function (_super) {
     return LocalStorage;
 }(BaseStorageProvider));
 var SessionStorage = (function (_super) {
-    __extends$1(SessionStorage, _super);
+    __extends(SessionStorage, _super);
     function SessionStorage() {
         _super.apply(this, arguments);
     }
@@ -1319,7 +1314,7 @@ var SessionStorage = (function (_super) {
     return SessionStorage;
 }(BaseStorageProvider));
 var CookieStorage = (function (_super) {
-    __extends$1(CookieStorage, _super);
+    __extends(CookieStorage, _super);
     function CookieStorage() {
         _super.apply(this, arguments);
         this.cookieRegistry = [];
@@ -1441,14 +1436,14 @@ exports.clone = clone;
 exports.colors = colors;
 exports.color = color;
 exports.getParts = getParts;
+exports.objectExists = objectExists;
 exports.objectGet = objectGet;
 exports.objectSet = objectSet;
-exports.objectExists = objectExists;
-exports.recurse = recurse;
 exports.copyObject = copyObject;
+exports.applyMixins = applyMixins;
+exports.recurse = recurse;
 exports.dotize = dotize;
 exports.StringType = StringType;
-exports.applyMixins = applyMixins;
 exports.DependencySorter = DependencySorter;
 exports.Storage = Storage;
 exports.StorageBag = StorageBag;

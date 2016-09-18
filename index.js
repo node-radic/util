@@ -1,8 +1,12 @@
-export * from './lib/config';
-export * from './lib/functions';
-export * from './lib/general';
-export * from './lib/JSON';
-export * from './lib/material';
-export * from './lib/object';
-export * from './lib/storage';
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(require("./lib/config"));
+__export(require("./lib/functions"));
+__export(require("./lib/general"));
+__export(require("./lib/JSON"));
+__export(require("./lib/material"));
+__export(require("./lib/object"));
+__export(require("./lib/storage"));
 //# sourceMappingURL=index.js.map

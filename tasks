@@ -1,0 +1,105 @@
+#!/usr/bin/node --harmony
+var path    = require('path'),
+    fs      = require('fs'),
+    globule = require('globule'),
+    exec    = require('child_process').execSync,
+    rollup  = require('rollup');
+
+let args = process.argv.splice(2);
+const command = args.shift();
+const config = {
+    fileName: 'radic.util',
+    clean   : ['{lib/*,*}.{d.ts,js,js.map}', '!types.d.ts']
+}
+
+var log = function () {
+    console.log.apply(console, arguments);
+}
+
+function tsconfig(name, to) {
+    to = to || 'tsconfig.json';
+    fs.existsSync(to) && fs.unlinkSync(to)
+    fs.symlinkSync('tsconfig-' + name + '.json', to)
+}
+
+function compile() {
+    log(exec('node_modules/.bin/tsc').toString());
+}
+
+var tasks = {
+    build: function () {
+        tsconfig('build');
+        compile();
+        tasks.bundle();
+        tasks.clean();
+    },
+
+    bundle: function () {
+        var rolled = rollup.rollup({
+            entry     : './index.js',
+            dest      : './dist/radic.util.js',
+            format    : 'umd',
+            moduleName: 'radic.util',
+            plugins   : [
+                // require('rollup-plugin-typescript')({
+                //     typescript: require('typescript')
+                // }),
+                // require('rollup-plugin-uglify')
+            ]
+        });
+
+        rolled.then(function (bundle) {
+            // Alternatively, let Rollup do it for you
+            // (this returns a promise). This is much
+            // easier if you're generating a sourcemap
+            bundle.write({
+                dest  : './dist/radic.util.js',
+                format: 'umd',
+            });
+
+        }, function (err) {
+            throw err;
+        })
+        rolled.catch(function (err) {
+            throw err;
+        })
+    },
+
+    test: function () {
+
+        var Jasmine = require('jasmine');
+        var jrunner = new Jasmine();
+        var SpecReporter = require('jasmine-spec-reporter');
+        var noop = function () {
+        };
+
+        jrunner.configureDefaultReporter({print: noop});
+        jasmine.getEnv().addReporter(new SpecReporter());
+        jrunner.loadConfigFile('spec/support/jasmine.json');
+        jrunner.onComplete(function (passed) {
+            if ( passed ) {
+                console.log('All specs have passed');
+            }
+            else {
+                console.log('At least one spec has failed');
+            }
+        });
+        jrunner.execute();
+    },
+
+    clean: function () {
+        globule.find(config.clean).forEach((filePath) => {
+            fs.unlinkSync(filePath)
+            log('deleted', filePath);
+        })
+    }
+}
+
+
+if ( ! tasks[command] ) {
+    throw new Error('Not a workinng command')
+}
+tasks[command].apply(tasks, args);
+
+
+process.exit()

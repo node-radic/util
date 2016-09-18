@@ -1,4 +1,7 @@
 import { objectGet, objectExists, objectSet, recurse } from './object'
+// import merge = require("lodash/merge");
+// import cloneDeep = require("lodash/cloneDeep");
+import {merge,cloneDeep,template,templateSettings} from 'lodash'
 
 
 export interface IDelimitersCollection
@@ -46,7 +49,7 @@ export class Config implements IConfig
         this.allDelimiters = {};
         this.addDelimiters('config', '<%', '%>');
         this.defaults = obj || {};
-        this.data     = _.cloneDeep(this.defaults);
+        this.data     = cloneDeep(this.defaults);
     }
 
 
@@ -81,11 +84,11 @@ export class Config implements IConfig
 
     public merge( ...args: any[] ): IConfig {
         if ( args.length === 1 ) {
-            this.data = _.merge(this.data, args[0]);
+            this.data = merge(this.data, args[0]);
         }
         else {
             var prop: string = args[0];
-            this.set(prop, _.merge(this.raw(prop), args[1]));
+            this.set(prop, merge(this.raw(prop), args[1]));
         }
         return this;
     }

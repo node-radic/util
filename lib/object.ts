@@ -1,4 +1,4 @@
-export var getParts = function getParts(str): any
+function getParts(str): any
 {
     return str.replace(/\\\./g, '\uffff').split('.').map(function (s)
     {
@@ -13,7 +13,7 @@ export var getParts = function getParts(str): any
  * @param create
  * @returns {any}
  */
-export var objectGet = function objectGet(obj?: any, parts?: any, create?: any): any
+function objectGet(obj?: any, parts?: any, create?: any): any
 {
     if (typeof parts === 'string') {
         parts = getParts(parts);
@@ -38,7 +38,7 @@ export var objectGet = function objectGet(obj?: any, parts?: any, create?: any):
  * @param value
  * @returns {any}
  */
-export var objectSet = function objectSet(obj, parts, value)
+function objectSet(obj, parts, value)
 {
     parts = getParts(parts);
 
@@ -55,7 +55,7 @@ export var objectSet = function objectSet(obj, parts, value)
  * @param parts
  * @returns {boolean|any}
  */
-export var objectExists = function objectExists(obj, parts)
+function objectExists(obj, parts)
 {
     parts = getParts(parts);
 
@@ -65,7 +65,7 @@ export var objectExists = function objectExists(obj, parts)
     return typeof obj === 'object' && obj && prop in obj;
 }
 
-export var recurse = function recurse(value: Object, fn: Function, fnContinue?: Function): any
+function recurse(value: Object, fn: Function, fnContinue?: Function): any
 {
     function recurse(value, fn, fnContinue, state)
     {
@@ -116,7 +116,7 @@ export var recurse = function recurse(value: Object, fn: Function, fnContinue?: 
  * @param object
  * @returns {T}
  */
-export var copyObject = function copyObject<T>(object: T): T
+function copyObject<T>(object: T): T
 {
     var objectCopy = <T>{};
 
@@ -135,7 +135,7 @@ export var copyObject = function copyObject<T>(object: T): T
  * @param prefix
  * @returns {any}
  */
-export var dotize = function dotize(obj: any, prefix?: any)
+function dotize(obj: any, prefix?: any)
 {
     if (!obj || typeof obj != "object") {
         if (prefix) {
@@ -222,7 +222,7 @@ export class StringType
     }
 }
 
-export var applyMixins = function applyMixins(derivedCtor: any, baseCtors: any[])
+function applyMixins(derivedCtor: any, baseCtors: any[])
 {
     baseCtors.forEach(baseCtor =>
     {
@@ -550,3 +550,6 @@ export class DependencySorter
     }
 
 }
+
+
+export { getParts, objectExists, objectGet, objectSet, copyObject, applyMixins, recurse, dotize }

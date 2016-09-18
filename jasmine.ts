@@ -1,5 +1,4 @@
-import * as Jasmine from 'jasmine'
-//var Jasmine = require('jasmine');
+var Jasmine = require('jasmine');
 var jrunner = new Jasmine();
 var SpecReporter = require('jasmine-spec-reporter');
 var noop = function() {};

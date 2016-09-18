@@ -1,26 +1,12 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
-        "declaration": true,
-        "stripInternal": true,
-        "experimentalDecorators": true,
-        "module": "es6",
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
-        "removeComments": false,
-        "noImplicitAny": false,
-        "isolatedModules": false,
-        "preserveConstEnums": false,
-        "pretty": true,
-        "rootDir": ".",
-        "sourceMap": true,
-        "inlineSources": true,
+        "module": "commonjs",
         "target": "es5",
-        "lib": ["es2015", "dom"],
-        "skipLibCheck": true
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "experimentalDecorators": true
     },
-    "exclude": [
-        "node_modules",
-        "tester"
+    "files": [
+        "index.ts"
     ]
 }

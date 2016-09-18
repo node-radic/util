@@ -2,7 +2,9 @@
   "name": "@radic/util",
   "version": "1.1.0",
   "description": "Utilities for node / browser",
-  "main": "index.js",
+  "main": "dist/radic.util.js",
+  "module": "index.js",
+  "typings": "index.d.ts",
   "scripts": {
     "build": "tsc",
     "start": "http-server -c-1 -o -p 8875 .",
@@ -18,12 +20,14 @@
     "@types/jasmine": "^2.2.33",
     "@types/lodash": "^4.14.34",
     "@types/node": "^6.0.31",
-    "@types/systemjs": "^0.19.30",
     "globule": "^1.0.0",
     "istanbul": "^0.4.5",
     "jasmine": "^2.4.1",
     "jasmine-spec-reporter": "^2.7.0",
     "remap-istanbul": "^0.6.4",
+    "rollup": "^0.35.12",
+    "rollup-plugin-typescript": "^0.8.1",
+    "rollup-plugin-uglify": "^1.0.1",
     "typescript": "^2.0.0"
   },
   "dependencies": {
