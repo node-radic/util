@@ -4,3 +4,4 @@
 /util.iml
 jasmine.js
 karma.conf.js
+*.js.map
