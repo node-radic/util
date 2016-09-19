@@ -1,64 +1,74 @@
 #!/usr/bin/node --harmony
-var path    = require('path'),
+let path    = require('path'),
     fs      = require('fs'),
     globule = require('globule'),
     exec    = require('child_process').execSync,
-    rollup  = require('rollup');
+    rollup  = require('rollup'),
+    Promise = require('bluebird');
 
 let args = process.argv.splice(2);
 const command = args.shift();
 const config = {
     fileName: 'radic.util',
-    clean   : ['lib/*.{d.ts,js,js.map}','*.{d.ts,js.map}', '!types.d.ts']
+    clean   : ['lib/*.{d.ts,js,js.map}', '*.{d.ts,js.map}', '!types.d.ts']
 }
 
 var log = function () {
     console.log.apply(console, arguments);
 }
-
-function tsconfig(name, to) {
-    to = to || 'tsconfig.json';
-    fs.existsSync(to) && fs.unlinkSync(to)
-    fs.symlinkSync('tsconfig-' + name + '.json', to)
+log.list = [];
+log.add = (name) => {
+    log.list.push(name)
+}
+log.has = (name) => {
+    return log.list.indexOf(name) !== - 1;
 }
 
-function compile() {
-    log(exec('node_modules/.bin/tsc').toString());
-}
+
 
 var tasks = {
-    build: function () {
-        tsconfig('build');
-        compile();
-        tasks.bundle();
-        tasks.clean();
+    compile(){
+        log(exec('node_modules/.bin/tsc').toString());
+        log.add('compile');
+    },
+    build() {
+        this.compile();
+        this.bundle();
+        this.clean();
+        log.add('build')
     },
 
     bundle: function () {
         log(exec('node_modules/.bin/rollup -c rollup.config.js').toString());
-
+        log.add('bundle')
     },
 
     test: function () {
+        ! log.has('compile') && this.compile();
 
         var Jasmine = require('jasmine');
         var jrunner = new Jasmine();
         var SpecReporter = require('jasmine-spec-reporter');
         var noop = function () {
         };
-
+        var defer = Promise.defer();
         jrunner.configureDefaultReporter({print: noop});
         jasmine.getEnv().addReporter(new SpecReporter());
         jrunner.loadConfigFile('spec/support/jasmine.json');
         jrunner.onComplete(function (passed) {
+
             if ( passed ) {
+                defer.resolve();
                 console.log('All specs have passed');
             }
             else {
+                defer.reject('At least one spec has failed');
                 console.log('At least one spec has failed');
             }
         });
         jrunner.execute();
+        log.add('test');
+        return defer.promise;
     },
 
     clean: function () {
@@ -66,6 +76,7 @@ var tasks = {
             fs.unlinkSync(filePath)
             log('deleted', filePath);
         })
+        log.add('clean');
     }
 }
 
