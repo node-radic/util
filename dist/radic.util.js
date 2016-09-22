@@ -138,7 +138,7 @@ function dotize(obj, prefix) {
         for (var f in o) {
             if (o[f] && typeof o[f] === "object") {
                 if (Array.isArray(o[f]))
-                    newObj = recurse(o[f], (p ? p : "") + (isNumber(f) ? "[" + f + "]" : "." + f), true); // array
+                    newObj = recurse(o[f], (p ? p : "") + (isNumber$$1(f) ? "[" + f + "]" : "." + f), true); // array
                 else {
                     if (isArrayItem)
                         newObj = recurse(o[f], (p ? p : "") + "[" + f + "]"); // array item object
@@ -147,7 +147,7 @@ function dotize(obj, prefix) {
                 }
             }
             else {
-                if (isArrayItem || isNumber(f))
+                if (isArrayItem || isNumber$$1(f))
                     newObj[p + "[" + f + "]"] = o[f]; // array item primitive
                 else
                     newObj[(p ? p + "." : "") + f] = o[f]; // primitive
@@ -157,7 +157,7 @@ function dotize(obj, prefix) {
             return obj;
         return newObj;
     }
-    function isNumber(f) {
+    function isNumber$$1(f) {
         return !isNaN(parseInt(f));
     }
     function isEmptyObj(obj) {
@@ -669,7 +669,7 @@ var defaultToWhiteSpace = function defaultToWhiteSpace(characters) {
     else if (characters.source)
         return characters.source;
     else
-        return '[' + _.escapeRegExp(characters) + ']';
+        return '[' + lodash.escapeRegExp(characters) + ']';
 };
 var kindsOf = {};
 'Number String Boolean Function RegExp Array Date Error'.split(' ').forEach(function (k) {
@@ -705,7 +705,7 @@ var def = function def(val, def) {
  * @returns {boolean}
  */
 var defined = function defined(obj) {
-    return !_.isUndefined(obj);
+    return lodash.isUndefined(obj);
 };
 /**
  * Get a random generated id string
@@ -714,7 +714,7 @@ var defined = function defined(obj) {
  * @returns {string}
  */
 var getRandomId = function getRandomId(length) {
-    if (!_.isNumber(length)) {
+    if (lodash.isNumber(length)) {
         length = 15;
     }
     var text = "";
