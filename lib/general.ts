@@ -1,4 +1,4 @@
-
+import {isNumber, escapeRegExp, isUndefined} from 'lodash'
 
     /**
      * Round a value to a precision
@@ -31,7 +31,7 @@
         else if ( characters.source )
             return characters.source;
         else
-            return '[' + _.escapeRegExp(characters) + ']';
+            return '[' + escapeRegExp(characters) + ']';
     }
 
 
@@ -83,7 +83,7 @@
      * @returns {boolean}
      */
     export var defined = function defined( obj?: any ) {
-        return !_.isUndefined(obj);
+        return isUndefined(obj);
     }
 
     /**
@@ -93,7 +93,7 @@
      * @returns {string}
      */
     export var getRandomId = function getRandomId( length?: number ): string {
-        if ( !_.isNumber(length) ) {
+        if ( isNumber(length) ) {
             length = 15;
         }
         var text: string     = "";

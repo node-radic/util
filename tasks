@@ -55,8 +55,7 @@ var tasks = {
         jrunner.configureDefaultReporter({print: noop});
         jasmine.getEnv().addReporter(new SpecReporter());
         jrunner.loadConfigFile('spec/support/jasmine.json');
-        jrunner.onComplete(function (passed) {
-
+        jrunner.onComplete((passed) => {
             if ( passed ) {
                 defer.resolve();
                 console.log('All specs have passed');
