@@ -1,6 +1,7 @@
 import * as gulp from "gulp";
 import * as karma from "karma";
-
+import * as fs from 'fs';
+import * as path from 'path'
 
 //import * as gulp from 'gulp'
 
@@ -95,6 +96,25 @@ gulp.task("build-dts", function () {
 
 });
 
+gulp.task('build-dts:concat', (done:any) => {
+    let dtsPath = path.join(process.cwd(), 'dts')
+    let dest = path.join(process.cwd(), 'radic.util.d.ts')
+    //let dest = path.join(process.cwd(), 'dts', 'radic.util.d.ts')
+    fs.existsSync(dest) && fs.unlinkSync(dest);
+    let content = '';
+    fs.readdirSync(dtsPath).forEach((fileName) => {
+        if(fileName === 'index.d.ts') return;
+        content += fs.readFileSync(path.join(dtsPath, fileName));
+    });
+
+    fs.writeFile(dest, `
+declare module "@radic/util" {
+    ${content.replace(/declare/g , '')}
+}
+`, done)
+
+
+})
 
 gulp.task('build-umd', ['build-es'], () => {
     return gulp.src('es/**/*.js')
@@ -212,6 +232,7 @@ gulp.task("build", function (cb) {
     runSequence(
         // "lint",
         ["build-src", "build-es", "build-lib", "build-dts", 'build-umd'],   // tests + build es and lib
+        'build-dts:concat',
         "build-test", cb);
 });
 

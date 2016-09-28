@@ -1,6 +1,8 @@
 "use strict";
 var gulp = require("gulp");
 var karma = require("karma");
+var fs = require('fs');
+var path = require('path');
 //import * as gulp from 'gulp'
 /**
  * @type {gulp}
@@ -66,6 +68,19 @@ gulp.task("build-dts", function () {
         process.exit(1);
     })
         .dts.pipe(gulp.dest("dts"));
+});
+gulp.task('build-dts:concat', function (done) {
+    var dtsPath = path.join(process.cwd(), 'dts');
+    var dest = path.join(process.cwd(), 'radic.util.d.ts');
+    //let dest = path.join(process.cwd(), 'dts', 'radic.util.d.ts')
+    fs.existsSync(dest) && fs.unlinkSync(dest);
+    var content = '';
+    fs.readdirSync(dtsPath).forEach(function (fileName) {
+        if (fileName === 'index.d.ts')
+            return;
+        content += fs.readFileSync(path.join(dtsPath, fileName));
+    });
+    fs.writeFile(dest, "\ndeclare module \"@radic/util\" {\n    " + content.replace(/declare/g, '') + "\n}\n", done);
 });
 gulp.task('build-umd', ['build-es'], function () {
     return gulp.src('es/**/*.js')
@@ -172,7 +187,7 @@ gulp.task("build", function (cb) {
     runSequence(
     // "lint",
     ["build-src", "build-es", "build-lib", "build-dts", 'build-umd'], // tests + build es and lib
-    "build-test", cb);
+    'build-dts:concat', "build-test", cb);
 });
 gulp.task("default", function (cb) {
     runSequence("build", "test", cb);
