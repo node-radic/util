@@ -13,6 +13,9 @@
         "start": "gulp",
         "test": "gulp test",
         "clean": "gulp clean",
+        "patch": "mversion patch -m",
+        "minor": "mversion minor -m",
+        "major": "mversion major -m",
         "posttest": "echo \"DONE!\""
     },
     "author": "Robin Radic",
