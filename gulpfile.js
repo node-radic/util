@@ -69,17 +69,20 @@ gulp.task("build-dts", function () {
     })
         .dts.pipe(gulp.dest("dts"));
 });
-gulp.task('build-dts:concat', function (done) {
+gulp.task('build-dts:concat', ['build-dts'], function (done) {
     var dtsPath = path.join(process.cwd(), 'dts');
     var dest = path.join(process.cwd(), 'radic.util.d.ts');
     //let dest = path.join(process.cwd(), 'dts', 'radic.util.d.ts')
     fs.existsSync(dest) && fs.unlinkSync(dest);
     var content = '';
     fs.readdirSync(dtsPath).forEach(function (fileName) {
-        if (fileName === 'index.d.ts')
-            return;
-        content += fs.readFileSync(path.join(dtsPath, fileName));
+        var filePath = path.join(dtsPath, fileName);
+        if (fileName !== 'index.d.ts') {
+            content += fs.readFileSync(filePath);
+        }
+        fs.unlinkSync(filePath);
     });
+    fs.rmdirSync(dtsPath);
     fs.writeFile(dest, "\ndeclare module \"@radic/util\" {\n    " + content.replace(/declare/g, '') + "\n}\n", done);
 });
 gulp.task('build-umd', ['build-es'], function () {

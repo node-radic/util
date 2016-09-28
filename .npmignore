@@ -27,3 +27,4 @@ karma.conf.*
 .mversionrc
 .editorconfig
 index.html
+/dts

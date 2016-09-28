@@ -96,22 +96,26 @@ gulp.task("build-dts", function () {
 
 });
 
-gulp.task('build-dts:concat', (done:any) => {
+gulp.task('build-dts:concat', ['build-dts'], (done:any) => {
     let dtsPath = path.join(process.cwd(), 'dts')
     let dest = path.join(process.cwd(), 'radic.util.d.ts')
     //let dest = path.join(process.cwd(), 'dts', 'radic.util.d.ts')
     fs.existsSync(dest) && fs.unlinkSync(dest);
     let content = '';
     fs.readdirSync(dtsPath).forEach((fileName) => {
-        if(fileName === 'index.d.ts') return;
-        content += fs.readFileSync(path.join(dtsPath, fileName));
+        let filePath = path.join(dtsPath, fileName)
+        if(fileName !== 'index.d.ts') {
+            content += fs.readFileSync(filePath);
+        }
+        fs.unlinkSync(filePath)
     });
-
+    fs.rmdirSync(dtsPath)
     fs.writeFile(dest, `
 declare module "@radic/util" {
     ${content.replace(/declare/g , '')}
 }
 `, done)
+
 
 
 })

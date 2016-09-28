@@ -1,0 +1,13 @@
+{
+  "name": "@radic/util",
+  "description": "Utilities for node / browser",
+  "main": "radic.util.js",
+  "authors": [
+    "Robin Radic"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "lodash": "^4.16.2"
+  }
+}
