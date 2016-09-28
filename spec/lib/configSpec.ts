@@ -1,4 +1,4 @@
-import {Config, IConfig} from "../../lib/config";
+import {Config, IConfig} from "../../src/config";
 
 
 

@@ -1,13 +1,30 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
+        "declaration": false,
+        "removeComments": true,
+        "noLib": false,
         "noImplicitAny": false,
         "sourceMap": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true
+        "emitDecoratorMetadata": true,
+
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es5",
+        "lib": ["es6", "es2015", "dom"],
+        "noResolve": false,
+        "typeRoots": [
+            "./node_modules/@types",
+            "./node_modules"
+        ],
+        "types": [
+            "lodash",
+            "jasmine",
+            "node"
+        ]
     },
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "gulpfile.ts"
     ]
 }
