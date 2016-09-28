@@ -9,5 +9,6 @@
   "homepage": "",
   "dependencies": {
     "lodash": "^4.16.2"
-  }
+  },
+  "version": "1.3.0"
 }
