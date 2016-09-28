@@ -6,3 +6,4 @@ jasmine.js
 karma.conf.js
 *.js.map
 /src/*.js
+/spec/*.js
