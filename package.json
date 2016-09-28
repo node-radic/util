@@ -12,6 +12,7 @@
         "build": "gulp build",
         "start": "gulp",
         "test": "gulp test",
+        "clean": "gulp clean",
         "posttest": "echo \"DONE!\""
     },
     "author": "Robin Radic",
