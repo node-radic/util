@@ -76,7 +76,7 @@
         "typescript": "^2.0.0",
         "vinyl-buffer": "^1.0.0",
         "vinyl-source-stream": "^1.1.0",
-        "browserfs": "^0.6.0",
+        "browserfs": "^0.6.0"
     },
     "dependencies": {
         "lodash": "^4.15.0"

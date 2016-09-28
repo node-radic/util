@@ -8,3 +8,4 @@ karma.conf.js
 /src/*.js
 /spec/*.js
 /bower_components
+/npm-debug.log
