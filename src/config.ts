@@ -21,6 +21,9 @@ export interface IDelimiter
     lodash?: IDelimiterLodash;
 }
 
+/**
+ * Inte
+ */
 export interface IConfig
 {
     get( prop?: any ): any;
@@ -38,6 +41,35 @@ export interface IConfigProperty extends IConfig
     ( args?: any ): any;
 }
 
+/**
+ * The Config class uses object get/set methods
+ * `Config` 'Config'
+ * `IConfig` 'IConfig'
+ * ```typescript
+ * let defaultConfig = { name: 'something' }
+ * let config:IConfig = new Config(defaultConfig)
+ * let name = config.get('name')
+ * config.set('app.version', '1.1.0')
+ * let version = config.get('app.version')
+ * let app = config.get('app') // returns object with app children
+ * version = app.version; // also works
+ * ```
+ *
+ * using the static `makeProperty` method, this class can be embedded into a helper function
+ * ```typescript
+ * let _config:IConfig = new Config(defaultConfig)
+ * let config:IConfigProperty = Config.makeProperty(_config)
+ * let version = config('app.version')
+ * // All public methods fron Config are still available
+ * config.get()
+ * config.set()
+ * //etc
+ * ```
+ * @see IConfigProperty
+ * @see IConfig
+ * @see `Config` 'Config'
+ * @see {PersistentConfig}
+ */
 export class Config implements IConfig
 {
     protected defaults: Object;
@@ -205,7 +237,9 @@ export class Config implements IConfig
     }
 }
 
-
+/**
+ * The {PersistentConfig} PersistentConfig class
+ */
 export class PersistentConfig extends Config
 {
     protected persistenceFilePath: string;

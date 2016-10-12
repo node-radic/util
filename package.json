@@ -6,6 +6,7 @@
     "typings": "radic.util.d.ts",
     "jsnext:main": "es/index.js",
     "repository": "node-radic/util",
+    "private": false,
     "scripts": {
         "build": "gulp build",
         "start": "gulp",
@@ -14,7 +15,8 @@
         "patch": "mversion patch -m",
         "minor": "mversion minor -m",
         "major": "mversion major -m",
-        "posttest": "echo \"DONE!\""
+        "posttest": "echo \"DONE!\"",
+        "docs": "cd .. ; rm -r util/docs/typedocs; typedoc --hideGenerator --includeDeclarations --mode file --out util/docs/typedocs --readme util/README.md --tsconfig util/tsconfig.docs.json util/src"
     },
     "author": "Robin Radic",
     "license": "MIT",

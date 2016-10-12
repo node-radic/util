@@ -1,4 +1,4 @@
-import { isNumber, escapeRegExp, isUndefined } from 'lodash';
+import { isNumber, escapeRegExp, isUndefined } from "lodash";
 export var round = function round(value, places) {
     var multiplier = Math.pow(10, places);
     return (Math.round(value * multiplier) / multiplier);
@@ -53,11 +53,39 @@ export var getRandomId = function getRandomId(length) {
     return text;
 };
 export var guid = function guid() {
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-        s4() + '-' + s4() + s4() + s4();
+    return guidSeg() + guidSeg() + '-' + guidSeg() + '-' + guidSeg() + '-' +
+        guidSeg() + '-' + guidSeg() + guidSeg() + guidSeg();
 };
-function s4() {
+export function guidSeg() {
     return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
 }
+function isLength(value, lengths) {
+    lengths = lengths.length === 1 && kindOf(lengths[0]) === 'array' ? lengths[0] : lengths;
+    var vLen;
+    if (value.length)
+        vLen = value.length;
+    else if (isFinite(value))
+        vLen = parseInt(value);
+    else
+        return [false];
+    var lens = [];
+    lengths.map(function (val) { return parseInt(val); }).forEach(function (len) { return lens[len] = vLen === len; });
+    return lens;
+}
+export var isAnyLength = function (value) {
+    var lengths = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        lengths[_i - 1] = arguments[_i];
+    }
+    return isLength(value, lengths).indexOf(true) !== -1;
+};
+export var isAllLength = function (value) {
+    var lengths = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        lengths[_i - 1] = arguments[_i];
+    }
+    return isLength(value, lengths).indexOf(false) === -1;
+};
+export { isAnyLength as isLength };

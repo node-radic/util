@@ -555,14 +555,41 @@ var getRandomId = function getRandomId(length) {
     return text;
 };
 var guid = function guid() {
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-        s4() + '-' + s4() + s4() + s4();
+    return guidSeg() + guidSeg() + '-' + guidSeg() + '-' + guidSeg() + '-' +
+        guidSeg() + '-' + guidSeg() + guidSeg() + guidSeg();
 };
-function s4() {
+function guidSeg() {
     return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
 }
+function isLength(value, lengths) {
+    lengths = lengths.length === 1 && kindOf(lengths[0]) === 'array' ? lengths[0] : lengths;
+    var vLen;
+    if (value.length)
+        vLen = value.length;
+    else if (isFinite(value))
+        vLen = parseInt(value);
+    else
+        return [false];
+    var lens = [];
+    lengths.map(function (val) { return parseInt(val); }).forEach(function (len) { return lens[len] = vLen === len; });
+    return lens;
+}
+var isAnyLength = function (value) {
+    var lengths = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        lengths[_i - 1] = arguments[_i];
+    }
+    return isLength(value, lengths).indexOf(true) !== -1;
+};
+var isAllLength = function (value) {
+    var lengths = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        lengths[_i - 1] = arguments[_i];
+    }
+    return isLength(value, lengths).indexOf(false) === -1;
+};
 
 var old_json = JSON;
 var stringify = function stringify(obj) {
@@ -1245,6 +1272,10 @@ exports.def = def;
 exports.defined = defined;
 exports.getRandomId = getRandomId;
 exports.guid = guid;
+exports.guidSeg = guidSeg;
+exports.isAnyLength = isAnyLength;
+exports.isAllLength = isAllLength;
+exports.isLength = isAnyLength;
 exports.stringify = stringify;
 exports.parse = parse;
 exports.clone = clone;
