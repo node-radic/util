@@ -8,9 +8,12 @@ var path = require('path');
  * @type {gulp}
  */
 var //gulp        = require("gulp"),
-browserify = require("browserify"), source = require("vinyl-source-stream"), buffer = require("vinyl-buffer"), tslint = require("gulp-tslint"), tsc = require("gulp-typescript"), sourcemaps = require("gulp-sourcemaps"), uglify = require("gulp-uglify"), rollup = require('gulp-rollup'), rename = require("gulp-rename"), runSequence = require("run-sequence"), mocha = require("gulp-mocha"), istanbul = require("gulp-istanbul"), jasmine = require("gulp-jasmine"), clean = require('gulp-clean'), SpecReporter = require('jasmine-spec-reporter');
+browserify = require("browserify"), source = require("vinyl-source-stream"), buffer = require("vinyl-buffer"), tslint = require("gulp-tslint"), tsc = require("gulp-typescript"), sourcemaps = require("gulp-sourcemaps"), uglify = require("gulp-uglify"), rollup = require('gulp-rollup'), rename = require("gulp-rename"), runSequence = require("run-sequence"), mocha = require("gulp-mocha"), istanbul = require("gulp-istanbul"), jasmine = require("gulp-jasmine"), clean = require('gulp-clean'), SpecReporter = require('jasmine-spec-reporter'), _ = require('lodash');
 var c = {
-    src: ['src/**/*.ts']
+    src: ['src/**/*.ts'],
+    fileName: 'util',
+    moduleName: '@radic/util',
+    umdModuleName: 'radic.util'
 };
 gulp.task('clean', ['clean:src', 'clean:build']);
 gulp.task('clean:build', function () { return gulp.src(['dist', 'dts', 'es', 'lib', 'umd', 'coverage']).pipe(clean()); });

@@ -23,11 +23,15 @@ var //gulp        = require("gulp"),
     istanbul     = require("gulp-istanbul"),
     jasmine      = require("gulp-jasmine"),
     clean        = require('gulp-clean'),
-    SpecReporter = require('jasmine-spec-reporter')
+    SpecReporter = require('jasmine-spec-reporter'),
+    _ = require('lodash')
     ;
 
 let c = {
-    src: ['src/**/*.ts']
+    src: ['src/**/*.ts'],
+    fileName: 'util',
+    moduleName: '@radic/util',
+    umdModuleName: 'radic.util'
 }
 
 gulp.task('clean', ['clean:src', 'clean:build'])

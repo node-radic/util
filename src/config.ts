@@ -105,8 +105,8 @@ export class Config implements IConfig
         }
     }
 
-    public get( prop?: any, def?: any ): any {
-        return this.process(this.raw(prop));
+    public get( prop?: any, def: any  = undefined): any {
+        return this.has(prop) ? this.process(this.raw(prop)) : def;
     }
 
     public set( prop: string, value: any ): IConfig {
