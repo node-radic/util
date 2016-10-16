@@ -361,7 +361,8 @@ var Config = (function () {
         }
     };
     Config.prototype.get = function (prop, def) {
-        return this.process(this.raw(prop));
+        if (def === void 0) { def = undefined; }
+        return this.has(prop) ? this.process(this.raw(prop)) : def;
     };
     Config.prototype.set = function (prop, value) {
         objectSet(this.data, Config.getPropString(prop), value);

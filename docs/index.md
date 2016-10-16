@@ -1,4 +1,3 @@
-
 ### Use
 - Install trough `npm install @radic/util`
 
