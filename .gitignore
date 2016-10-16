@@ -9,3 +9,6 @@ karma.conf.js
 /spec/*.js
 /bower_components
 /npm-debug.log
+/es
+/lib
+/umd
