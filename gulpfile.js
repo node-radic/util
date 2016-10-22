@@ -75,17 +75,15 @@ gulp.task("build-dts", function () {
 gulp.task('build-dts:concat', ['build-dts'], function (done) {
     var dtsPath = path.join(process.cwd(), 'dts');
     var dest = path.join(process.cwd(), 'radic.util.d.ts');
-    //let dest = path.join(process.cwd(), 'dts', 'radic.util.d.ts')
     fs.existsSync(dest) && fs.unlinkSync(dest);
-    var content = '';
-    fs.readdirSync(dtsPath).forEach(function (fileName) {
-        var filePath = path.join(dtsPath, fileName);
-        if (fileName !== 'index.d.ts') {
-            content += fs.readFileSync(filePath);
-        }
-        fs.unlinkSync(filePath);
+    var result = require('dts-bundle').bundle({
+        name: c.moduleName,
+        main: 'dts/index.d.ts',
+        outputAsModuleFolder: true,
+        out: dest
     });
-    fs.rmdirSync(dtsPath);
+    var content = fs.readFileSync(dest, 'utf-8');
+    fs.unlinkSync(dest);
     fs.writeFile(dest, "\ndeclare module \"@radic/util\" {\n    " + content.replace(/declare/g, '') + "\n}\n", done);
 });
 gulp.task('build-umd', ['build-es'], function () {
@@ -190,9 +188,7 @@ else {
 //* DEFAULT
 //******************************************************************************
 gulp.task("build", function (cb) {
-    runSequence(
-    // "lint",
-    ["build-src", "build-es", "build-lib", "build-dts", 'build-umd'], // tests + build es and lib
+    runSequence("clean", ["build-src", "build-es", "build-lib", "build-dts", 'build-umd'], // tests + build es and lib
     'build-dts:concat', "build-test", cb);
 });
 gulp.task("default", function (cb) {

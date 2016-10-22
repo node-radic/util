@@ -12,3 +12,4 @@ karma.conf.js
 /es
 /lib
 /umd
+/dts

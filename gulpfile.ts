@@ -103,17 +103,16 @@ gulp.task("build-dts", function () {
 gulp.task('build-dts:concat', ['build-dts'], (done:any) => {
     let dtsPath = path.join(process.cwd(), 'dts')
     let dest = path.join(process.cwd(), 'radic.util.d.ts')
-    //let dest = path.join(process.cwd(), 'dts', 'radic.util.d.ts')
     fs.existsSync(dest) && fs.unlinkSync(dest);
-    let content = '';
-    fs.readdirSync(dtsPath).forEach((fileName) => {
-        let filePath = path.join(dtsPath, fileName)
-        if(fileName !== 'index.d.ts') {
-            content += fs.readFileSync(filePath);
-        }
-        fs.unlinkSync(filePath)
-    });
-    fs.rmdirSync(dtsPath)
+
+    let result = require('dts-bundle').bundle({
+        name: c.moduleName,
+        main: 'dts/index.d.ts',
+        outputAsModuleFolder: true,
+        out: dest
+    })
+    let content:string = fs.readFileSync(dest, 'utf-8');
+    fs.unlinkSync(dest);
     fs.writeFile(dest, `
 declare module "@radic/util" {
     ${content.replace(/declare/g , '')}
@@ -238,7 +237,7 @@ if (process.env.APPVEYOR) {
 //******************************************************************************
 gulp.task("build", function (cb) {
     runSequence(
-        // "lint",
+        "clean",
         ["build-src", "build-es", "build-lib", "build-dts", 'build-umd'],   // tests + build es and lib
         'build-dts:concat',
         "build-test", cb);

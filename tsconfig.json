@@ -15,7 +15,7 @@
         "noResolve": false,
         "typeRoots": [
             "./node_modules/@types",
-            "./node_modules"
+            "./types"
         ],
         "types": [
             "lodash",
@@ -23,8 +23,7 @@
             "node"
         ]
     },
-    "exclude": [
-        "node_modules",
-        "gulpfile.ts"
+    "files": [
+        "src/index.ts"
     ]
 }
