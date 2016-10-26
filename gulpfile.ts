@@ -36,7 +36,7 @@ let c = {
 }
 
 gulp.task('clean', [ 'clean:src', 'clean:build' ])
-gulp.task('clean:build', () => gulp.src([ 'dist', 'dts', 'es', 'lib', 'umd', 'coverage', 'radic.util.*' ]).pipe(clean()))
+gulp.task('clean:build', () => gulp.src([ 'dist', 'dts', 'es', 'lib', 'umd', 'coverage' ]).pipe(clean()))
 gulp.task('clean:src', () => gulp.src([ '{src,spec}/*.{js,js.map}', '*.{js,js.map}' ]).pipe(clean()))
 
 //******************************************************************************
