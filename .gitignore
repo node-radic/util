@@ -2,8 +2,8 @@
 /tester
 /coverage
 /util.iml
-jasmine.js
-karma.conf.js
+/jasmine.js
+/karma.conf.js
 *.js.map
 /src/*.js
 /spec/*.js
@@ -13,3 +13,4 @@ karma.conf.js
 /lib
 /umd
 /dts
+/gulpfile.js

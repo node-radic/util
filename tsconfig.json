@@ -23,6 +23,9 @@
             "node"
         ]
     },
+    "exclude": [
+        "gulpfile.ts"
+    ],
     "files": [
         "src/index.ts"
     ]
