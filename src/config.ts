@@ -92,8 +92,8 @@ export class Config implements IConfig
         delete obj[key];
     }
 
-    public has( prop: any ): boolean {
-        return objectExists(this.data, Config.getPropString(prop));
+    public has( prop?: any ): boolean {
+        return prop ? objectExists(this.data, Config.getPropString(prop)) : true;
     }
 
     public raw( prop?: any ): any {
