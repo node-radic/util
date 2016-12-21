@@ -26,6 +26,13 @@ export class Storage {
         return Storage.bags[ name ];
     }
 
+    static getOrCreateBag(name:string, provider:StorageProvider) : IStorageBag {
+        if(!Storage.hasBag(name)){
+            return Storage.createBag(name, provider);
+        }
+        return Storage.getBag(name);
+    }
+
     private static make(name: string, provider: StorageProvider): IStorageProvider {
         if ( provider === StorageProvider.COOKIE ) return new CookieStorage(name);
         if ( provider === StorageProvider.LOCAL ) return new LocalStorage(name);
@@ -35,13 +42,13 @@ export class Storage {
 
     static isSupportedProvider(provider: IStorageBag): boolean {
         if ( provider instanceof LocalStorage ) {
-            return defined(window.localStorage)
+            return window.localStorage !== undefined
         }
         if ( provider instanceof SessionStorage ) {
-            return defined(window.localStorage)
+            return window.localStorage !== undefined
         }
         if ( provider instanceof CookieStorage ) {
-            return defined(window.document.cookie)
+            return window.document.cookie !== undefined
         }
     }
 }
@@ -53,7 +60,7 @@ export interface IStorageProvider {
     getItem(key: string): any;
     key(index: number): string;
     removeItem(key: string): void;
-    setItem(key: string, data: string): void;
+    setItem(key: string, data: string, expires?:number|Date): void;
     hasItem(key: string): boolean;
     getSize(key: any): string;
 }
@@ -92,10 +99,10 @@ export class StorageBag implements IStorageBag {
     }
 
     get(key: any, options?: any) {
-        var options: any = merge({ json: true, def: null }, options);
+        var options: any = merge({ json: true, default: null }, options);
 
         if ( ! key ) {
-            return options.def;
+            return options.default;
         }
 
         if ( isString(this.provider.getItem(key)) ) {
@@ -111,8 +118,8 @@ export class StorageBag implements IStorageBag {
 
         var val: any = this.provider.getItem(key);
 
-        if ( ! val || defined(val) && val == null ) {
-            return options.def;
+        if ( ! val || val !== undefined && val == null ) {
+            return options.default;
         }
 
         if ( options.json ) {
@@ -214,7 +221,7 @@ export class LocalStorage extends BaseStorageProvider implements IStorageProvide
 export class SessionStorage extends BaseStorageProvider implements IStorageProvider {
 
     hasItem(key: string): boolean {
-        return window.localStorage.getItem(key) !== null;
+        return window.sessionStorage.getItem(key) !== null;
     }
 
     get length() {
