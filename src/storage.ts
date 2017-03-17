@@ -1,46 +1,44 @@
 import { defined } from './general'
 import { isString, merge } from 'lodash'
 
-export enum StorageProvider {
-    LOCAL, SESSION, COOKIE
-}
+export type StorageType = 'local' | 'session' | 'cookie' | string;
 
 export class Storage {
-    static bags: {[name: string]: IStorageBag} = {}
+    static bags: { [name: string]: StorageBag } = {}
 
     static hasBag(name: string): boolean {
         return typeof Storage.bags[ name ] !== 'undefined';
     }
 
-    static createBag(name: string, provider: StorageProvider): IStorageBag {
+    static createBag(name: string, storageType: StorageType): StorageBag {
         if ( Storage.hasBag(name) ) {
             throw new Error('StorageBag ' + name + ' already exists');
         }
-        return Storage.bags[ name ] = new StorageBag(Storage.make(name, provider));
+        return Storage.bags[ name ] = new StorageBag(Storage.make(name, storageType));
     }
 
-    static getBag(name: string): IStorageBag {
+    static getBag(name: string): StorageBag {
         if ( ! Storage.hasBag(name) ) {
             throw new Error('StorageBag ' + name + ' does not exist');
         }
         return Storage.bags[ name ];
     }
 
-    static getOrCreateBag(name:string, provider:StorageProvider) : IStorageBag {
-        if(!Storage.hasBag(name)){
-            return Storage.createBag(name, provider);
+    static getOrCreateBag(name: string, storageType: StorageType): StorageBag {
+        if ( ! Storage.hasBag(name) ) {
+            return Storage.createBag(name, storageType);
         }
         return Storage.getBag(name);
     }
 
-    private static make(name: string, provider: StorageProvider): IStorageProvider {
-        if ( provider === StorageProvider.COOKIE ) return new CookieStorage(name);
-        if ( provider === StorageProvider.LOCAL ) return new LocalStorage(name);
-        if ( provider === StorageProvider.SESSION ) return new SessionStorage(name);
+    private static make(name: string, storageType: StorageType): IStorageProvider {
+        if ( storageType === 'cookie' ) return new CookieStorage(name);
+        if ( storageType === 'local' ) return new LocalStorage(name);
+        if ( storageType === 'session' ) return new SessionStorage(name);
         throw new Error('Storage provider could not be maked. ... ?')
     }
 
-    static isSupportedProvider(provider: IStorageBag): boolean {
+    static isSupportedProvider(provider: StorageBag): boolean {
         if ( provider instanceof LocalStorage ) {
             return window.localStorage !== undefined
         }
@@ -60,26 +58,25 @@ export interface IStorageProvider {
     getItem(key: string): any;
     key(index: number): string;
     removeItem(key: string): void;
-    setItem(key: string, data: string, expires?:number|Date): void;
+    setItem(key: string, data: string, expires?: number|Date): void;
     hasItem(key: string): boolean;
     getSize(key: any): string;
 }
 
-export interface IStorageBag {
-    get(key: any, options?: any): any
-    set(key: any, val: any, options?: any);
-    has(key: any): boolean;
-    on(callback: any);
-    del(key: any);
-    clear();
-    getSize(key: any);
+
+export interface IStorageBagOptions {
+    json?: boolean
 }
 
-export class StorageBag implements IStorageBag {
+export class StorageBag {
     provider: IStorageProvider;
+    options: IStorageBagOptions = {
+        json: true
+    }
 
-    constructor(provider: IStorageProvider) {
+    constructor(provider: IStorageProvider, options:IStorageBagOptions={}) {
         this.provider = provider;
+        merge(this.options, options);
     }
 
     on(callback: Function) {
@@ -87,19 +84,19 @@ export class StorageBag implements IStorageBag {
     }
 
     set(key: any, val: any, options?: any) {
-        var options: any = merge({ json: true, expires: false }, options);
+        options = merge({ json: true, expires: false }, options);
         if ( options.json ) {
             val = JSON.stringify(val);
         }
         if ( options.expires ) {
-            var now = Math.floor((Date.now() / 1000) / 60);
+            let now = Math.floor((Date.now() / 1000) / 60);
             this.provider.setItem(key + ':expire', now + options.expires);
         }
         this.provider.setItem(key, val);
     }
 
-    get(key: any, options?: any) {
-        var options: any = merge({ json: true, default: null }, options);
+    get(key: any, defaultReturn:any=null, options?: any) {
+        options = merge({ json: this.options.json, default: defaultReturn}, options);
 
         if ( ! key ) {
             return options.default;
@@ -107,8 +104,8 @@ export class StorageBag implements IStorageBag {
 
         if ( isString(this.provider.getItem(key)) ) {
             if ( isString(this.provider.getItem(key + ':expire')) ) {
-                var now     = Math.floor((Date.now() / 1000) / 60);
-                var expires = parseInt(this.provider.getItem(key + ':expire'));
+                let now     = Math.floor((Date.now() / 1000) / 60);
+                let expires = parseInt(this.provider.getItem(key + ':expire'));
                 if ( now > expires ) {
                     this.del(key);
                     this.del(key + ':expire');
@@ -116,7 +113,7 @@ export class StorageBag implements IStorageBag {
             }
         }
 
-        var val: any = this.provider.getItem(key);
+        let val: any = this.provider.getItem(key);
 
         if ( ! val || val !== undefined && val == null ) {
             return options.default;
@@ -316,7 +313,7 @@ export class CookieStorage extends BaseStorageProvider implements IStorageProvid
     }
 
     clear(): void {
-        this.keys().forEach((name: string)=> {
+        this.keys().forEach((name: string) => {
             this.removeItem(name);
         })
     }

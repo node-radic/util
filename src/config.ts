@@ -1,21 +1,18 @@
 import { objectGet, objectExists, objectSet, recurse } from './object'
 // import merge = require("lodash/merge");
 // import cloneDeep = require("lodash/cloneDeep");
-import {merge,cloneDeep,template,templateSettings} from 'lodash'
+import { merge, cloneDeep, template, templateSettings } from 'lodash'
 
 
-export interface IDelimitersCollection
-{
+export interface IDelimitersCollection {
     [index: string]: IDelimiter;
 }
-export interface IDelimiterLodash
-{
+export interface IDelimiterLodash {
     evaluate: RegExp;
     interpolate: RegExp;
     escape: RegExp;
 }
-export interface IDelimiter
-{
+export interface IDelimiter {
     opener?: string;
     closer?: string;
     lodash?: IDelimiterLodash;
@@ -24,21 +21,19 @@ export interface IDelimiter
 /**
  * Inte
  */
-export interface IConfig
-{
-    get( prop?: any ): any;
-    set( prop: string, value: any ): IConfig;
-    merge( obj: Object ): IConfig;
-    merge( prop: string, obj: Object ): IConfig;
-    raw( prop?: any ): any;
-    process( raw: any ): any;
-    unset( prop: any ): any;
-    has( prop: any ): boolean;
+export interface IConfig {
+    get(prop?: any, defaultReturnValue?: any): any;
+    set(prop: string, value: any): IConfig;
+    merge(obj: Object): IConfig;
+    merge(prop: string, obj: Object): IConfig;
+    raw(prop?: any): any;
+    process(raw: any): any;
+    unset(prop: any): any;
+    has(prop: any): boolean;
 }
 
-export interface IConfigProperty extends IConfig
-{
-    ( args?: any ): any;
+export interface IConfigProperty extends IConfig {
+    (args?: any): any;
 }
 
 /**
@@ -70,14 +65,13 @@ export interface IConfigProperty extends IConfig
  * @see `Config` 'Config'
  * @see {PersistentConfig}
  */
-export class Config implements IConfig
-{
+export class Config implements IConfig {
     protected defaults: Object;
     protected data: Object;
     protected allDelimiters: IDelimitersCollection;
     protected static propStringTmplRe: RegExp = /^<%=\s*([a-z0-9_$]+(?:\.[a-z0-9_$]+)*)\s*%>$/i;
 
-    constructor( obj?: Object ) {
+    constructor(obj?: Object) {
         this.allDelimiters = {};
         this.addDelimiters('config', '<%', '%>');
         this.defaults = obj || {};
@@ -85,18 +79,18 @@ export class Config implements IConfig
     }
 
 
-    public unset( prop: any ): any {
+    public unset(prop: any): any {
         prop    = prop.split('.');
         var key = prop.pop();
         var obj = objectGet(this.data, Config.getPropString(prop.join('.')));
-        delete obj[key];
+        delete obj[ key ];
     }
 
-    public has( prop?: any ): boolean {
+    public has(prop?: any): boolean {
         return prop ? objectExists(this.data, Config.getPropString(prop)) : true;
     }
 
-    public raw( prop?: any ): any {
+    public raw(prop?: any): any {
         if ( prop ) {
             return objectGet(this.data, Config.getPropString(prop));
         }
@@ -105,30 +99,30 @@ export class Config implements IConfig
         }
     }
 
-    public get( prop?: any, def: any  = undefined): any {
-        return this.has(prop) ? this.process(this.raw(prop)) : def;
+    public get(prop?: any, defaultReturnValue: any = undefined): any {
+        return this.has(prop) ? this.process(this.raw(prop)) : defaultReturnValue;
     }
 
-    public set( prop: string, value: any ): IConfig {
+    public set(prop: string, value: any): IConfig {
         objectSet(this.data, Config.getPropString(prop), value);
         return this;
     }
 
-    public merge( ...args: any[] ): IConfig {
+    public merge(...args: any[]): IConfig {
         if ( args.length === 1 ) {
-            this.data = merge(this.data, args[0]);
+            this.data = merge(this.data, args[ 0 ]);
         }
         else {
-            var prop: string = args[0];
-            this.set(prop, merge(this.raw(prop), args[1]));
+            var prop: string = args[ 0 ];
+            this.set(prop, merge(this.raw(prop), args[ 1 ]));
         }
         return this;
     }
 
 
-    public process( raw: any ): any {
+    public process(raw: any): any {
         var self: Config = this;
-        return recurse(raw, function ( value ) {
+        return recurse(raw, function (value) {
             // If the value is not a string, return it.
             if ( typeof value !== 'string' ) {
                 return value;
@@ -138,7 +132,7 @@ export class Config implements IConfig
             var matches = value.match(Config.propStringTmplRe);
             var result;
             if ( matches ) {
-                result = self.get(matches[1]);
+                result = self.get(matches[ 1 ]);
                 // If the result retrieved from the config data wasn't null or undefined,
                 // return it.
                 if ( result != null ) {
@@ -146,12 +140,12 @@ export class Config implements IConfig
                 }
             }
             // Process the string as a template.
-            return self.processTemplate(value, { data : self.data });
+            return self.processTemplate(value, { data: self.data });
         });
     }
 
-    private addDelimiters( name, opener, closer ) {
-        var delimiters: IDelimiter = this.allDelimiters[name] = {};
+    private addDelimiters(name, opener, closer) {
+        var delimiters: IDelimiter = this.allDelimiters[ name ] = {};
         // Used by grunt.
         delimiters.opener = opener;
         delimiters.closer = closer;
@@ -160,15 +154,15 @@ export class Config implements IConfig
         var b             = '([\\s\\S]+?)' + delimiters.closer.replace(/(.)/g, '\\$1');
         // Used by Lo-Dash.
         delimiters.lodash = {
-            evaluate    : new RegExp(a + b, 'g'),
-            interpolate : new RegExp(a + '=' + b, 'g'),
-            escape      : new RegExp(a + '-' + b, 'g')
+            evaluate   : new RegExp(a + b, 'g'),
+            interpolate: new RegExp(a + '=' + b, 'g'),
+            escape     : new RegExp(a + '-' + b, 'g')
         };
     }
 
-    private setDelimiters( name ) {
+    private setDelimiters(name) {
         // Get the appropriate delimiters.
-        var delimiters: IDelimiter = this.allDelimiters[name in this.allDelimiters ? name : 'config'];
+        var delimiters: IDelimiter = this.allDelimiters[ name in this.allDelimiters ? name : 'config' ];
 
         // Tell Lo-Dash which delimiters to use.
         // templateSettings = delimiters.lodash;
@@ -176,8 +170,8 @@ export class Config implements IConfig
         return delimiters;
     }
 
-    private processTemplate( tmpl: string, options: any ): string {
-        if ( !options ) {
+    private processTemplate(tmpl: string, options: any): string {
+        if ( ! options ) {
             options = {};
         }
         // Set delimiters, and get a opening match character.
@@ -208,8 +202,8 @@ export class Config implements IConfig
     }
 
 
-    public static makeProperty( config: IConfig ): IConfigProperty {
-        var cf: any = function ( prop?: any ): any {
+    public static makeProperty(config: IConfig): IConfigProperty {
+        var cf: any = function (prop?: any): any {
             return config.get(prop);
         };
         cf.get      = config.get.bind(config);
@@ -223,11 +217,11 @@ export class Config implements IConfig
         return cf;
     }
 
-    public static getPropString( prop: any ): string {
+    public static getPropString(prop: any): string {
         return Array.isArray(prop) ? prop.map(this.escape).join('.') : prop;
     }
 
-    public static escape( str: string ): string {
+    public static escape(str: string): string {
         return str.replace(/\./g, '\\.');
     }
 
@@ -240,11 +234,10 @@ export class Config implements IConfig
 /**
  * The {PersistentConfig} PersistentConfig class
  */
-export class PersistentConfig extends Config
-{
+export class PersistentConfig extends Config {
     protected persistenceFilePath: string;
 
-    constructor( obj?: Object, persistenceFilePath?: string ) {
+    constructor(obj?: Object, persistenceFilePath?: string) {
         super(obj);
         // this.persistenceFilePath = persistenceFilePath || process.cwd();
         this.load();
@@ -263,20 +256,20 @@ export class PersistentConfig extends Config
     }
 
 
-    public unset( prop: any ): any {
+    public unset(prop: any): any {
         super.unset(prop);
         this.save();
         return this;
     }
 
-    public merge( ...args ): IConfig {
+    public merge(...args): IConfig {
         super.merge(args);
         this.save();
         return this;
     }
 
 
-    public set( prop: string, value: any ): IConfig {
+    public set(prop: string, value: any): IConfig {
         super.set(prop, value);
         this.save();
         return this;
