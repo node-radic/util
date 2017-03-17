@@ -1,6 +1,6 @@
 {
   "name": "@radic/util",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Utilities for node / browser",
   "main": "radic.util.js",
   "typings": "lib/index.d.ts",
