@@ -61,7 +61,8 @@ var tsLibProject = tsc.createProject("tsconfig.json", { module: "es2015", declar
 
 gulp.task("build-lib", function () {
     return gulp.src([
-        "src/**/*.ts"
+        "src/**/*.ts",
+        "!src/**/*.spec.ts"
     ])
         .pipe(tsLibProject())
         .on("error", function (err) {
@@ -180,11 +181,11 @@ gulp.task("build-test", function () {
 
 gulp.task("jasmine", function () {
     return gulp.src([
-        "spec/**/*Spec.js"
+        "src/**/*.spec.js"
     ])
         .pipe(jasmine({
             reporter: new SpecReporter(),
-            config  : require('./spec/support/jasmine.json')
+            config  : require('./jasmine.json')
         }))
 });
 //

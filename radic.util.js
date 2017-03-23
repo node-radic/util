@@ -4,6 +4,87 @@
     (factory((global.radic = global.radic || {}, global.radic.util = global.radic.util || {}),global._));
 }(this, (function (exports,lodash) { 'use strict';
 
+function round(value, places) {
+    var multiplier = Math.pow(10, places);
+    return (Math.round(value * multiplier) / multiplier);
+}
+function makeString(object) {
+    if (object == null)
+        return '';
+    return '' + object;
+}
+function defaultToWhiteSpace(characters) {
+    if (characters == null)
+        return '\\s';
+    else if (characters.source)
+        return characters.source;
+    else
+        return '[' + lodash.escapeRegExp(characters) + ']';
+}
+var kindsOf = {};
+'Number String Boolean Function RegExp Array Date Error'.split(' ').forEach(function (k) {
+    kindsOf['[object ' + k + ']'] = k.toLowerCase();
+});
+function kindOf(value) {
+    if (value == null) {
+        return String(value);
+    }
+    return kindsOf[kindsOf.toString.call(value)] || 'object';
+}
+function def(val, def) {
+    return defined(val) ? val : def;
+}
+function defined(obj) {
+    return lodash.isUndefined(obj) === false;
+}
+function getRandomId(length) {
+    if (lodash.isNumber(length)) {
+        length = 15;
+    }
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (var i = 0; i < length; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
+}
+function guid() {
+    return guidSeg() + guidSeg() + '-' + guidSeg() + '-' + guidSeg() + '-' +
+        guidSeg() + '-' + guidSeg() + guidSeg() + guidSeg();
+}
+function guidSeg() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+}
+function isLength(value, lengths) {
+    lengths = lengths.length === 1 && kindOf(lengths[0]) === 'array' ? lengths[0] : lengths;
+    var vLen;
+    if (value.length)
+        vLen = value.length;
+    else if (isFinite(value))
+        vLen = parseInt(value);
+    else
+        return [false];
+    var lens = [];
+    lengths.map(function (val) { return parseInt(val); }).forEach(function (len) { return lens[len] = vLen === len; });
+    return lens;
+}
+var isAnyLength = function (value) {
+    var lengths = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        lengths[_i - 1] = arguments[_i];
+    }
+    return isLength(value, lengths).indexOf(true) !== -1;
+};
+var isAllLength = function (value) {
+    var lengths = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        lengths[_i - 1] = arguments[_i];
+    }
+    return isLength(value, lengths).indexOf(false) === -1;
+};
+
 function getParts(str) {
     return str.replace(/\\\./g, '\uffff').split('.').map(function (s) {
         return s.replace(/\uffff/g, '.');
@@ -49,7 +130,7 @@ function recurse(value, fn, fnContinue) {
         if (fnContinue && fnContinue(value) === false) {
             return value;
         }
-        else if (typeof value === 'array') {
+        else if (kindOf(value) === 'array') {
             return value.map(function (item, index) {
                 return recurse(item, fn, fnContinue, {
                     objs: state.objs.concat([value]),
@@ -365,7 +446,13 @@ var Config = (function () {
         return this.has(prop) ? this.process(this.raw(prop)) : defaultReturnValue;
     };
     Config.prototype.set = function (prop, value) {
-        objectSet(this.data, Config.getPropString(prop), value);
+        var _this = this;
+        if (defined(value)) {
+            objectSet(this.data, Config.getPropString(prop), value);
+        }
+        else if (kindOf(prop) === 'object') {
+            Object.keys(prop).forEach(function (key) { return _this.set(key, prop[key]); });
+        }
         return this;
     };
     Config.prototype.merge = function () {
@@ -436,7 +523,13 @@ var Config = (function () {
         return tmpl.toString().replace(/\r\n|\n/g, '\n');
     };
     Config.makeProperty = function (config) {
-        var cf = function (prop) {
+        var cf = function (prop, val) {
+            if (defined(val)) {
+                return config.set(prop, val);
+            }
+            if (kindOf(prop) === 'object') {
+                return config.set(prop);
+            }
             return config.get(prop);
         };
         cf.get = config.get.bind(config);
@@ -511,87 +604,6 @@ function inspect() {
     }
     args.forEach(function (arg) { return console.dir(arg, { colors: true, depth: 5, showHidden: true }); });
 }
-
-var round = function round(value, places) {
-    var multiplier = Math.pow(10, places);
-    return (Math.round(value * multiplier) / multiplier);
-};
-var makeString = function makeString(object) {
-    if (object == null)
-        return '';
-    return '' + object;
-};
-var defaultToWhiteSpace = function defaultToWhiteSpace(characters) {
-    if (characters == null)
-        return '\\s';
-    else if (characters.source)
-        return characters.source;
-    else
-        return '[' + lodash.escapeRegExp(characters) + ']';
-};
-var kindsOf = {};
-'Number String Boolean Function RegExp Array Date Error'.split(' ').forEach(function (k) {
-    kindsOf['[object ' + k + ']'] = k.toLowerCase();
-});
-var kindOf = function kindOf(value) {
-    if (value == null) {
-        return String(value);
-    }
-    return kindsOf[kindsOf.toString.call(value)] || 'object';
-};
-var def = function def(val, def) {
-    return defined(val) ? val : def;
-};
-var defined = function defined(obj) {
-    return lodash.isUndefined(obj);
-};
-var getRandomId = function getRandomId(length) {
-    if (lodash.isNumber(length)) {
-        length = 15;
-    }
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for (var i = 0; i < length; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-    return text;
-};
-var guid = function guid() {
-    return guidSeg() + guidSeg() + '-' + guidSeg() + '-' + guidSeg() + '-' +
-        guidSeg() + '-' + guidSeg() + guidSeg() + guidSeg();
-};
-function guidSeg() {
-    return Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
-}
-function isLength(value, lengths) {
-    lengths = lengths.length === 1 && kindOf(lengths[0]) === 'array' ? lengths[0] : lengths;
-    var vLen;
-    if (value.length)
-        vLen = value.length;
-    else if (isFinite(value))
-        vLen = parseInt(value);
-    else
-        return [false];
-    var lens = [];
-    lengths.map(function (val) { return parseInt(val); }).forEach(function (len) { return lens[len] = vLen === len; });
-    return lens;
-}
-var isAnyLength = function (value) {
-    var lengths = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        lengths[_i - 1] = arguments[_i];
-    }
-    return isLength(value, lengths).indexOf(true) !== -1;
-};
-var isAllLength = function (value) {
-    var lengths = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        lengths[_i - 1] = arguments[_i];
-    }
-    return isLength(value, lengths).indexOf(false) === -1;
-};
 
 var old_json = JSON;
 var stringify = function stringify(obj) {

@@ -1,4 +1,5 @@
 import {uniq} from 'lodash'
+import { kindOf } from "./general";
 
 function getParts(str): any {
     return str.replace(/\\\./g, '\uffff').split('.').map(function (s) {
@@ -76,7 +77,7 @@ function recurse(value: Object, fn: Function, fnContinue?: Function): any {
             // Skip value if necessary.
             return value;
         }
-        else if ( typeof value === 'array' ) {
+        else if ( kindOf(value) === 'array' ) {
             // If value is an array, recurse.
             return value.map(function (item, index) {
                 return recurse(item, fn, fnContinue, {

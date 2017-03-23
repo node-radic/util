@@ -3,6 +3,15 @@ Utility JS functions for use in both browser and node.
 
 [View Documentation](docs/index.md)
 
+### Install
+```bash
+# using npm
+npm i -S @radic/util
+
+# using yarn
+yarn add @radic/util
+```
+
 ### Contribute
 - fork
 - git clone 

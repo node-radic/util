@@ -6,7 +6,7 @@ import { isNumber, escapeRegExp, isUndefined } from "lodash";
  * @param places
  * @returns {number}
  */
-export var round = function round(value, places) {
+export function round(value, places)  {
     var multiplier = Math.pow(10, places);
     return (Math.round(value * multiplier) / multiplier);
 }
@@ -18,13 +18,13 @@ export var round = function round(value, places) {
  * @param object
  * @returns {any}
  */
-export var makeString = function makeString(object) {
+export function makeString(object)  {
     if ( object == null ) return '';
     return '' + object;
 }
 
 
-export var defaultToWhiteSpace = function defaultToWhiteSpace(characters) {
+export function defaultToWhiteSpace(characters)  {
     if ( characters == null )
         return '\\s';
     else if ( characters.source )
@@ -55,7 +55,7 @@ var entityMap = {
  * @param value
  * @returns {any}
  */
-export var kindOf = function kindOf(value: any): any {
+export function kindOf(value: any): any  {
     // Null or undefined.
     if ( value == null ) {
         return String(value);
@@ -71,7 +71,7 @@ export var kindOf = function kindOf(value: any): any {
  * @param def
  * @returns {any}
  */
-export var def = function def(val, def) {
+export function def(val, def) : any  {
     return defined(val) ? val : def;
 }
 
@@ -81,8 +81,8 @@ export var def = function def(val, def) {
  * @param obj
  * @returns {boolean}
  */
-export var defined = function defined(obj?: any) {
-    return isUndefined(obj);
+export function defined(obj?: any) : boolean  {
+    return isUndefined(obj) === false ;
 }
 
 /**
@@ -91,7 +91,7 @@ export var defined = function defined(obj?: any) {
  * @param length
  * @returns {string}
  */
-export var getRandomId = function getRandomId(length?: number): string {
+export function getRandomId(length?: number): string  {
     if ( isNumber(length) ) {
         length = 15;
     }
@@ -103,7 +103,7 @@ export var getRandomId = function getRandomId(length?: number): string {
     return text;
 }
 
-export var guid = function guid() {
+export function guid() : string  {
     return guidSeg() + guidSeg() + '-' + guidSeg() + '-' + guidSeg() + '-' +
         guidSeg() + '-' + guidSeg() + guidSeg() + guidSeg();
 }

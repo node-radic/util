@@ -6,7 +6,6 @@
 /karma.conf.js
 *.js.map
 /src/*.js
-/spec/*.js
 /bower_components
 /npm-debug.log
 /es

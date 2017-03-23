@@ -7,7 +7,6 @@
         "sourceMap": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-
         "module": "commonjs",
         "moduleResolution": "node",
         "target": "es5",
@@ -28,5 +27,8 @@
     ],
     "files": [
         "src/index.ts"
+    ],
+    "include": [
+        "spec/**/*.ts"
     ]
 }

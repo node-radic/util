@@ -1,8 +1,8 @@
-import {Config, IConfig} from "../../src/config";
+import {Config, IConfig} from "./config";
 
 
 
-describe("Config", () => {
+describe("config", () => {
     let defaultConfig = {
         foo     : 'bar',
         fooNum  : 1,
