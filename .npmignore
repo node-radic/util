@@ -31,3 +31,4 @@ karma.conf.js
 /dts
 /spec
 /npm-debug.log
+/.idea
