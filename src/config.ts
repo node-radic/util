@@ -36,7 +36,7 @@ export interface IConfig {
 export interface IConfigProperty extends IConfig {
     (prop:string): any;
     (prop:Object): any;
-    (prop:string, val:any): any;
+    (prop:string, defaultReturnValue:any): any;
 }
 
 /**
@@ -210,9 +210,9 @@ export class Config implements IConfig {
 
 
     public static makeProperty(config: IConfig): IConfigProperty {
-        let cf: any = function (prop?: any, val?: any): any {
-            if ( defined(val) ) {
-                return config.set(prop, val);
+        let cf: any = function (prop?: any, defaultReturnValue?: any): any {
+            if ( defined(defaultReturnValue) ) {
+                return config.get(prop, defaultReturnValue);
             }
             if ( kindOf(prop) === 'object' ) {
                 return config.set(prop);
