@@ -26,5 +26,4 @@ function inspect(...args: any[])
     args.forEach((arg) => console.dir(arg, {colors: true, depth: 5, showHidden: true}));
 }
 
-
 export {inspect}

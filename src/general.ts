@@ -82,7 +82,7 @@ export function def(val, def) : any  {
  * @returns {boolean}
  */
 export function defined(obj?: any) : boolean  {
-    return isUndefined(obj) === false ;
+    return ! isUndefined(obj);
 }
 
 /**

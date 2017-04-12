@@ -1,7 +1,7 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('lodash')) :
-    typeof define === 'function' && define.amd ? define(['exports', 'lodash'], factory) :
-    (factory((global.radic = global.radic || {}, global.radic.util = global.radic.util || {}),global._));
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('lodash')) :
+	typeof define === 'function' && define.amd ? define(['exports', 'lodash'], factory) :
+	(factory((global.radic = global.radic || {}, global.radic.util = global.radic.util || {}),global._));
 }(this, (function (exports,lodash) { 'use strict';
 
 function round(value, places) {
@@ -35,7 +35,7 @@ function def(val, def) {
     return defined(val) ? val : def;
 }
 function defined(obj) {
-    return lodash.isUndefined(obj) === false;
+    return !lodash.isUndefined(obj);
 }
 function getRandomId(length) {
     if (lodash.isNumber(length)) {
@@ -412,11 +412,16 @@ var DependencySorter = (function () {
     return DependencySorter;
 }());
 
-var __extends = (undefined && undefined.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Config = (function () {
     function Config(obj) {
         this.allDelimiters = {};
@@ -523,9 +528,9 @@ var Config = (function () {
         return tmpl.toString().replace(/\r\n|\n/g, '\n');
     };
     Config.makeProperty = function (config) {
-        var cf = function (prop, val) {
-            if (defined(val)) {
-                return config.set(prop, val);
+        var cf = function (prop, defaultReturnValue) {
+            if (defined(defaultReturnValue)) {
+                return config.get(prop, defaultReturnValue);
             }
             if (kindOf(prop) === 'object') {
                 return config.set(prop);
@@ -949,11 +954,16 @@ var color = function color(name, variant, prefixHexSymbol) {
     throw new Error('Could not find color [' + name + '] variant [' + variant + '] in materials.color()');
 };
 
-var __extends$1 = (undefined && undefined.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends$1 = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Storage = (function () {
     function Storage() {
     }

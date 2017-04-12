@@ -378,4 +378,3 @@ export class CookieStorage extends BaseStorageProvider implements IStorageProvid
 
 }
 
-
