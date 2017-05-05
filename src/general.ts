@@ -1,4 +1,4 @@
-import { isNumber, escapeRegExp, isUndefined } from "lodash";
+import { escapeRegExp, isNumber, isUndefined } from "lodash";
 
 /**
  * Round a value to a precision
@@ -6,7 +6,7 @@ import { isNumber, escapeRegExp, isUndefined } from "lodash";
  * @param places
  * @returns {number}
  */
-export function round(value, places)  {
+export function round(value, places) {
     var multiplier = Math.pow(10, places);
     return (Math.round(value * multiplier) / multiplier);
 }
@@ -18,13 +18,13 @@ export function round(value, places)  {
  * @param object
  * @returns {any}
  */
-export function makeString(object)  {
+export function makeString(object) {
     if ( object == null ) return '';
     return '' + object;
 }
 
 
-export function defaultToWhiteSpace(characters)  {
+export function defaultToWhiteSpace(characters) {
     if ( characters == null )
         return '\\s';
     else if ( characters.source )
@@ -34,13 +34,15 @@ export function defaultToWhiteSpace(characters)  {
 }
 
 
-var kindsOf: any = {};
+let kindsOf: any = {};
 'Number String Boolean Function RegExp Array Date Error'.split(' ').forEach(function (k) {
     kindsOf[ '[object ' + k + ']' ] = k.toLowerCase();
 });
-var nativeTrim = String.prototype.trim;
+export type KindOf = 'number' | 'string' | 'boolean' | 'function' | 'regexp' | 'array' | 'date' | 'error' | 'object' | 'null' | 'undefined'
 
-var entityMap = {
+let nativeTrim = String.prototype.trim;
+
+let entityMap = {
     "&": "&amp;",
     "<": "&lt;",
     ">": "&gt;",
@@ -55,10 +57,10 @@ var entityMap = {
  * @param value
  * @returns {any}
  */
-export function kindOf(value: any): any  {
+export function kindOf(value: any): KindOf {
     // Null or undefined.
     if ( value == null ) {
-        return String(value);
+        return <any> String(value);
     }
     // Everything else.
     return kindsOf[ kindsOf.toString.call(value) ] || 'object';
@@ -71,7 +73,7 @@ export function kindOf(value: any): any  {
  * @param def
  * @returns {any}
  */
-export function def(val, def) : any  {
+export function def(val, def): any {
     return defined(val) ? val : def;
 }
 
@@ -81,7 +83,7 @@ export function def(val, def) : any  {
  * @param obj
  * @returns {boolean}
  */
-export function defined(obj?: any) : boolean  {
+export function defined(obj?: any): boolean {
     return ! isUndefined(obj);
 }
 
@@ -91,7 +93,7 @@ export function defined(obj?: any) : boolean  {
  * @param length
  * @returns {string}
  */
-export function getRandomId(length?: number): string  {
+export function getRandomId(length?: number): string {
     if ( isNumber(length) ) {
         length = 15;
     }
@@ -103,7 +105,7 @@ export function getRandomId(length?: number): string  {
     return text;
 }
 
-export function guid() : string  {
+export function guid(): string {
     return guidSeg() + guidSeg() + '-' + guidSeg() + '-' + guidSeg() + '-' +
         guidSeg() + '-' + guidSeg() + guidSeg() + guidSeg();
 }
