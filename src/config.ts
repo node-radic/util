@@ -23,7 +23,7 @@ export interface IDelimiter {
  * Inte
  */
 export interface IConfig {
-    get(prop?: any, defaultReturnValue?: any): any;
+    get<T extends any>(prop?: any, defaultReturnValue?: any): T;
     set(prop: string | Object, value?: any): IConfig;
     merge(obj: Object): IConfig;
     merge(prop: string, obj: Object): IConfig;
