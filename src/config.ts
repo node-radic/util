@@ -1,7 +1,7 @@
-import { objectGet, objectExists, objectSet, recurse } from './object'
+import { objectExists, objectGet, objectSet, recurse } from "./object";
 // import merge = require("lodash/merge");
 // import cloneDeep = require("lodash/cloneDeep");
-import { merge, cloneDeep, template, templateSettings } from 'lodash'
+import { cloneDeep, merge, template } from "lodash";
 import { defined, kindOf } from "./general";
 
 
@@ -24,7 +24,7 @@ export interface IDelimiter {
  */
 export interface IConfig {
     get(prop?: any, defaultReturnValue?: any): any;
-    set(prop: string|Object, value?: any): IConfig;
+    set(prop: string | Object, value?: any): IConfig;
     merge(obj: Object): IConfig;
     merge(prop: string, obj: Object): IConfig;
     raw(prop?: any): any;
@@ -34,9 +34,9 @@ export interface IConfig {
 }
 
 export interface IConfigProperty extends IConfig {
-    (prop:string): any;
-    (prop:Object): any;
-    (prop:string, defaultReturnValue:any): any;
+    (prop: string): any;
+    (prop: Object): any;
+    (prop: string, defaultReturnValue: any): any;
 }
 
 /**
@@ -102,11 +102,11 @@ export class Config implements IConfig {
         }
     }
 
-    public get(prop?: any, defaultReturnValue: any = undefined): any {
+    public get<T extends any>(prop?: any, defaultReturnValue: any = undefined): T {
         return this.has(prop) ? this.process(this.raw(prop)) : defaultReturnValue;
     }
 
-    public set(prop: string|Object, value?: any): IConfig {
+    public set(prop: string | Object, value?: any): IConfig {
         if ( defined(value) ) {
             objectSet(this.data, Config.getPropString(prop), value);
         } else if ( kindOf(prop) === 'object' ) {

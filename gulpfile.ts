@@ -72,7 +72,7 @@ const  //gulp        = require("gulp"),
     istanbul           = require("gulp-istanbul"),
     jasmine            = require("gulp-jasmine"),
     clean              = require('gulp-clean'),
-
+    size = require('gulp-filesize'),
     SpecReporter       = require('jasmine-spec-reporter')
 ;
 
@@ -185,7 +185,8 @@ gulp.task('build-umd', [ 'build-lib' ], (cb) => {
         gulp.dest('./'),
         clean(),
         rename('radic.util.js'),
-        gulp.dest('./')
+        gulp.dest('./'),
+        size()
     ], cb)
 });
 
@@ -194,7 +195,8 @@ gulp.task('build-umd:minify', [ 'build-umd' ], (cb) => {
         gulp.src('./radic.util.js'),
         uglify(),
         rename('radic.util.min.js'),
-        gulp.dest('./')
+        gulp.dest('./'),
+        size()
     ], cb)
 })
 

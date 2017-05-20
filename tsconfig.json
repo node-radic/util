@@ -7,6 +7,7 @@
         "sourceMap": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
         "module": "commonjs",
         "moduleResolution": "node",
         "target": "es5",
