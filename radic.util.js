@@ -411,6 +411,29 @@ var DependencySorter = (function () {
     };
     return DependencySorter;
 }());
+function everyKey(obj, cb) {
+    var objs = [];
+    Object.keys(obj).forEach(function (key, index, keys) {
+        objs.push(cb(key, obj[key], index, keys));
+    });
+    return objs;
+}
+function omap(obj, cb) {
+    Object.keys(obj).forEach(function (key, index, keys) {
+        var result = cb(obj[key], key, index, keys);
+        var type = kindOf(result);
+        if (type === 'object') {
+            obj[key] = result;
+        }
+        else if (type === 'array') {
+            var newKey = result[0];
+            var newObj = result[1];
+            delete obj[key];
+            obj[newKey] = newObj;
+        }
+    });
+    return obj;
+}
 
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -560,8 +583,9 @@ var Config = (function () {
 Config.propStringTmplRe = /^<%=\s*([a-z0-9_$]+(?:\.[a-z0-9_$]+)*)\s*%>$/i;
 var PersistentConfig = (function (_super) {
     __extends(PersistentConfig, _super);
-    function PersistentConfig(obj, persistenceFilePath) {
+    function PersistentConfig(obj) {
         var _this = _super.call(this, obj) || this;
+        _this.enabled = true;
         _this.load();
         return _this;
     }
@@ -587,6 +611,20 @@ var PersistentConfig = (function (_super) {
         _super.prototype.set.call(this, prop, value);
         this.save();
         return this;
+    };
+    PersistentConfig.makeProperty = function (config) {
+        var cf = function (prop, defaultReturnValue) {
+            if (defined(defaultReturnValue)) {
+                return config.get(prop, defaultReturnValue);
+            }
+            if (kindOf(prop) === 'object') {
+                return config.set(prop);
+            }
+            return config.get(prop);
+        };
+        cf.load = config.get.bind(config);
+        cf.safef = config.set.bind(config);
+        return cf;
     };
     return PersistentConfig;
 }(Config));
@@ -1314,6 +1352,8 @@ exports.colors = colors;
 exports.color = color;
 exports.StringType = StringType;
 exports.DependencySorter = DependencySorter;
+exports.everyKey = everyKey;
+exports.omap = omap;
 exports.getParts = getParts;
 exports.objectExists = objectExists;
 exports.objectGet = objectGet;

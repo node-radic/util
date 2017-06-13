@@ -248,11 +248,10 @@ export class Config implements IConfig {
  * The {PersistentConfig} PersistentConfig class
  */
 export class PersistentConfig extends Config {
-    protected persistenceFilePath: string;
+    protected enabled: boolean = true;
 
-    constructor(obj?: Object, persistenceFilePath?: string) {
+    constructor(obj?: Object) {
         super(obj);
-        // this.persistenceFilePath = persistenceFilePath || process.cwd();
         this.load();
     }
 
@@ -265,7 +264,7 @@ export class PersistentConfig extends Config {
         // if ( false === fs.existsSync(this.persistenceFilePath) ) {
         //     this.save();
         // }
-        // this.data = _.merge(this.defaults, fs.readJsonSync(this.persistenceFilePath));
+        // this.data = _.merge(this.defaults, readJsonSync(this.persistenceFilePath));
     }
 
 
@@ -287,4 +286,24 @@ export class PersistentConfig extends Config {
         this.save();
         return this;
     }
+
+
+
+
+    public static makeProperty(config: IConfig): IConfigProperty {
+        let cf: any = function (prop?: any, defaultReturnValue?: any): any {
+            if ( defined(defaultReturnValue) ) {
+                return config.get(prop, defaultReturnValue);
+            }
+            if ( kindOf(prop) === 'object' ) {
+                return config.set(prop);
+            }
+            return config.get(prop);
+        };
+        cf.load = config.get.bind(config);
+        cf.safef      = config.set.bind(config);
+
+        return cf;
+    }
+
 }

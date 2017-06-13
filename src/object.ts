@@ -500,5 +500,32 @@ export class DependencySorter {
 
 }
 
+export function everyKey<T extends object, U extends T>(obj: T, cb: (key?: string, obj?: T, index?: number, keys?: string[]) => U ): U[] {
+    let objs = [];
+    Object.keys(obj).forEach((key: string, index: number, keys: string[]) => {
+        objs.push(cb(key, obj[ key ], index, keys))
+    });
+    return objs
+}
+
+export type KeyObjectArray<T extends object> = [string, T]
+
+export function omap<T extends object>(obj: T, cb: (obj?: T, key?:string, index?:number, keys?:string[]) => T | KeyObjectArray<T> ) : T{
+    Object.keys(obj).forEach((key, index, keys) => {
+        let result = cb(obj[ key ], key, index, keys)
+        let type   = kindOf(result);
+        if ( type === 'object' ) {
+            obj[ key ] = result;
+        } else if ( type === 'array' ) {
+            let newKey = result[ 0 ]
+            let newObj = result[ 1 ];
+            delete obj[ key ];
+            obj[ newKey ] = newObj;
+        }
+    })
+    return obj;
+}
+
+
 
 export { getParts, objectExists, objectGet, objectSet, copyObject, applyMixins, recurse, dotize }
