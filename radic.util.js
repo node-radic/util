@@ -471,6 +471,9 @@ var Config = (function () {
     };
     Config.prototype.get = function (prop, defaultReturnValue) {
         if (defaultReturnValue === void 0) { defaultReturnValue = undefined; }
+        if (!prop || prop.toString().length === 0) {
+            return this.process(this.raw());
+        }
         return this.has(prop) ? this.process(this.raw(prop)) : defaultReturnValue;
     };
     Config.prototype.set = function (prop, value) {
