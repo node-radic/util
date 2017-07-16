@@ -103,6 +103,9 @@ export class Config implements IConfig {
     }
 
     public get<T extends any>(prop?: any, defaultReturnValue: any = undefined): T {
+        if(! prop || prop.toString().length === 0){
+            return this.process(this.raw())
+        }
         return this.has(prop) ? this.process(this.raw(prop)) : defaultReturnValue;
     }
 
