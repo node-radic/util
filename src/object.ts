@@ -184,6 +184,12 @@ function dotize(obj: any, prefix?: any) {
     return recurse(obj, prefix);
 }
 
+function objectLoop(obj:any, callback:(key:string, item:any)=>void) {
+    Object.keys(obj).forEach((key:string) =>{
+        callback(key, obj[key])
+    })
+}
+
 export class StringType {
     constructor(public value: string) { }
 
@@ -528,4 +534,4 @@ export function omap<T extends object>(obj: T, cb: (obj?: T, key?:string, index?
 
 
 
-export { getParts, objectExists, objectGet, objectSet, copyObject, applyMixins, recurse, dotize }
+export { objectLoop,getParts, objectExists, objectGet, objectSet, copyObject, applyMixins, recurse, dotize }

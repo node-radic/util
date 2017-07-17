@@ -209,6 +209,11 @@ function dotize(obj, prefix) {
     }
     return recurse(obj, prefix);
 }
+function objectLoop(obj, callback) {
+    Object.keys(obj).forEach(function (key) {
+        callback(key, obj[key]);
+    });
+}
 var StringType = (function () {
     function StringType(value) {
         this.value = value;
@@ -1357,6 +1362,7 @@ exports.StringType = StringType;
 exports.DependencySorter = DependencySorter;
 exports.everyKey = everyKey;
 exports.omap = omap;
+exports.objectLoop = objectLoop;
 exports.getParts = getParts;
 exports.objectExists = objectExists;
 exports.objectGet = objectGet;

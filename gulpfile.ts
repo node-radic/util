@@ -105,7 +105,7 @@ gulp.task('clean:src', () => gulp.src([ '{src,spec}/*.{js,js.map}', '*.{js,js.ma
 //******************************************************************************
 //* BUILD
 //******************************************************************************
-var tsLibProject = tsc.createProject("tsconfig.json", { module: "es2015", declaration: true, typescript: require("typescript") });
+var tsLibProject = tsc.createProject("tsconfig.json", { module: "es2015",  declaration: true, typescript: require("typescript") });
 
 gulp.task("build-lib", function () {
     return gulp.src([
