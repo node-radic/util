@@ -5,7 +5,7 @@
   "main": "radic.util.js",
   "typings": "lib/index.d.ts",
   "jsnext:main": "lib/index.js",
-  "repository": "node-radic/util",
+  "repository": "https://bitbucket.org/robin-radic/util",
   "private": false,
   "scripts": {
     "build": "gulp build",
