@@ -18,11 +18,11 @@ describe("object", () => {
         }
 
     })
-    describe('everyKey', () => {
-        omap(obj, (obj: OT, key: string) => {
-            obj.foo.foo = [ 1 ]
-            obj.bar.foo = [ 'as' ]
-            return obj;
-        })
-    })
+    // describe('everyKey', () => {
+    //     omap(obj, (obj: OT, key: string) => {
+    //         obj.foo.foo = [ 1 ]
+    //         obj.bar.foo = [ 'as' ]
+    //         return obj;
+    //     })
+    // })
 });

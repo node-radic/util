@@ -439,6 +439,33 @@ function omap(obj, cb) {
     });
     return obj;
 }
+function Mixin() {
+    var mixins = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        mixins[_i] = arguments[_i];
+    }
+    return mixins.reduceRight(function (prev, cur) { return __extends$1(cur, prev); }, (function () {
+        function class_1() {
+        }
+        return class_1;
+    }()));
+}
+function __extends$1(f, s) {
+    var mixedClass = (function () {
+        function class_2() {
+            return f.apply(s.apply(this, arguments) || this, arguments);
+        }
+        return class_2;
+    }());
+    void Object.assign(mixedClass.prototype, f.prototype, s.prototype);
+    for (var p in s)
+        if (s.hasOwnProperty(p))
+            mixedClass[p] = s[p];
+    for (var p in f)
+        if (f.hasOwnProperty(p))
+            mixedClass[p] = f[p];
+    return mixedClass;
+}
 
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -1000,7 +1027,7 @@ var color = function color(name, variant, prefixHexSymbol) {
     throw new Error('Could not find color [' + name + '] variant [' + variant + '] in materials.color()');
 };
 
-var __extends$1 = (undefined && undefined.__extends) || (function () {
+var __extends$2 = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
         function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
@@ -1126,7 +1153,7 @@ var BaseStorageProvider = (function () {
     return BaseStorageProvider;
 }());
 var LocalStorage = (function (_super) {
-    __extends$1(LocalStorage, _super);
+    __extends$2(LocalStorage, _super);
     function LocalStorage() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -1179,7 +1206,7 @@ var LocalStorage = (function (_super) {
     return LocalStorage;
 }(BaseStorageProvider));
 var SessionStorage = (function (_super) {
-    __extends$1(SessionStorage, _super);
+    __extends$2(SessionStorage, _super);
     function SessionStorage() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -1232,7 +1259,7 @@ var SessionStorage = (function (_super) {
     return SessionStorage;
 }(BaseStorageProvider));
 var CookieStorage = (function (_super) {
-    __extends$1(CookieStorage, _super);
+    __extends$2(CookieStorage, _super);
     function CookieStorage() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.cookieRegistry = [];
@@ -1362,6 +1389,7 @@ exports.StringType = StringType;
 exports.DependencySorter = DependencySorter;
 exports.everyKey = everyKey;
 exports.omap = omap;
+exports.Mixin = Mixin;
 exports.objectLoop = objectLoop;
 exports.getParts = getParts;
 exports.objectExists = objectExists;

@@ -533,5 +533,31 @@ export function omap<T extends object>(obj: T, cb: (obj?: T, key?:string, index?
 }
 
 
+/**
+ * https://github.com/likerRr/ts-mixin
+ * @param mixins
+ * @constructor
+ */
+export function Mixin<T>(...mixins: Array<new (...args: any[]) => any>): new (...args: any[]) => T {
+    return mixins.reduceRight((prev, cur) => __extends(cur, prev), class {});
+}
+
+function __extends(f: MixinFunction, s: MixinFunction): MixinFunction {
+    const mixedClass = class {
+        constructor() {
+            return f.apply(s.apply(this, arguments) || this, arguments);
+        }
+    };
+    void Object.assign(mixedClass.prototype, f.prototype, s.prototype);
+    for (const p in s) if (s.hasOwnProperty(p)) mixedClass[p] = s[p];
+    for (const p in f) if (f.hasOwnProperty(p)) mixedClass[p] = f[p];
+
+    return mixedClass;
+}
+
+interface MixinFunction {
+    new (...args: any[]): any;
+}
+
 
 export { objectLoop,getParts, objectExists, objectGet, objectSet, copyObject, applyMixins, recurse, dotize }
