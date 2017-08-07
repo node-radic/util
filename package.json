@@ -16,7 +16,8 @@
     "minor": "mversion minor -m",
     "major": "mversion major -m",
     "posttest": "echo \"DONE!\"",
-    "docs": "rm -r docs/typedocs &> /dev/null ; typedoc --hideGenerator --includeDeclarations --mode file --out docs/typedocs --readme README.md --tsconfig tsconfig.docs.json src"
+      "docs": "rm -r docs &> /dev/null ; typedoc --includeDeclarations --target ES6 --exclude spec example example2 node_modules types/lodash --ignoreCompilerErrors --mode file --excludeExternals --excludePrivate --readme docs.md --out docs --tsconfig tsconfig.docs.json src",
+      "deploy:docs": "npm run dev:docs && gulp ghpages"
   },
   "author": "Robin Radic",
   "license": "MIT",
@@ -40,6 +41,8 @@
     "globule": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
+    "gulp-filesize": "^0.0.6",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-header": "1.8.8",
     "gulp-istanbul": "^1.0.0",
     "gulp-jasmine": "^2.4.1",

@@ -16,20 +16,12 @@
         "typeRoots": [
             "./node_modules/@types",
             "./types"
-        ],
-        "types": [
-            "lodash",
-            "jasmine",
-            "node"
         ]
     },
     "exclude": [
         "gulpfile.ts"
     ],
-    "files": [
-        "src/index.ts"
-    ],
     "include": [
-        "spec/**/*.ts"
+        "src","spec"
     ]
 }

@@ -1,5 +1,5 @@
-import { defined } from './general'
-import { isString, merge } from 'lodash'
+import { merge } from 'lodash'
+import { kindOf } from "./general";
 
 export type StorageType = 'local' | 'session' | 'cookie' | string;
 
@@ -53,76 +53,118 @@ export class Storage {
 
 export interface IStorageProvider {
     length: number;
+
     onStoreEvent(callback: Function);
+
     clear(): void;
+
     getItem(key: string): any;
+
     key(index: number): string;
+
     removeItem(key: string): void;
-    setItem(key: string, data: string, expires?: number|Date): void;
+
+    setItem(key: string, data: string, expires?: number | Date): void;
+
     hasItem(key: string): boolean;
+
     getSize(key: any): string;
 }
 
 
 export interface IStorageBagOptions {
-    json?: boolean
+    json?: boolean,
+    expires?: number
 }
 
+export class StorageMeta implements IStorageBagOptions {
+
+    json: boolean   = true
+    expires: number = null
+
+    constructor(options: IStorageBagOptions = {}) {
+        merge(this, {
+            json   : true,
+            expires: null
+        }, options);
+    }
+
+    merge(options: IStorageBagOptions): this {
+        merge(this, options);
+        return this;
+    }
+
+    static create(options?: IStorageBagOptions): StorageMeta { return new StorageMeta(options); }
+
+    static fromString(meta: string): StorageMeta { return new StorageMeta(JSON.parse(meta)); }
+
+    toString(): string { return JSON.stringify({ json: this.json, expires: this.expires }); }
+
+    expiresIn(minutes: number) { this.expires = Math.floor((Date.now() / 1000) / 60) + minutes; }
+
+    isExpired(): boolean {
+        if ( ! this.canExpire() ) {
+            return false;
+        }
+        let now = Math.floor((Date.now() / 1000) / 60);
+        return now > this.expires;
+    }
+
+    canExpire(): boolean { return this.expires && this.expires !== null && kindOf(this.expires) === "number"; }
+
+    isJSON(): boolean { return this.json === true }
+
+    setJSON(val: boolean) { this.json = val }
+}
+export type StorageEvent = 'set' | 'del' | 'clear'
 export class StorageBag {
     provider: IStorageProvider;
     options: IStorageBagOptions = {
-        json: true
+        json   : true,
+        expires: null
     }
 
-    constructor(provider: IStorageProvider, options:IStorageBagOptions={}) {
+    constructor(provider: IStorageProvider, options: IStorageBagOptions = {}) {
         this.provider = provider;
         merge(this.options, options);
     }
 
-    on(callback: Function) {
+    on(event:StorageEvent, callback: Function) {
+        this.listeners[event].push(callback);
         this.provider.onStoreEvent(callback);
     }
 
-    set(key: any, val: any, options?: any) {
-        options = merge({ json: true, expires: false }, options);
-        if ( options.json ) {
-            val = JSON.stringify(val);
-        }
-        if ( options.expires ) {
-            let now = Math.floor((Date.now() / 1000) / 60);
-            this.provider.setItem(key + ':expire', now + options.expires);
-        }
-        this.provider.setItem(key, val);
+    listeners:{[event:string]:Function[]} = {set: [], del: [], clear: []}
+
+    protected fireEvent(event:StorageEvent, params:any[]=[]){
+        this.listeners[event].forEach(listener => listener.apply(this, params));
     }
 
-    get(key: any, defaultReturn:any=null, options?: any) {
-        options = merge({ json: this.options.json, default: defaultReturn}, options);
-
-        if ( ! key ) {
-            return options.default;
+    get <T extends any>(key: any, defaultReturn: any = null, options: IStorageBagOptions = {}): T {
+        if ( ! this.has(key) ) {
+            return defaultReturn;
+        }
+        const meta = StorageMeta.fromString(this.provider.getItem(key + ':meta'));
+        if ( meta.canExpire() && meta.isExpired() ) {
+            this.del(key);
+            return defaultReturn;
         }
 
-        if ( isString(this.provider.getItem(key)) ) {
-            if ( isString(this.provider.getItem(key + ':expire')) ) {
-                let now     = Math.floor((Date.now() / 1000) / 60);
-                let expires = parseInt(this.provider.getItem(key + ':expire'));
-                if ( now > expires ) {
-                    this.del(key);
-                    this.del(key + ':expire');
-                }
-            }
+        let val = this.provider.getItem(key);
+        if ( meta.isJSON() ) {
+            val = JSON.parse(val);
         }
+        return <T> val;
+    }
 
-        let val: any = this.provider.getItem(key);
-
-        if ( ! val || val !== undefined && val == null ) {
-            return options.default;
+    set (key: any, val: any, options: IStorageBagOptions = {}) {
+        const meta = StorageMeta.create(this.options).merge(options);
+        if ( meta.isJSON() ) {
+            val = JSON.stringify(val);
         }
-
-        if ( options.json ) {
-            return JSON.parse(val);
-        }
-        return val;
+        this.provider.setItem(key + ':meta', meta.toString());
+        this.provider.setItem(key, val);
+        this.fireEvent('set', [key, val, meta]);
     }
 
     has(key) {
@@ -136,6 +178,8 @@ export class StorageBag {
      */
     del(key) {
         this.provider.removeItem(key);
+        this.provider.removeItem(key + ':meta');
+        this.fireEvent('del', [key]);
     }
 
     /**
@@ -143,6 +187,7 @@ export class StorageBag {
      */
     clear() {
         this.provider.clear();
+        this.fireEvent('clear');
     }
 
 
