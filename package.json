@@ -1,6 +1,6 @@
 {
   "name": "@radic/util",
-  "version": "1.7.5",
+  "version": "2.0.0",
   "description": "Utilities for node / browser",
   "main": "radic.util.js",
   "typings": "lib/index.d.ts",
@@ -16,8 +16,8 @@
     "minor": "mversion minor -m",
     "major": "mversion major -m",
     "posttest": "echo \"DONE!\"",
-      "docs": "rm -r docs &> /dev/null ; typedoc --includeDeclarations --target ES6 --exclude spec example example2 node_modules types/lodash --ignoreCompilerErrors --mode file --excludeExternals --excludePrivate --readme docs.md --out docs --tsconfig tsconfig.docs.json src",
-      "deploy:docs": "npm run dev:docs && gulp ghpages"
+    "docs": "rm -r docs &> /dev/null ; typedoc --includeDeclarations --target ES6 --exclude spec example example2 node_modules types/lodash --ignoreCompilerErrors --mode file --excludeExternals --excludePrivate --readme docs.md --out docs --tsconfig tsconfig.docs.json src",
+    "deploy:docs": "npm run dev:docs && gulp ghpages"
   },
   "author": "Robin Radic",
   "license": "MIT",
