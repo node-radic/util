@@ -22,7 +22,8 @@
         "docs:deploy": "npm run docs:generate; gulp ghpages",
         "preversion": "npm test",
         "version": "npm run build && git add -A",
-        "postversion": "git push && git push --tags  && npm run docs:deploy && npm run clean"
+        "postversion": "git push && git push --tags && npm publish --access public",
+        "postpublish": "npm run docs:deploy"
     },
     "author": "Robin Radic",
     "license": "MIT",
