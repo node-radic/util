@@ -17,3 +17,6 @@
 /docs
 /.publish
 /lib-es6
+/.nyc_output
+/radic.util.js
+/radic.util.min.js
