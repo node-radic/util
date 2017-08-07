@@ -1,265 +1,124 @@
 import * as gulp from "gulp";
-import * as karma from "karma";
-import * as chalk from "chalk";
+import { WatchOptions } from "gulp";
 import * as _ from "lodash";
+import * as rollup from 'gulp-rollup'
 
+const
+    pump        = require('pump'),
+    uglify      = require("gulp-uglify"),
+    rollup      = require('gulp-rollup'),
+    rename      = require("gulp-rename"),
+    runSequence = require("run-sequence"),
 
-/**
- * @type {gulp}
- */
-const  //gulp        = require("gulp"),
-    pump         = require('pump'),
-    browserify   = require("browserify"),
-    source       = require("vinyl-source-stream"),
-    buffer       = require("vinyl-buffer"),
-    tslint       = require("gulp-tslint"),
-    tsc          = require("gulp-typescript"),
-    sourcemaps   = require("gulp-sourcemaps"),
-    uglify       = require("gulp-uglify"),
-    rollup       = require('gulp-rollup'),
-    rename       = require("gulp-rename"),
-    runSequence  = require("run-sequence"),
-    mocha        = require("gulp-mocha"),
-    istanbul     = require("gulp-istanbul"),
-    jasmine      = require("gulp-jasmine"),
-    clean        = require('gulp-clean'),
-    ghPages      = require("gulp-gh-pages"),
-    size         = require('gulp-filesize'),
-    SpecReporter = require('jasmine-spec-reporter')
+    clean       = require('gulp-clean'),
+    ghPages     = require("gulp-gh-pages"),
+    size        = require("gulp-filesize"),
+
+    tsc         = require('gulp-typescript'),
+    ts          = require('typescript')
 ;
-
-const c = {
-    src          : [ 'src/**/*.ts' ],
+const c         = {
+    src          : [ 'src/**/*.ts',
+        "!src/**/*.spec.ts" ],
     fileName     : 'util',
     moduleName   : '@radic/util',
     umdModuleName: 'radic.util'
 }
 
-gulp.task('clean', [ 'clean:src', 'clean:build' ])
-gulp.task('clean:build', () => gulp.src([ 'dist', 'dts', 'es', 'lib', 'umd', 'coverage' ]).pipe(clean()))
-gulp.task('clean:src', () => gulp.src([ '{src,spec}/*.{js,js.map}', '*.{js,js.map}' ]).pipe(clean()))
+// import typedoc from 'gulp-typedoc';
+// typedoc({})
+const tsProject = {
+    es  : tsc.createProject("tsconfig.json", { module: "es2015",  declaration: false, typescript: ts }),
+    src : tsc.createProject("tsconfig.json", { typescript: ts, sourceMap: true }),
+    lib : tsc.createProject("tsconfig.json", { typescript: ts, declaration: false, target: 'es5' }),
+    dts : tsc.createProject("tsconfig.json", { typescript: ts, declaration: true, target: 'es5' }),
+    test: tsc.createProject("tsconfig.json", { target: "es6", sourceMap: true, typescript: ts })
+};
+gulp.task('clean', [ 'clean:src:js', 'clean:build', 'clean:docs' ], (cb) => pump([ gulp.src([ '.nyc_output', 'coverage' ]), clean() ]))
+gulp.task('clean:docs', (cb) => pump([ gulp.src([ 'docs', '.publish' ]), clean() ]))
+gulp.task('clean:build', (cb) => pump([ gulp.src([ 'lib', 'lib-es6', 'dts', 'coverage', '.publish', 'docs' ]), clean() ]));
+gulp.task('clean:watch', (cb) => pump([ gulp.src([ 'lib', 'dts' ]), clean() ]));
 
-//******************************************************************************
-//* LINT
-//******************************************************************************
-// gulp.task("lint", function() {
-//
-//     var config =  { formatter: "verbose", emitError: (process.env.CI) ? true : false };
-// return gulp.run
-//     return gulp.src([
-//         "src/**/**.ts",
-//         "test/**/**.test.ts"
-//     ])
-//         .pipe(tslint(config))
-//         .pipe(tslint.report());
-// });
+gulp.task('clean:src:js', (cb) => pump([ gulp.src([ '{src,examples}/*.{js,js.map}', '*.{js,js.map}' ]), clean() ]));
+gulp.task('clean:test:js', (cb) => pump([ gulp.src([ '{tests}/*.{js,js.map}', '*.{js,js.map}' ]), clean() ]));
 
-//******************************************************************************
-//* BUILD
-//******************************************************************************
-var tsLibProject = tsc.createProject("tsconfig.json", { module: "es2015", declaration: true, typescript: require("typescript") });
+gulp.task('clean:dts:js', (cb) => pump([ gulp.src([ 'dts/**/*.js' ]), clean() ]))
 
-gulp.task("build-lib", function () {
-    return gulp.src([
-        "src/**/*.ts",
-        "!src/**/*.spec.ts"
-    ])
-        .pipe(tsLibProject())
-        .on("error", function (err) {
-            process.exit(1);
-        })
-        .pipe(gulp.dest("lib/"))
-});
+gulp.task("build:lib:es6", (cb) => pump([
+    gulp.src(c.src),
+    tsProject.es(),
+    gulp.dest("lib-es6/")
+]))
 
-// var tsEsProject = tsc.createProject("tsconfig.json", { module: "es2015", typescript: require("typescript") });
-//
-// gulp.task("build-es", function () {
-//     return gulp.src([
-//         "src/**/*.ts"
-//     ])
-//         .pipe(tsEsProject())
-//         .on("error", function (err) {
-//             process.exit(1);
-//         })
-//         .js.pipe(gulp.dest("es/"));
-// });
-//
-// var tsDtsProject = tsc.createProject("tsconfig.json", {
-//     declaration: true,
-//     noResolve  : false,
-//     typescript : require("typescript")
-// });
-//
-// gulp.task("build-dts", function () {
-//     return gulp.src([
-//         "src/**/*.ts"
-//     ])
-//         .pipe(tsDtsProject())
-//         .on("error", function (err) {
-//             process.exit(1);
-//         })
-//         .dts.pipe(gulp.dest("dts"));
-//
-// });
-//
-// gulp.task('build-dts:concat', [ 'build-dts' ], (done: any) => {
-//     let dtsPath = path.join(process.cwd(), 'dts')
-//     let dest    = path.join(process.cwd(), 'radic.util.d.ts')
-//     fs.existsSync(dest) && fs.unlinkSync(dest);
-//
-//     let result          = require('dts-bundle').bundle({
-//         name                : c.moduleName,
-//         main                : 'dts/index.d.ts',
-//         outputAsModuleFolder: true,
-//         out                 : dest
-//     })
-//     let content: string = fs.readFileSync(dest, 'utf-8');
-//     fs.unlinkSync(dest);
-//     fs.writeFile(dest, `
-// declare module "@radic/util" {
-//     ${content.replace(/declare/g, '')}
-// }
-// `, done)
-//
-//
-// })
+gulp.task("build:dts:ts", (cb) => pump([
+    gulp.src(c.src),
+    tsProject.dts(),
+    gulp.dest('dts/')
+]))
+
+gulp.task('build:lib', (cb) => pump([
+    gulp.src(c.src),
+    tsProject.lib(),
+    gulp.dest("lib/")
+]))
+
+gulp.task('build:src', (cb) => pump([
+    gulp.src(c.src),
+    tsProject.src(),
+    gulp.dest("src/")
+]))
+
+gulp.task("build:test", (cb) => pump([
+    gulp.src([ "tests/**/*.ts" ]),
+    tsProject.test(),
+    gulp.dest("tests/")
+]))
+
+gulp.task('build:dts', (cb) => runSequence('build:dts:ts', 'clean:dts:js', cb))
+
+gulp.task("build:watch", (cb) => runSequence(
+    "clean:watch",
+    [ 'build:lib', 'build:dts' ],
+    cb
+));
+gulp.task('watch', () => { gulp.watch(c.src, <WatchOptions>{ debounceDelay: 3000, interval: 3000 }, [ 'build:watch' ])})
 
 
-gulp.task('build-umd', [ 'build-lib' ], (cb) => {
-    pump([
-        gulp.src('lib/**/*.js'),
-        rollup({
-            entry     : './lib/index.js',
-            format    : 'umd',
-            moduleName: 'radic.util',
-            globals   : { lodash: '_' }
-        }),
-        gulp.dest('./'),
-        clean(),
-        rename('radic.util.js'),
-        gulp.dest('./'),
-        size()
-    ], cb)
-});
+gulp.task('build:umd', [ 'build:lib:es6' ], () => pump([
+    gulp.src('lib-es6/**/*.js'),
+    rollup({
+        entry     : './lib-es6/index.js',
+        format    : 'umd',
+        moduleName: 'radic.util',
+        globals   : { lodash: '_' },
 
-gulp.task('build-umd:minify', [ 'build-umd' ], (cb) => {
-    pump([
-        gulp.src('./radic.util.js'),
-        uglify(),
-        rename('radic.util.min.js'),
-        gulp.dest('./'),
-        size()
-    ], cb)
-})
+    }),
+    gulp.dest('./'),
+    clean(),
+    rename('radic.util.js'),
+    gulp.dest('./'),
+    size()
+]))
 
-//******************************************************************************
-//* TESTS NODE
-//******************************************************************************
-var tstProject = tsc.createProject("tsconfig.json", { typescript: require("typescript") });
-
-gulp.task("build-src", function () {
-    return gulp.src([
-        "src/**/*.ts"
-    ])
-        .pipe(tstProject())
-        .on("error", function (err) {
-            process.exit(1);
-        })
-        .js.pipe(gulp.dest("src/"));
-});
-
-var tsTestProject = tsc.createProject("tsconfig.json", { typescript: require("typescript") });
-
-gulp.task("build-test", function () {
-    return gulp.src([
-        "spec/**/*.ts"
-    ])
-        .pipe(tsTestProject())
-        .on("error", function (err) {
-            process.exit(1);
-        })
-        .js.pipe(gulp.dest("spec/"));
-});
-
-gulp.task("jasmine", function () {
-    return gulp.src([
-        "src/**/*.spec.js"
-    ])
-        .pipe(jasmine({
-            reporter: new SpecReporter(),
-            config  : require('./jasmine.json')
-        }))
-});
-//
-// gulp.task("istanbul:hook", function () {
-//     return gulp.src(["src/**/*.js"])
-//         .pipe(istanbul())
-//         .pipe(sourcemaps.write("."))
-//         .pipe(istanbul.hookRequire());
-// });
-
-//******************************************************************************
-//* TESTS BROWSER
-//******************************************************************************
-gulp.task("bundle-test", function () {
-
-    var mainJsFilePath = "test/inversify.test.js";
-    var outputFolder   = "temp/";
-    var outputFileName = "bundle.test.js";
-
-    var bundler = browserify({
-        debug     : true,
-        standalone: "inversify"
-    });
-
-    return bundler.add(mainJsFilePath)
-        .bundle()
-        .pipe(source(outputFileName))
-        .pipe(buffer())
-        .pipe(sourcemaps.init({ loadMaps: true }))
-        .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest(outputFolder));
-});
-
-gulp.task("karma", [ "bundle-test" ], function (done) {
-    new karma.Server({
-        configFile: __dirname + "/karma.conf.js"
-    }, function (code) {
-        if ( code === 1 ) {
-            console.log('Browser test failures, exiting process');
-            done('Browser test Failures');
-        } else {
-            console.log('Browser tests passed');
-            done();
-        }
-    }).start();
-});
-
-// Run browser testings on AppVeyor not in Travis CI
-
-gulp.task("test", function (cb) {
-    if ( process.env.APPVEYOR ) {
-        runSequence("jasmine", "karma", cb);
-    } else {
-        runSequence("jasmine", cb);
-    }
-});
+gulp.task('build:umd:minify', [ 'build:umd' ], () => pump([
+    gulp.src('./radic.util.js'),
+    uglify(),
+    rename('radic.util.min.js'),
+    gulp.dest('./'),
+    size()
+]))
 
 
-//******************************************************************************
-//* DEFAULT
-//******************************************************************************
-gulp.task("build", (cb) => {
-    runSequence(
-        "clean",
-        [ "build-src", "build-lib", 'build-umd', 'build-umd:minify' ],   // tests + build es and lib
-        "build-test", cb);
-});
 
-interface TaskList {
-    [name: string]: { fn: Function, dep?: string[], name: string }
-}
-gulp.task("default", ['build'])
+gulp.task("build", (cb) => runSequence(
+    "clean",
+    [ "build:src", "build:lib", 'build:lib:es6', 'build:dts', 'build:umd', 'build:umd:minify' ],
+    "build:test", cb
+));
+
+
+
+gulp.task("default", [ 'build' ])
 
 
 gulp.task('ghpages', () => pump([ gulp.src('./docs/**/*'), ghPages({

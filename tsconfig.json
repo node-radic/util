@@ -1,27 +1,25 @@
 {
     "compilerOptions": {
         "removeComments": true,
-        "declaration": false,
         "noLib": false,
         "noImplicitAny": false,
-        "sourceMap": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
         "module": "commonjs",
+        "skipLibCheck": true,
         "moduleResolution": "node",
         "target": "es5",
-        "lib": ["dom", "es2017"],
+        "lib": ["es2017", "dom"],
         "noResolve": false,
         "typeRoots": [
             "./node_modules/@types",
             "./types"
         ]
     },
-    "exclude": [
-        "gulpfile.ts"
-    ],
     "include": [
-        "src","spec"
+        "src","spec",
+        "gulpfile.ts"
     ]
 }
