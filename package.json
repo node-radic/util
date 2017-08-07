@@ -9,7 +9,7 @@
     "private": false,
     "scripts": {
         "reinstall": "rm -rf node_modules yarn.lock package-lock.json && yarn install",
-        "start": "npm run reinstall && npm run link && npm run build && npm run watch",
+        "start": "npm run reinstall && npm run build && npm run watch",
         "build": "gulp --gulpfile gulpfile.ts build",
         "watch": "gulp --gulpfile gulpfile.ts watch",
         "pretest": "gulp --gulpfile gulpfile.ts build:test",
@@ -22,7 +22,7 @@
         "docs:deploy": "npm run docs:generate; gulp ghpages",
         "preversion": "npm test",
         "version": "npm run build && git add -A",
-        "postversion": "git push && git push --tags  && npm run docs:deploy"
+        "postversion": "git push && git push --tags  && npm run docs:deploy && npm run clean"
     },
     "author": "Robin Radic",
     "license": "MIT",

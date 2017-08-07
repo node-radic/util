@@ -6,6 +6,7 @@ export * from './material'
 
 export * from './object'
 export * from './storage'
+export * from './date'
 
 
 
