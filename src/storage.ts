@@ -131,7 +131,6 @@ export class StorageBag {
 
     on(event:StorageEvent, callback: Function) {
         this.listeners[event].push(callback);
-        this.provider.onStoreEvent(callback);
     }
 
     listeners:{[event:string]:Function[]} = {set: [], del: [], clear: []}
