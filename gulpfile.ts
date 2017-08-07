@@ -68,7 +68,7 @@ gulp.task('build:src', (cb) => pump([
     gulp.dest("src/")
 ]))
 
-gulp.task("build:test", (cb) => pump([
+gulp.task("build:test", ['build:src'], (cb) => pump([
     gulp.src([ "tests/**/*.ts" ]),
     tsProject.test(),
     gulp.dest("tests/")
