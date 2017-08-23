@@ -28,7 +28,6 @@ karma.conf.js
 /.mversionrc
 /.editorconfig
 /index.html
-/dts
 /spec
 /npm-debug.log
 /.idea
